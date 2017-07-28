@@ -12,5 +12,33 @@
 *  Author: {Autore della modifica}
 */
 
+import React, { Component } from 'react';
+import { render as reactRender } from 'react-dom';
+import { renderToString as reactRenderToString } from 'react-dom/server';
+import {ContainedElement} from './ContainedElement.jsx';
+
+class VerticalLayout extends React.Component{
+    constructor(props){
+        super(props);
+        this.renderChildren = this.renderChildren.bind(this);
+    }
 
 
+    renderChildren() {
+        return React.Children.map(this.props.children, child => {
+            return (<ContainedElement classNames="col-md-12">{child}</ContainedElement>);
+        });
+    }
+
+
+    render(){
+        var classes = classNames("row",this.props.classNames);
+        return(
+            <div className={classes}>
+                {this.renderChildren()}
+            </div>
+        );
+    }
+}
+
+export default AwesomeComponent;
