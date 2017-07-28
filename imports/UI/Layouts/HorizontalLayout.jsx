@@ -54,3 +54,14 @@ class HorizontalLayout extends React.Component{
 }
 
 export default HorizontalLayout;
+
+/*
+How to use: 
+<HorizontalLayout hide={"visibility state(true or false)"}>
+<Children/>
+<Children/>
+.
+.
+.
+</HorizontalLayout>
+*/

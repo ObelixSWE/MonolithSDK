@@ -46,3 +46,15 @@ class VerticalLayout extends React.Component{
 }
 
 export default AwesomeComponent;
+
+
+/*
+How to use: 
+<VerticalLayout hide={"visibility state(true or false)"}>
+<Children/>
+<Children/>
+.
+.
+.
+</VerticalLayout>
+*/
