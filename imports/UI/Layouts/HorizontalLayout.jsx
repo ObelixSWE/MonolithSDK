@@ -11,6 +11,9 @@
 *  Description: {descrizione della modifica}
 *  Author: {Autore della modifica}
 */
+import style from '../CSS/styles.css';
+import {ContainedElement} from 'ContainedElement.jsx';
+//importare boostrap
 
 class HorizontalLayout extends React.Component{
     constructor(props){
@@ -41,7 +44,7 @@ class HorizontalLayout extends React.Component{
 
 
     render(){
-        var classes = classNames("row",this.props.classNames);
+        var classes = classNames("row",{"hidden" : this.props.hide},this.props.classNames);
         return(
             <div className={classes}>
                 {this.renderChildren()}

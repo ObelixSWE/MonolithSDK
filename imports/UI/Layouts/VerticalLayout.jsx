@@ -12,6 +12,10 @@
 *  Author: {Autore della modifica}
 */
 
+import style from '../CSS/styles.css';
+import {ContainedElement} from 'ContainedElement.jsx';
+//importare boostrap
+
 import React, { Component } from 'react';
 import { render as reactRender } from 'react-dom';
 import { renderToString as reactRenderToString } from 'react-dom/server';
@@ -32,7 +36,7 @@ class VerticalLayout extends React.Component{
 
 
     render(){
-        var classes = classNames("row",this.props.classNames);
+        var classes = classNames("row",{"hidden" : this.props.hide},this.props.classNames);
         return(
             <div className={classes}>
                 {this.renderChildren()}
