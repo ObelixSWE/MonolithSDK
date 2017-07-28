@@ -29,7 +29,7 @@ export class RadioButtonGroup extends React.Component{
 
     handleClick(event){
         this.state.value=event.target.value;
-        this.props.f(this.state.value)
+        this.props.getValue(this.state.value)
     }
     render(){
         let el=[];
@@ -45,6 +45,6 @@ export class RadioButtonGroup extends React.Component{
 /*
 <RadioButtonGroup
     options={["a","b","c"]} //array of options
-    f={this."function name"}
+    getValue={this."function name"}
 />
  */
