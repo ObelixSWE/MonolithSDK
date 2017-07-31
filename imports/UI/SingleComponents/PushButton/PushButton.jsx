@@ -20,9 +20,14 @@ import { renderToString as reactRenderToString } from 'react-dom/server'
 export class PushButton extends React.Component {
     constructor(props){
         super(props);
+        this.onclick=this.onclick.bind(this);
     }
+    onclick(){
+        this.props.handleClick(this.props.id);
+    }
+
     render() {
-        return <button type="button" onClick={this.props.handleClick}>{this.props.buttonName}</button>
+        return <button type="button" onClick={this.onclick}>{this.props.buttonName}</button>
     }
 }
 

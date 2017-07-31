@@ -22,10 +22,10 @@ export class LineEdit extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event){
-        this.props.updateState(event.target.value);
+        this.props.updateState(event.target.value,this.props.id);
     }
     render(){
-        return <input type="text" onChange={this.handleChange}/>;
+        return <input type="text" placeholder={this.props.placeholder} onChange={this.handleChange}/>;
     }
 }
 
