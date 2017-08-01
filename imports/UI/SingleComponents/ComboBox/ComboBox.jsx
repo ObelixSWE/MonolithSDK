@@ -20,20 +20,20 @@ import { renderToString as reactRenderToString } from 'react-dom/server'
 export class ComboBox extends React.Component{//mettere apposto la storia dello stato iniziale
     constructor(props){
         super(props);
-        /*this.state={
-            selected:'a'
-        }*/
+        this.state={
+            selected:this.props.options[0],
+        }
         this.optChange=this.optChange.bind(this);
     }
 
     optChange(event) {
         let selInd= event.target.selectedIndex;
         this.props.getSelection(this.props.options[selInd]);
+        this.setState({selected:this.props.options[selInd]});
     }
 
     render(){
         const el = this.props.options.map((myvalue,i) => ( <option key={i} value={i}>{myvalue}</option>));
-        //console.log(this.props.options);
         return(
             <select onChange={this.optChange}>
                 {el}
@@ -41,7 +41,6 @@ export class ComboBox extends React.Component{//mettere apposto la storia dello 
 
                     );
     }
-
 }
 
 /*

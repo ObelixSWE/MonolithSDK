@@ -27,13 +27,14 @@ export class PushButton extends React.Component {
     }
 
     render() {
-        return <button type="button" onClick={this.onclick}>{this.props.buttonName}</button>
+        return <button id=this.props.id type="button" onClick={this.onclick}>{this.props.buttonName}</button>
     }
 }
 
 /*
 How to use:
 <PushButton
+    id= // like HTML "id" attribute
     handleClick={this."function name"}
     buttonName="button name"
 />

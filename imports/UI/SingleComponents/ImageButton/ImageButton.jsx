@@ -25,19 +25,20 @@ export class ImageButton extends React.Component{
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(event){
-        this.props.f(event.target.src);
+        this.props.handleClick(this.props.id);
     }
     render(){
-        return(<input type="image" src={this.props.src} alt={this.props.alt} width={this.props.width} height={this.props.height} onClick={this.handleClick}/>);
+        return(<input id={this.props.id} type="image" src={this.props.src} alt={this.props.alt} width={this.props.width} height={this.props.height} onClick={this.handleClick}/>);
     }
 }
 
 /*
 <ImageButton
+    id= // like HTML "id" attribute
     src= // like HTML "src" attribute
     alt=  // like HTML "alt" attribute
     width=  // like HTML "width" attribute
     height=  // like HTML "height" attribute
-    f={this."function name"}
+    handleClick={this."function name"}
 />
  */

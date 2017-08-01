@@ -17,37 +17,31 @@ import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 
 
-export class CheckButton extends React.Component{
+class CheckButton extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            n:this.props.n,
-            check:'false'
+            check:false,
         }
         this.changeCheck=this.changeCheck.bind(this);
     }
     changeCheck(event){
-        if(this.state.check=='false') this.state.check='true';
-        else this.state.check='false'
-        console.log(this.state.n);
-        this.props.f(this.state.n);
+        this.setState({check:!this.state.check});
+        this.props.getCheck(event.target.checked);
     }
     render(){
-        if(this.state.check=='true')
-            return (<div>
-                <input id={this.state.n} type="checkbox" onChange={this.changeCheck} checked/>{this.props.value}<br/>
-            </div>);
-        else
-            return(<div>
-                <input id={this.state.n} type="checkbox" onChange={this.changeCheck}/>{this.props.value}<br/>
-            </div>);
+            return(<div><input id={this.props.id} type="checkbox" onChange={this.changeCheck} checked={this.state.check}/>{this.props.value}</div>);
     }
 
 }
 
+export default CheckButton;
+
 /*
+How to use:
 <CheckButton
-    n= number  //for the id
-    f={this."function name"}
+    id='id'
+    getCheck={this."function name"}
+    value="checkbox value"
 />
- */
+*/
