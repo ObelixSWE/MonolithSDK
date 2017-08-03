@@ -1,5 +1,5 @@
 /*
-*  Name :   Bubble.jsx
+*  Name :   BubbleCreationButton.jsx 
 *  Location : /imports/UI/Bubbles
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
@@ -15,18 +15,5 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {VerticalLayout} from "../../Layouts/VerticalLayout";
-import {PushButton} from "../../SingleComponents/PushButton/PushButton";
-
-export class WeathBubble extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={
-            city:''
-        }
-    }
-
-    render(){
-
-    }
-}
+import {PushButton} from "../../SingleComponents/PushButton/PushButton"
+import {buttons} from "bootstrap-css"
