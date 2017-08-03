@@ -18,15 +18,3 @@ import { renderToString as reactRenderToString } from 'react-dom/server'
 import {VerticalLayout} from "../../Layouts/VerticalLayout";
 import {PushButton} from "../../SingleComponents/PushButton/PushButton";
 
-export class WeathBubble extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={
-            city:''
-        }
-    }
-
-    render(){
-
-    }
-}
