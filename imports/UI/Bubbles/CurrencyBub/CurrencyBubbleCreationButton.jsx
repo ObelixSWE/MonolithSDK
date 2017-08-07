@@ -15,5 +15,21 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {PushButton} from "../../SingleComponents/PushButton/PushButton"
-import {buttons} from "bootstrap-css"
+
+
+export class CurrencyBubbleCreationButton extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+            <PushButton
+                className="btn"
+                buttonName="Currency"
+                handleClick={this.props.generate}
+            />
+        );
+    }
+}
+

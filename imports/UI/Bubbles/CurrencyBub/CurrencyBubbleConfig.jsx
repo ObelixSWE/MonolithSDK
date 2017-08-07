@@ -19,38 +19,38 @@ import {VerticalLayout} from "../../Layouts/VerticalLayout";
 import {ComboBox} from "../../SingleComponents/ComboBox/ComboBox";
 import {LineEditPushButton} from "../../SingleComponents/LineEditPushButton/LineEditPushButton";
 
-export class TranslationBubbleConfig extends React.Component{
+export class CurrencyBubbleConfig extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            lang_in:'',
-            lang_out:'',
-            words:''
+            curr_in:'',
+            curr_out:'',
+            value:''
         }
-        this.getLangIn=this.getLangIn.bind(this);
-        this.getLangOut=this.getLangOut.bind(this);
-        this.getText=this.getText.bind(this);
+        this.getValue=this.getValue.bind(this);
+        this.getCurrIn=this.getCurrIn.bind(this);
+        this.getCurrOut=this.getCurrOut.bind(this);
     }
 
-    getLangIn(text){
-        this.setState({lang_in:text});
+    getCurrOut(text){
+        this.setState({curr_out:text})
     }
 
-    getLangOut(text){
-        this.setState({lang_out:text});
+    getCurrIn(text){
+        this.setState({curr_in:text})
     }
 
-    getText(text){
-        this.setState({words:text});
+    getValue(text){
+        this.setState({value:text});
         //invio bolla
     }
 
     render(){
         return(
             <VerticalLayout>
-                <h1>Scegli la lingua base</h1><ComboBox options="" getSelection={this.getLangIn}/><br/>
-                <h1>Scegli la lingua finale</h1><ComboBox options="" getSelection={this.getLangOut}/><br/>
-                <h1>Inserisci la frase:</h1><LineEditPushButton buttonName="Send" getText={this.getText}/>
+                <h1>Scegli la valuta base</h1><ComboBox options="" getSelection={this.getCurrIn}/><br/>
+                <h1>Scegli la valuta finale</h1><ComboBox options="" getSelection={this.getCurrOut}/><br/>
+                <h1>Inserisci il valore:</h1><LineEditPushButton buttonName="Send" getText={this.getValue}/>
             </VerticalLayout>
         );
     }

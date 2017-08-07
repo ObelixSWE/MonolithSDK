@@ -28,8 +28,8 @@ export class ComboBox extends React.Component{//mettere apposto la storia dello 
 
     optChange(event) {
         let selInd= event.target.selectedIndex;
-        this.props.getSelection(this.props.options[selInd]);
         this.setState({selected:this.props.options[selInd]});
+        this.props.getSelection(this.props.options[selInd]);
     }
 
     render(){

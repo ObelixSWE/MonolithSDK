@@ -18,24 +18,24 @@ import { renderToString as reactRenderToString } from 'react-dom/server'
 import VerticalLayout from "../../Layouts/VerticalLayout";
 
 
-export class TranslationBubble extends React.Component{
+export class CurrencyBubble extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            lang_in:this.props.lang_in,
-            lang_out:this.props.lang_out,
-            words_in:this.props.words_in,
-            words_out:this.props.words_out
+            curr_in:this.props.curr_in,
+            curr_out:this.props.curr_out,
+            value_in:this.props.value_in,
+            value_out:this.props.value_out
         }
     }
 
 
     render(){
         return(
-            <VerticalLayout>
-                <p><h1>Da:</h1>{this.state.lang_in} <h1>a:</h1>{this.state.lang_out}</p><br/>
-                <p>{this.state.words_in} <h1>-></h1> {this.state.words_out}</p>
-            </VerticalLayout>
+          <VerticalLayout>
+              <p><h1>Da:</h1>{this.state.curr_in} <h1>a:</h1>{this.state.curr_out}</p><br/>
+              <p>{this.state.value_in} <h1>-></h1> {this.state.value_out}</p>
+          </VerticalLayout>
         );
     }
 }
