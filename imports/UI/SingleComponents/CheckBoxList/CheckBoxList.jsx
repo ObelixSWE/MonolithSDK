@@ -15,39 +15,56 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
+import CheckButton from '../CheckButton/CheckButton.jsx';
 
 
-export class CheckBoxList extends React.Component{
+export default class CheckBoxList extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            options: this.props.options
-
+            options: [],
         }
+		this.getCheck=this.getCheck.bind(this);
+		this.state.options=this.props.options.map((opt) => <CheckButton id={opt.id.toString()} classes={this.props.classes} getCheck={this.getCheck} value={opt.value}/>);
     }
+//
+	getCheck(n){
+		this.props.getCheck(n);
+	}
+
     getSelection(event){
-        var i=event.target.id;
+        /*var i=event.target.id;
         if(this.state.options[i].check) this.state.options[i].check=false;
         else
             this.state.options[i].check=true;
         console.log("elemento "+i+": "+this.state.options[i].check)
-        this.props.f(this.state.options[i].val);
+        this.props.f(this.state.options[i].val);*/
     }
 
     render(){
-        var el=[];
+        /*var el=[];
         for (var i=0;i< this.state.options.length;i++)
         {
             if(this.state.options[i].check==false)
                 el.push(<div><input id={i} type="checkbox" onChange={this.getSelection.bind(this)}/>{this.state.options[i].val}<br/></div>);
             else
                 el.push(<div><input id={i} type="checkbox" onChange={this.getSelection.bind(this)} checked/>{this.state.options[i].val}<br/></div>);
-        }
-        return(<div>
-            {el}
-        </div>);
+        }*/
+        return(
+			<div>
+            	{this.state.options}
+        	</div>
+		);
     }
 }
+/*
+var opt=[{id: 1, value: 'Hello World'},{id: 2, value: 'Installation'}];
+<CheckBoxList
+	classes= // CSS classes
+	options={opt}
+	getCheck=this."function name"
+/>
+*/
 
 /*
 <CheckBoxList

@@ -18,7 +18,7 @@ import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 
 
-export class RadioButtonGroup extends React.Component{
+export default class RadioButtonGroup extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -44,6 +44,7 @@ export class RadioButtonGroup extends React.Component{
 
 /*
 <RadioButtonGroup
+	classes= // CSS classes
     options={["a","b","c"]} //array of options
     getValue={this."function name"}
 />

@@ -16,7 +16,7 @@ import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 
-export class LineEdit extends React.Component {
+export default class LineEdit extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
@@ -25,11 +25,16 @@ export class LineEdit extends React.Component {
         this.props.updateState(event.target.value,this.props.id);
     }
     render(){
-        return <input type="text" placeholder={this.props.placeholder} onChange={this.handleChange}/>;
+		var leClass = classNames("",this.props.classes);
+        return <input id={this.props.id} type="text" className={leClass} placeholder={this.props.placeholder} onChange={this.handleChange}/>;
     }
 }
 
 /*
 How to use:
- <LineEdit updateState={this."function name"}/>
+ <LineEdit 
+	id= // like HTML id
+	classes= // CSS classes
+	updateState={this."function name"}
+ />
 */

@@ -19,7 +19,7 @@ import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 
 
-export class ImageButton extends React.Component{
+export default class ImageButton extends React.Component{
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -28,7 +28,8 @@ export class ImageButton extends React.Component{
         this.props.handleClick(this.props.id);
     }
     render(){
-        return(<input id={this.props.id} type="image" src={this.props.src} alt={this.props.alt} width={this.props.width} height={this.props.height} onClick={this.handleClick}/>);
+		var imgClass = classNames("",this.props.classes);
+        return(<input id={this.props.id} type="image" className={imgClass} src={this.props.src} alt={this.props.alt} width={this.props.width} height={this.props.height} onClick={this.handleClick}/>);
     }
 }
 

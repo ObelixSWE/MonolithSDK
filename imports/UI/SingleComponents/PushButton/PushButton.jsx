@@ -17,24 +17,32 @@ import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 
-export class PushButton extends React.Component {
+class PushButton extends React.Component {
     constructor(props){
         super(props);
-        this.onclick=this.onclick.bind(this);
+        this.onClick=this.onClick.bind(this);
     }
-    onclick(){
+
+    onClick(){
         this.props.handleClick(this.props.id);
     }
 
     render() {
-        return <button id=this.props.id type="button" onClick={this.onclick}>{this.props.buttonName}</button>
+        var btnClass = classNames("btn btn-primary btn-lg",this.props.classes);
+        if(this.props.dis==true)
+            return <button id={this.props.id} type="button" className={btnClass} onClick={this.onClick} disabled>{this.props.buttonName}</button>
+        else
+            return <button id={this.props.id} type="button" className={btnClass} onClick={this.onClick} >{this.props.buttonName}</button>
     }
 }
+
+export default PushButton;
 
 /*
 How to use:
 <PushButton
     id= // like HTML "id" attribute
+	classes= // CSS classes
     handleClick={this."function name"}
     buttonName="button name"
 />

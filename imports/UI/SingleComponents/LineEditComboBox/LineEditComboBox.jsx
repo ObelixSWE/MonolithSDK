@@ -13,12 +13,14 @@
 */
 
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
+import React, { Component } from 'react';
+import { render as reactRender } from 'react-dom';
+import { renderToString as reactRenderToString } from 'react-dom/server';
+import LineEdit from '../LineEdit/LineEdit.jsx';
+import ComboBox from '../ComboBox/ComboBox.jsx'
 
 
-export class LineEditComboBox extends React.Component{
+export default class LineEditComboBox extends React.Component{
     /*
     tolte le funzioni per la gestione degli stati e rimandato il compito alle funzioni passate dalle props
     */
@@ -27,8 +29,11 @@ export class LineEditComboBox extends React.Component{
     }
 
     render(){
+		var leClass = classNames("",this.props.classesle);
+		var cbClass = classNames("",this.props.classescb);
         return(<div>
-            <LineEdit updateState={this.props.textUpdate}/><ComboBox options={this.props.options} mGetSelection={this.props.comboUpdate}/>
+            <LineEdit id={this.props.idle} classes={leClass} updateState={this.props.textUpdate}/>
+			<ComboBox id={this.props.idcb} classes={cbClass} options={this.props.options} getSelection={this.props.comboUpdate}/>
         </div>);
     }
 }
@@ -36,6 +41,10 @@ export class LineEditComboBox extends React.Component{
 /*
 How to use:
 <LineEditComboBox
+	idle= // lineEdit HTML id
+	idcb= // comboBox  HTML id
+	classesle= // lineEdit CSS classes
+	classescb= // comboBox CSS classes
     textUpdate={this."function name"}
     options={["a","b","c"]} //array of option
     comboUpdate={this."function name"}

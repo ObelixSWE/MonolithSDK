@@ -17,9 +17,10 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
+import ComboBox from '../ComboBox/ComboBox.jsx'
 
 
-export class TextAreaComboBox extends React.Component {
+export default class TextAreaComboBox extends React.Component {
     /*
     tolte le funzioni per la gestione degli stati e rimandato il compito alle funzioni passate dalle props
     */
@@ -32,9 +33,11 @@ export class TextAreaComboBox extends React.Component {
     }
 
     render(){
+		var txClass = classNames("",this.props.classestx);
+		var cbClass = classNames("",this.props.classescb);
         return(<div>
-            <textarea width={this.props.width} height={this.props.height} onChange={this.handleChange}></textarea>
-            <ComboBox options={this.props.options} getSelection={this.props.comboUpdate}/>
+            <textarea id={this.props.idtx} className={txClass} width={this.props.width} height={this.props.height} onChange={this.handleChange}></textarea>
+            <ComboBox id={this.props.idcb} className={cbClass} options={this.props.options} getSelection={this.props.comboUpdate}/>
         </div>);
     }
 }
@@ -42,6 +45,10 @@ export class TextAreaComboBox extends React.Component {
 /*
 How to use:
 <TextAreaComboBox
+	idtx= //textArea id like HTML id
+	classestx= // textArea CSS classes
+	idcb= //combobox id like HTML id
+	classescb= // combobox CSS classes
     width="textarea width"
     height="textarea height"
     textUpdate={this."function name"}

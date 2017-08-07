@@ -16,8 +16,10 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
+import LineEdit from '../LineEdit/LineEdit.jsx';
+import PushButton from '../PushButton/PushButton.jsx'
 
-export class LineEditPushButton extends React.Component{
+export default class LineEditPushButton extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -34,13 +36,20 @@ export class LineEditPushButton extends React.Component{
     }
 
     render(){
+		var leClass = classNames("",this.props.classesle);
+		var pbClass = classNames("",this.props.classespb);
         return(<div>
-            <LineEdit updateState={this.textField}/> <PushButton handleClick={this.handleClick} buttonName={this.props.buttonName}/>
+            <LineEdit id={this.props.idle} classes={leClass} updateState={this.textField}/>
+			<PushButton id={this.props.idpb} classes={pbClass} handleClick={this.handleClick} buttonName={this.props.buttonName}/>
         </div>);
     }
 }
 /*
 <LineEditPushButton
+	idle= // lineEdit HTML id
+	idpb= // pushButton HTML id
+	classesle= // lineEdit CSS classes
+	classespb= // pushButton CSS classes
     getText={this."function name"}
     buttonName="button name"
 />

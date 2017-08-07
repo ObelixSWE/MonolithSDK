@@ -16,8 +16,10 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
+import PushButton from '../PushButton/PushButton.jsx'
 
-export class TextAreaButton extends React.Component{// non funziona il ridimensionamento
+
+export default class TextAreaButton extends React.Component{// non funziona il ridimensionamento
     constructor(props){
         super(props);
         this.state={
@@ -33,9 +35,11 @@ export class TextAreaButton extends React.Component{// non funziona il ridimensi
         this.props.getText(this.state.value);
     }
     render(){
+		var pbClass = classNames("",this.props.classespb);
+		var taClass = classNames("",this.props.classesta);
         return(<div>
-                <textarea width={this.props.width} height={this.props.height} onChange={this.textField}></textarea>
-                <PushButton handleClick={this.handleClick} buttonName={this.props.buttonName}/>
+                <textarea id={this.props.idta} className={taClass} width={this.props.width} height={this.props.height} onChange={this.textField}></textarea>
+                <PushButton id={this.props.idpb} classes={pbClass} handleClick={this.handleClick} buttonName={this.props.buttonName}/>
             </div>
 
         );
@@ -44,6 +48,10 @@ export class TextAreaButton extends React.Component{// non funziona il ridimensi
 /*
 How to use:
 <TextAreaButton
+	idta= // textArea like HTML id
+	classesta= // textArea CSS classes
+	idpb= // like HTML id
+	classespb= // CSS classes
     getText={this."function name"}
     width="textarea width"
     height="textarea height"
