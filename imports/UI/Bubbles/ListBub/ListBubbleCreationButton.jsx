@@ -17,3 +17,18 @@ import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 
 
+export class ListBubbleCreationButton extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+            <PushButton
+                className="btn"
+                buttonName="List"
+                handleClick={this.props.generate}
+            />
+        );
+    }
+}

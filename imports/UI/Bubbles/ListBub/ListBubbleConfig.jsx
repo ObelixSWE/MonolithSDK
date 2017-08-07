@@ -15,13 +15,9 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {RadioButtonGroup} from "../../SingleComponents/RadioButtonGroup/RadioButtonGroup"
-import {PushButton} from "../../SingleComponents/PushButton/PushButton";
-import {VerticalLayout} from "../../Layouts/VerticalLayout";
-import {LineEdit} from "../../SingleComponents/LineEdit/LineEdit"
 
 
-export class PollBubbleConfig extends React.Component {
+export class ListBubbleConfig extends React.Component {
     constructor(props){
         super(props);
         this.state={ num: 0, op:[],title:''}
@@ -36,13 +32,17 @@ export class PollBubbleConfig extends React.Component {
         console.log(this.state.op.length);
     }
 
-    titleChange(text,id){
-        this.state.title=text;
+    titleChange(event){
+        this.state.title=event.target.value;
+
     }
 
+
     optChange(text,id) {
-        this.state.op[id-1]={id:id,val:text,voti:0};
+        this.state.op[id-1]={id:id,val:text,check:false};
+
     }
+
 
     render() {
         var rows = [];
@@ -54,15 +54,14 @@ export class PollBubbleConfig extends React.Component {
             </div>);
         }
         return (
-            <VericalLayout>
-                <h1>Domanda:</h1><br/>
-                <LineEdit id="question" placeholder="Inserisci una domanda" updateState={this.titleChange}/><br/>
+            <div>
+                <h1>Nome lista:</h1><br/>
+                <LineEdit id="title" placeholder="Inserisci una nome per la lista" updateState={this.titleChange}/><br/>
                 {rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
                 <PushButton buttonName="Send" />
-            </VericalLayout>
+            </div>
 
         );
     }
-
 }
