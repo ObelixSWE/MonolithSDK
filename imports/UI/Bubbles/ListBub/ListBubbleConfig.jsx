@@ -15,9 +15,10 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
+import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
-export class ListBubbleConfig extends React.Component {
+export class ListBubbleConfig extends AbsBubbleConfig {
     constructor(props){
         super(props);
         this.state={ num: 0, op:[],title:''}

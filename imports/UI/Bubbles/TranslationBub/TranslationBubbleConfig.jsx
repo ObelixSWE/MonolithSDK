@@ -15,11 +15,12 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {VerticalLayout} from "../../Layouts/VerticalLayout";
-import {ComboBox} from "../../SingleComponents/ComboBox/ComboBox";
-import {LineEditPushButton} from "../../SingleComponents/LineEditPushButton/LineEditPushButton";
+import VerticalLayout from "../../Layouts/VerticalLayout";
+import ComboBox from "../../SingleComponents/ComboBox/ComboBox";
+import LineEditPushButton from "../../SingleComponents/LineEditPushButton/LineEditPushButton";
+import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
-export class TranslationBubbleConfig extends React.Component{
+export class TranslationBubbleConfig extends AbsBubbleConfig{
     constructor(props){
         super(props);
         this.state={

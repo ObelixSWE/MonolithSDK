@@ -15,9 +15,10 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
+import AbsButton from "../../../lib/uiConstruction/AbsButton";
 
 
-export class TranslationBubbleCreationButton extends React.Component {
+export class TranslationBubbleCreationButton extends AbsButton {
     constructor(props){
         super(props);
     }

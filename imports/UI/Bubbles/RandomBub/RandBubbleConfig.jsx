@@ -15,12 +15,13 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {RadioButtonGroup} from "../../SingleComponents/RadioButtonGroup/RadioButtonGroup"
-import {PushButton} from "../../SingleComponents/PushButton/PushButton";
-import {VerticalLayout} from "../../Layouts/VerticalLayout";
+import RadioButtonGroup from "../../SingleComponents/RadioButtonGroup/RadioButtonGroup"
+import PushButton from "../../SingleComponents/PushButton/PushButton";
+import VerticalLayout from "../../Layouts/VerticalLayout";
+import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
-export class RandBubbleConfig extends React.Component{
+export class RandBubbleConfig extends AbsBubbleConfig{
     constructor(props){
         super(props);
         this.state={

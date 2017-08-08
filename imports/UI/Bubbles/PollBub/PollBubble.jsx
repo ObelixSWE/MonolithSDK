@@ -15,10 +15,11 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {VerticalLayout} from "../../Layouts/VerticalLayout";
-import {PushButton} from "../../SingleComponents/PushButton/PushButton";
+import VerticalLayout from "../../Layouts/VerticalLayout";
+import PushButton from "../../SingleComponents/PushButton/PushButton";
+import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 
-export class PollBubble extends React.Component {
+export class PollBubble extends AbsBubble {
     constructor(props){
         super(props);
         this.state={

@@ -20,9 +20,10 @@ import {PushButton} from "../../SingleComponents/PushButton/PushButton";
 import {VerticalLayout} from "../../Layouts/VerticalLayout";
 import {LineEdit} from "../../SingleComponents/LineEdit/LineEdit"
 import {LineEditPushButton} from "../../SingleComponents/LineEditPushButton/LineEditPushButton";
+import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
-export class WeathBubbleConfig extends React.Component{
+export class WeathBubbleConfig extends AbsBubbleConfig{
     constructor(props){
         super(props);
         this.state={
@@ -33,6 +34,7 @@ export class WeathBubbleConfig extends React.Component{
 
     getCity(text){
         this.state.city=text;
+        this.props.getCity(this.state.city);
     }
 
     render(){
