@@ -28,20 +28,28 @@ export default class PollBubbleConfig extends AbsBubbleConfig {
         this.addOpt=this.addOpt.bind(this);
         this.titleChange=this.titleChange.bind(this);
         this.optChange=this.optChange.bind(this);
+        this.send=this.send.bind(this);
     }
 
     addOpt(){
         let n=this.state.num+1;
         this.setState({num:n});
-        console.log(this.state.op.length);
     }
 
     titleChange(text,id){
-        this.state.title=text;
+        this.setState({title:text});
     }
 
     optChange(text,id) {
-        this.state.op[id-1]={id:id,val:text,voti:0};
+      let m={id:id,val:text,voti:0};
+      let v=this.state.op;
+      v[id-1]=m;
+      this.setState({op:v});
+    }
+
+    send(){
+      this.props.send(this.state.title, this.state.op, this.state.num);
+
     }
 
     render() {
@@ -59,10 +67,15 @@ export default class PollBubbleConfig extends AbsBubbleConfig {
                 <LineEdit id="question" placeholder="Inserisci una domanda" updateState={this.titleChange}/><br/>
                 {rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
-                <PushButton buttonName="Send" />
+                <PushButton buttonName="Send" handleClick={this.send} />
             </VerticalLayout>
 
         );
     }
 
 }
+
+/*
+how to use:
+<PollBubbleConfig send={this."function name"}/>
+*/

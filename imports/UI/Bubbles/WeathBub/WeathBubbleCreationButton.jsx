@@ -15,7 +15,7 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import PushButton from "../../SingleComponents/PushButton/PushButton"
+import {PushButton} from "../../SingleComponents/PushButton/PushButton"
 import {buttons} from "bootstrap-css"
 import AbsButton from "../../../lib/uiConstruction/AbsButton";
 

@@ -28,7 +28,7 @@ export default class ListBubbleConfig extends AbsBubbleConfig {
         this.addOpt=this.addOpt.bind(this);
         this.titleChange=this.titleChange.bind(this);
         this.optChange=this.optChange.bind(this);
-        this.mandare=this.mandare.bind(this);
+        this.send=this.send.bind(this);
     }
 
     addOpt(){
@@ -51,9 +51,9 @@ export default class ListBubbleConfig extends AbsBubbleConfig {
 
     }
 
-    mandare(){
+    send(){
       let m=this.state;//{num: this.state.num, op: this.state.op, title:this.state.title}
-      this.props.getList(m);
+      this.props.send(m);
     }
 
     render() {
@@ -71,9 +71,14 @@ export default class ListBubbleConfig extends AbsBubbleConfig {
                 <LineEdit id="title" placeholder="Inserisci una nome per la lista" updateState={this.titleChange}/><br/>
                 {rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
-                <PushButton buttonName="Send" handleClick={this.mandare}/>
+                <PushButton buttonName="Send" handleClick={this.send}/>
             </div>
 
         );
     }
 }
+
+/*
+how to use:
+<ListBubbleConfig send={this."function name"}/>
+*/

@@ -28,8 +28,7 @@ export default class ListBubble extends AbsBubble{
     }
 
     changeCheck(m){
-      console.log(m);
-        //this.props.getCheck(m);
+        this.props.getCheck(m);
     }
 
     render(){
@@ -43,5 +42,10 @@ export default class ListBubble extends AbsBubble{
     }
 
 }
+/*
+how to use:
+<ListBubble stat={m}/>
 
-//options={[{"nome",true/false},{"nome",true/false},...]}
+m = { num: 0, op:[],title:''}
+op = [{id:id,value:text,check:false},{id:id,value:text,check:false},...]
+*/

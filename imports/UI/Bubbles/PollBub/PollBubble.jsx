@@ -45,7 +45,6 @@ export default class PollBubble extends AbsBubble {
             opts.push(
                 <div>
                     <PushButton id={i} buttonName={this.state.op[i].val} handleClick={this.addVoto}/> Voti: {this.state.op[i].voti} <br/>
-                    /*<button id={i} className="button" onClick={this.addVoto.bind(this)}>{this.state.op[i].val}</button>Voti: {this.state.op[i].voti} <br/>*/
                 </div>
             )
         }
@@ -57,3 +56,12 @@ export default class PollBubble extends AbsBubble {
         );
     }
 }
+
+/*
+how to use:
+<PollBubble title={t} op={o} num={n}/>;
+title= poll's title
+op = {id:id,val:text,voti:0};
+num = number of options
+
+*/

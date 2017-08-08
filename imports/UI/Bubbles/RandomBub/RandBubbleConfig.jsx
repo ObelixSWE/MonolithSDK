@@ -49,3 +49,8 @@ export default class RandBubbleConfig extends AbsBubbleConfig{
     }
 
 }
+
+/*
+how to use:
+<RandBubbleConfig send={this."function name"}/>
+*/

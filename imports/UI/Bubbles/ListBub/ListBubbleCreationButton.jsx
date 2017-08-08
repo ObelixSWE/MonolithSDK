@@ -34,3 +34,10 @@ export default class ListBubbleCreationButton extends AbsButton {
         );
     }
 }
+
+
+/*
+how to use:
+
+<ListBubbleCreationButton generate={this."function name"}/>
+*/

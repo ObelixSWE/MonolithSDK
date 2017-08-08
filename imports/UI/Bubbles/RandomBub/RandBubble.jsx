@@ -1,5 +1,5 @@
 /*
-*  Name :   Bubble.jsx 
+*  Name :   Bubble.jsx
 *  Location : /imports/UI/Bubbles
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
@@ -45,3 +45,8 @@ export default class RandBubble extends AbsBubble {
     }
 }
 
+/*
+how to use:
+<RandBubble nMax={"maximum number"}/>;
+
+*/

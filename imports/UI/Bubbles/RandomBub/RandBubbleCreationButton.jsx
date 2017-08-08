@@ -33,3 +33,10 @@ export default class RandBubbleCreationButton extends AbsButton {
         );
     }
 }
+
+
+/*
+How to use:
+<RandBubbleCreationButton generate={this."function name"}/>
+
+*/

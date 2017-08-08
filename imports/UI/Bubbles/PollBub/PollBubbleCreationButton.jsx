@@ -1,5 +1,5 @@
 /*
-*  Name :   BubbleCreationButton.jsx 
+*  Name :   BubbleCreationButton.jsx
 *  Location : /imports/UI/Bubbles
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
@@ -33,3 +33,8 @@ export default class PollBubbleCreationButton extends AbsButton {
         );
     }
 }
+
+/*
+how to use:
+<PollBubbleCreationButton generate={this."function name"}/>
+*/
