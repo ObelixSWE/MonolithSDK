@@ -24,12 +24,12 @@ export const  CheckHandler = {
             throw Error(checkName + " has not been registered using registerCheck.");
         }
     },
-    execCheckOne(checkName,dataObj){
+    execCheckUpdate(checkName,dataObj){
         if(this.checkMap && this.checkMap[checkName]){
             return this.checkMap[checkName].validateUpdate(dataObj);
         }
         else{
-            throw Error(checkName + " has not been registered using registerCheckOne.");
+            throw Error(checkName + " has not been registered using registerCheck.");
         }
     }
 };
