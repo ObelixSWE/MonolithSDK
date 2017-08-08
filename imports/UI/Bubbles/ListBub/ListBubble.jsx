@@ -1,5 +1,5 @@
 /*
-*  Name :   Bubble.jsx 
+*  Name :   Bubble.jsx
 *  Location : /imports/UI/Bubbles
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
@@ -23,35 +23,21 @@ import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 export default class ListBubble extends AbsBubble{
     constructor(props){
         super(props);
-        this.state={
-            title:this.props.title,
-            num:this.props.num,
-            op:this.props.op,
-            id:this.props.id
-        }
+        this.state=this.props.stat;
         this.changeCheck=this.changeCheck.bind(this);
     }
 
-    changeCheck(){
-        i=event.target.id;
-        var stateCopy=Object.assign({},this.state);
-        if(stateCopy.op[i].check=='false') stateCopy.op[i].check='true'
-        else stateCopy.op[i].check='false'
-        this.setState(stateCopy);
-
-
+    changeCheck(m){
+      console.log(m);
+        //this.props.getCheck(m);
     }
 
     render(){
-        let opts="[";
-        for (i=0;i<this.state.num;i++){
-            opts=opts+"{\""+this.state.op[i].val+"\","+this.state.op[i].check+"},";
-        }
-        opts[opts.lastIndexOf(",")]="]";
+
         return(
             <VerticalLayout>
                 <h1>{this.state.title}</h1>
-                <CheckBoxList options={opts} /*f=????*//>
+                <CheckBoxList classes="chel casso che vojo" options={this.props.stat.op} getCheck={this.changeCheck}/>
             </VerticalLayout>
         );
     }

@@ -1,5 +1,5 @@
 /*
-*  Name :   BubbleCreationButton.jsx 
+*  Name :   BubbleCreationButton.jsx
 *  Location : /imports/UI/Bubbles
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
@@ -16,7 +16,6 @@ import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 import PushButton from "../../SingleComponents/PushButton/PushButton"
-import {buttons} from "bootstrap-css"
 import AbsButton from "../../../lib/uiConstruction/AbsButton";
 
 export default class RandBubbleCreationButton extends AbsButton {
@@ -34,4 +33,3 @@ export default class RandBubbleCreationButton extends AbsButton {
         );
     }
 }
-

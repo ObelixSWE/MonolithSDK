@@ -25,7 +25,8 @@ export default class CheckBoxList extends React.Component{
             options: [],
         }
 		this.getCheck=this.getCheck.bind(this);
-		this.state.options=this.props.options.map((opt) => <CheckButton id={opt.id.toString()} classes={this.props.classes} getCheck={this.getCheck} value={opt.value}/>);
+    const op=this.props.options;
+		this.state.options=op.map((opt) => <CheckButton id={opt.id.toString()} classes={this.props.classes} getCheck={this.getCheck} value={opt.value}/>);
     }
 //
 	getCheck(n){
@@ -36,9 +37,9 @@ export default class CheckBoxList extends React.Component{
     render(){
 
         return(
-			<div>
+            <div>
             	{this.state.options}
-        	</div>
+            </div>
 		);
     }
 }

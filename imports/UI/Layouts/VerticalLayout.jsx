@@ -13,13 +13,13 @@
 */
 
 import style from '../CSS/styles.css';
-import {ContainedElement} from 'ContainedElement.jsx';
+
 //importare boostrap
 
 import React, { Component } from 'react';
 import { render as reactRender } from 'react-dom';
 import { renderToString as reactRenderToString } from 'react-dom/server';
-import {ContainedElement} from './ContainedElement.jsx';
+import ContainedElement from './ContainedElement.jsx';
 
 class VerticalLayout extends React.Component{
     constructor(props){
@@ -45,11 +45,11 @@ class VerticalLayout extends React.Component{
     }
 }
 
-export default AwesomeComponent;
+export default VerticalLayout;
 
 
 /*
-How to use: 
+How to use:
 <VerticalLayout hide={"visibility state(true or false)"}>
 <Children/>
 <Children/>

@@ -27,10 +27,7 @@ class CheckButton extends React.Component{
     }
     changeCheck(event){
         this.setState({check:!this.state.check});
-		let m=[];
-		m.push(this.props.id);
-		m.push(this.props.value);
-		m.push(event.target.checked);
+		    let m={id:this.props.id, value:this.props.value, check:event.target.checked};
         this.props.getCheck(m);
     }
     render(){

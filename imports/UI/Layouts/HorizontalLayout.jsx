@@ -12,7 +12,10 @@
 *  Author: {Autore della modifica}
 */
 import style from '../CSS/styles.css';
-import {ContainedElement} from 'ContainedElement.jsx';
+import React, { Component } from 'react';
+import { render as reactRender } from 'react-dom';
+import { renderToString as reactRenderToString } from 'react-dom/server';
+import ContainedElement from './ContainedElement.jsx';
 //importare boostrap
 
 class HorizontalLayout extends React.Component{
