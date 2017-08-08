@@ -19,7 +19,7 @@ import VerticalLayout from "../../Layouts/VerticalLayout";
 import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 
 
-export class TranslationBubble extends AbsBubble{
+export default class TranslationBubble extends AbsBubble{
     constructor(props){
         super(props);
         this.state={

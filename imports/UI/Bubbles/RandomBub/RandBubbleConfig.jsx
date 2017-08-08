@@ -21,7 +21,7 @@ import VerticalLayout from "../../Layouts/VerticalLayout";
 import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
-export class RandBubbleConfig extends AbsBubbleConfig{
+export default class RandBubbleConfig extends AbsBubbleConfig{
     constructor(props){
         super(props);
         this.state={

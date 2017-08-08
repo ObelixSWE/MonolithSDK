@@ -20,7 +20,7 @@ import ComboBox from "../../SingleComponents/ComboBox/ComboBox";
 import LineEditPushButton from "../../SingleComponents/LineEditPushButton/LineEditPushButton";
 import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
-export class TranslationBubbleConfig extends AbsBubbleConfig{
+export default class TranslationBubbleConfig extends AbsBubbleConfig{
     constructor(props){
         super(props);
         this.state={

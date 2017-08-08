@@ -20,7 +20,7 @@ import CheckBoxList from "../../SingleComponents/CheckBoxList/CheckBoxList";
 import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 
 
-export class ListBubble extends AbsBubble{
+export default class ListBubble extends AbsBubble{
     constructor(props){
         super(props);
         this.state={

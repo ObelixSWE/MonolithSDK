@@ -19,7 +19,7 @@ import VerticalLayout from "../../Layouts/VerticalLayout";
 import PushButton from "../../SingleComponents/PushButton/PushButton";
 import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 
-export class WeathBubble extends AbsBubble {
+export default class WeathBubble extends AbsBubble {
     constructor(props){
         super(props);
     }

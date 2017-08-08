@@ -19,7 +19,7 @@ import VerticalLayout from "../../Layouts/VerticalLayout";
 import PushButton from "../../SingleComponents/PushButton/PushButton";
 import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 
-export class PollBubble extends AbsBubble {
+export default class PollBubble extends AbsBubble {
     constructor(props){
         super(props);
         this.state={

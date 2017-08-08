@@ -23,7 +23,7 @@ import {LineEditPushButton} from "../../SingleComponents/LineEditPushButton/Line
 import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
-export class WeathBubbleConfig extends AbsBubbleConfig{
+export default class WeathBubbleConfig extends AbsBubbleConfig{
     constructor(props){
         super(props);
         this.state={

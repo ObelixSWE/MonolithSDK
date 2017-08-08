@@ -18,7 +18,7 @@ import { renderToString as reactRenderToString } from 'react-dom/server'
 import PushButton from "../../SingleComponents/PushButton/PushButton"
 import AbsButton from "../../../lib/uiConstruction/AbsButton";
 
-export class PollBubbleCreationButton extends AbsButton {
+export default class PollBubbleCreationButton extends AbsButton {
     constructor(props){
         super(props);
     }

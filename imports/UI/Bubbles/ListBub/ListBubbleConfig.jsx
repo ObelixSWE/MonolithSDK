@@ -18,7 +18,7 @@ import { renderToString as reactRenderToString } from 'react-dom/server'
 import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
-export class ListBubbleConfig extends AbsBubbleConfig {
+export default class ListBubbleConfig extends AbsBubbleConfig {
     constructor(props){
         super(props);
         this.state={ num: 0, op:[],title:''}

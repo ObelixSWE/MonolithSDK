@@ -19,7 +19,7 @@ import PushButton from "../../SingleComponents/PushButton/PushButton"
 import {buttons} from "bootstrap-css"
 import AbsButton from "../../../lib/uiConstruction/AbsButton";
 
-export class RandBubbleCreationButton extends AbsButton {
+export default class RandBubbleCreationButton extends AbsButton {
     constructor(props){
         super(props);
     }

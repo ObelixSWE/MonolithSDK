@@ -21,7 +21,7 @@ import LineEdit from "../../SingleComponents/LineEdit/LineEdit"
 import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
-export class PollBubbleConfig extends AbsBubbleConfig {
+export default class PollBubbleConfig extends AbsBubbleConfig {
     constructor(props){
         super(props);
         this.state={ num: 0, op:[],title:''}
