@@ -27,7 +27,7 @@ export default class BubbleDatabase {
         }
     }
     insert(bubbleType,data){
-        let insPromise = aMeteor.callAsync("insertBubble",bubbleType, "room91", data);
+        let insPromise = aMeteor.callAsync("insertBubble",bubbleType, data);
         insPromise.then(
             (Success) => {this.insertSuccess(Success);},
             (Error) => {this.insertFailure(Error);}

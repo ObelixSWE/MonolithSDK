@@ -16,12 +16,12 @@ export default class BubbleCreator {
             throw new TypeError("Please override doMakeBubbleReceiver in BubbleCreator");
         }
     }
-    doMakeConfigurationMenu(props,bubbleId){
+    doMakeConfigurationMenu(){
         if(this.doMakeConfigurationMenu === BubbleCreator.prototype.doMakeConfigurationMenu){
             throw new TypeError("Please override doMakeConfigurationMenu in BubbleCreator");
         }
     }
-    doMakeButton(props,bubbleId){
+    doMakeButton(){
         if(this.doMakeButton === BubbleCreator.prototype.doMakeButton){
             throw new TypeError("Please override doMakeButton in BubbleCreator");
         }

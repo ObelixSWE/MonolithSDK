@@ -13,9 +13,18 @@
 */
 
 
-
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
+import React, {Component} from 'react';
 
 
+class Sidearea2 extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div id="sidearea2">
+      <ReceivedBubble bubbles={this.props.receivedbubbles}/>
+      </div>
+    );
+  }
+}

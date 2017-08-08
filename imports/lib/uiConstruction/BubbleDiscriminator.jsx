@@ -12,17 +12,17 @@ export const BubbleDiscriminator = {
             throw new TypeError("registerBubbleCreator needs a BubbleCreator as argument");
         }
     },
-    useDoMakeBubbleSender(bubbleType){
+    useDoMakeBubbleSender(bubbleType, data, bubbleId){
         if(this.BubbleCreatorMap && this.BubbleCreatorMap[bubbleType]){
-            return this.BubbleCreatorMap[bubbleType].doMakeBubbleSender();
+            return this.BubbleCreatorMap[bubbleType].doMakeBubbleSender(data);
         }
         else{
             throw new Error("Bubbletype " + bubbleType + " not found. You need to register it with BubbleDiscriminator.registerBubbleCreator.");
         }
     },
-    useDoMakeBubbleReceiver(bubbleType){
+    useDoMakeBubbleReceiver(bubbleType, data, bubbleId){
         if(this.BubbleCreatorMap && this.BubbleCreatorMap[bubbleType]){
-            return this.BubbleCreatorMap[bubbleType].doMakeBubbleReceiver();
+            return this.BubbleCreatorMap[bubbleType].doMakeBubbleReceiver(data);
         }
         else{
             throw new Error("Bubbletype " + bubbleType + " not found. You need to register it with BubbleDiscriminator.registerBubbleCreator.");
