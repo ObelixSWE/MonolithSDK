@@ -44,7 +44,7 @@ export class RandBubbleConfig extends AbsBubbleConfig{
             options={["4","6","8","12","20"]}
             getValue={this.getValue}
             />
-            <PushButton buttonName="Send" handleClick={}/>
+            <PushButton buttonName="Send" handleClick={this.send}/>
         </VerticalLayout>);
     }
 
