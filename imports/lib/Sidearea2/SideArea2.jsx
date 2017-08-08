@@ -13,8 +13,8 @@
 */
 
 
-import React, {Component} from 'react';
-
+import React, {Component} from "react";
+import {BubbleCollection} from "../database/databaseInitialization.js";
 
 class Sidearea2 extends React.Component {
   constructor(props) {
@@ -23,8 +23,19 @@ class Sidearea2 extends React.Component {
   render() {
     return (
       <div id="sidearea2">
-      <ReceivedBubble bubbles={this.props.receivedbubbles}/>
+      <ReceivedBubble  bubbles={this.props.sentbubbles}/>
       </div>
     );
   }
 }
+
+
+export default Sidearea2Container = createContainer(() => {
+    const handle = Meteor.subscribe('BubblesPublication');
+
+    return {
+        bubbles: BubbleCollection.find({userId: {$ne: Meteor.Meteor.userId()}}).fetch(),
+        listLoading: ! handle.ready(),
+        currentUser: Meteor.user()
+    };
+}, Sidearea2);

@@ -2,6 +2,8 @@
  * Created by nick on 31/07/17.
  */
 
+ // serverSideOps è il metodo da callare per modificare il parametro data oppure modifier 
+
 import {aBubbleCollection} from "./databaseInitialization.js";
 import {aMeteor} from "../callerInitialization.js";
 
@@ -26,14 +28,14 @@ export default class BubbleDatabase {
             throw new TypeError("Please implement bubbleType method of BubbleDatabase derivate class.");
         }
     }
-    insert(bubbleType,data){
-        let insPromise = aMeteor.callAsync("insertBubble",bubbleType, data);
+    insert(data, serverSideOps){
+        let insPromise = aMeteor.callAsync("insertBubble", data);
         insPromise.then(
             (Success) => {this.insertSuccess(Success);},
             (Error) => {this.insertFailure(Error);}
             );
     }
-    update(bubbleId,modifier){
+    update(bubbleId,modifier,serverSideOps){
         console.log(this.bubbleType());
         console.log(modifier);
         let upPromise = aMeteor.callAsync("updateBubble", bubbleId,modifier);
