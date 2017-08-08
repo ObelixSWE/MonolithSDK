@@ -15,10 +15,11 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {VerticalLayout} from "../../Layouts/VerticalLayout";
-import {PushButton} from "../../SingleComponents/PushButton/PushButton";
+import VerticalLayout from "../../Layouts/VerticalLayout";
+import PushButton from "../../SingleComponents/PushButton/PushButton";
+import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 
-export class RandBubble extends React.Component {
+export class RandBubble extends AbsBubble {
     constructor(props){
         super(props);
         this.calcolate=this.calcolate.bind(this);

@@ -15,9 +15,9 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
+import AbsButton from '../../../lib/uiConstruction/AbsButton.jsx'
 
-
-export class CurrencyBubbleCreationButton extends React.Component {
+export default class CurrencyBubbleCreationButton extends AbsButton {
     constructor(props){
         super(props);
     }
@@ -32,4 +32,5 @@ export class CurrencyBubbleCreationButton extends React.Component {
         );
     }
 }
+
 

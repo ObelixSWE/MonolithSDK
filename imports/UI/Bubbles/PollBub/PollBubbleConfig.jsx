@@ -15,13 +15,13 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {RadioButtonGroup} from "../../SingleComponents/RadioButtonGroup/RadioButtonGroup"
-import {PushButton} from "../../SingleComponents/PushButton/PushButton";
-import {VerticalLayout} from "../../Layouts/VerticalLayout";
-import {LineEdit} from "../../SingleComponents/LineEdit/LineEdit"
+import PushButton from "../../SingleComponents/PushButton/PushButton";
+import VerticalLayout from "../../Layouts/VerticalLayout";
+import LineEdit from "../../SingleComponents/LineEdit/LineEdit"
+import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
-export class PollBubbleConfig extends React.Component {
+export class PollBubbleConfig extends AbsBubbleConfig {
     constructor(props){
         super(props);
         this.state={ num: 0, op:[],title:''}
@@ -54,13 +54,13 @@ export class PollBubbleConfig extends React.Component {
             </div>);
         }
         return (
-            <VericalLayout>
+            <VerticalLayout>
                 <h1>Domanda:</h1><br/>
                 <LineEdit id="question" placeholder="Inserisci una domanda" updateState={this.titleChange}/><br/>
                 {rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
                 <PushButton buttonName="Send" />
-            </VericalLayout>
+            </VerticalLayout>
 
         );
     }

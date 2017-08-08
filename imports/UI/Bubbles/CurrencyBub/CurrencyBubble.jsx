@@ -16,9 +16,10 @@ import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 import VerticalLayout from "../../Layouts/VerticalLayout";
+import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 
 
-export class CurrencyBubble extends React.Component{
+export class CurrencyBubble extends AbsBubble{
     constructor(props){
         super(props);
         this.state={

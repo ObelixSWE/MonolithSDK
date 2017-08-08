@@ -16,10 +16,11 @@ import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
 import VerticalLayout from "../../Layouts/VerticalLayout";
-import {CheckBoxList} from "../../SingleComponents/CheckBoxList/CheckBoxList";
+import CheckBoxList from "../../SingleComponents/CheckBoxList/CheckBoxList";
+import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
 
 
-export class ListBubble extends React.Component{
+export class ListBubble extends AbsBubble{
     constructor(props){
         super(props);
         this.state={
