@@ -11,23 +11,8 @@ import {CheckHandler} from "../imports/lib/checks/CheckHandler.js";
 // throw new Meteor.Error("logged-out", "The user must be logged in to post a comment.");
 
 Meteor.methods({
-    insertBubble(bubbleType, data){
-        // verifica dati
-        // imposta server time
-        /*
-        console.log("---------");
-        console.log(bubbleType);
-        console.log(roomId);
-        console.log(data);
-        console.log("---------");
-        */
-        /*
-        data.createdAt = new Date();
-        data.lastEdited = new Date();
-        data.userId = this.userId;
-        data.roomId = roomId;
-        data.bubbleType = bubbleType;
-        */
+    insertBubble(bubbleType, data, funDataEdit = 'nonOperationsOnData'){
+        data = Meteor.call(funDataEdit,data);
         data.createdAt = new Date();
         data.lastEdited = new Date();
         let validation = CheckHandler.execCheck(bubbleType, data);
@@ -45,11 +30,8 @@ Meteor.methods({
         );
         return true;
     },
-    updateBubble(bubbleId,modifier){ // solo per operazioni di set. controlla le chiavi con set validateUpdate
-       /* console.log("---------");
-        console.log(bubbleId);
-        console.log(modifier);
-        console.log("---------");*/
+    updateBubble(bubbleId,modifier, funDataEdit = 'nonOperationsOnData'){ // solo per operazioni di set. controlla le chiavi con set validateUpdate
+	modifier = Meteor.call(funDataEdit,modifier);
         if (modifier.$set !== undefined) {
             let verify = 0;
             let bId = BubbleCollection.findOne({"_id" : bubbleId});
@@ -78,8 +60,14 @@ Meteor.methods({
             (errormsg) => {throw new Meteor.Error("remove-error", "Remove of bubble from database failed.");
         });
         return true;
+    },
+    nonOperationsOnData(data){
+      return data;
     }
 });
+
+
+
 /*import { Meteor } from "meteor/meteor";
 import {aBubbleCollection} from "../imports/lib/database/databaseInitialization.js";
 import {CheckHandler} from "../imports/lib/CheckHandler/CheckHandler.js";

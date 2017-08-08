@@ -30,3 +30,14 @@ class Sidearea1 extends React.Component {
     );
   }
 }
+
+
+export default Sidearea1Container = createContainer(() => {
+    const handle = Meteor.subscribe('BubblesPublication');
+
+    return {
+        bubbles: BubbleCollection.find({userId: {$eq: Meteor.Meteor.userId()}}).fetch(),
+        listLoading: ! handle.ready(),
+        currentUser: Meteor.user()
+    };
+}, Sidearea1);
