@@ -27,7 +27,7 @@ export default class WeathBubble extends AbsBubble {
     render(){
         return(
             <VerticalLayout>
-
+                <h2>{this.props.city}</h2>
             </VerticalLayout>
         );
     }

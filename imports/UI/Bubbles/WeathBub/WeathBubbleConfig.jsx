@@ -15,26 +15,22 @@
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
 import { renderToString as reactRenderToString } from 'react-dom/server'
-import {RadioButtonGroup} from "../../SingleComponents/RadioButtonGroup/RadioButtonGroup"
-import {PushButton} from "../../SingleComponents/PushButton/PushButton";
-import {VerticalLayout} from "../../Layouts/VerticalLayout";
-import {LineEdit} from "../../SingleComponents/LineEdit/LineEdit"
-import {LineEditPushButton} from "../../SingleComponents/LineEditPushButton/LineEditPushButton";
+import RadioButtonGroup from "../../SingleComponents/RadioButtonGroup/RadioButtonGroup"
+import PushButton from "../../SingleComponents/PushButton/PushButton";
+import VerticalLayout from "../../Layouts/VerticalLayout";
+import LineEdit from "../../SingleComponents/LineEdit/LineEdit"
+import LineEditPushButton from "../../SingleComponents/LineEditPushButton/LineEditPushButton";
 import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 
 
 export default class WeathBubbleConfig extends AbsBubbleConfig{
     constructor(props){
         super(props);
-        this.state={
-            city:''
-        }
         this.getCity=this.getCity.bind(this);
     }
 
     getCity(text){
-        this.state.city=text;
-        this.props.getCity(this.state.city);
+        this.props.getCity(text);
     }
 
     render(){

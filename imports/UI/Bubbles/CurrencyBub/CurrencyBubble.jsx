@@ -1,5 +1,5 @@
 /*
-*  Name :   Bubble.jsx 
+*  Name :   Bubble.jsx
 *  Location : /imports/UI/Bubbles
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
@@ -34,8 +34,7 @@ export default class CurrencyBubble extends AbsBubble{
     render(){
         return(
           <VerticalLayout>
-              <p><h1>Da:</h1>{this.state.curr_in} <h1>a:</h1>{this.state.curr_out}</p><br/>
-              <p>{this.state.value_in} <h1>-></h1> {this.state.value_out}</p>
+              <p><h1>Da:</h1>{this.state.curr_in}: {this.state.value_in} <h1>a:</h1>{this.state.curr_out}: {this.state.value_out}</p>
           </VerticalLayout>
         );
     }

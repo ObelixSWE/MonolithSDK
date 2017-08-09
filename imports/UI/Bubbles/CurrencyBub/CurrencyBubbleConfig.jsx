@@ -24,9 +24,9 @@ export default class CurrencyBubbleConfig extends AbsBubbleConfig{
     constructor(props){
         super(props);
         this.state={
-            curr_in:'',
-            curr_out:'',
-            value:''
+            curr_in:this.props.curr[0],
+            curr_out:this.props.curr[0],
+            value:0
         }
         this.getValue=this.getValue.bind(this);
         this.getCurrIn=this.getCurrIn.bind(this);
@@ -43,14 +43,15 @@ export default class CurrencyBubbleConfig extends AbsBubbleConfig{
 
     getValue(text){
         this.setState({value:text});
-        //invio bolla
+        this.props.send(text,this.state.curr_in,this.state.curr_out);
     }
 
     render(){
-        return(
+
+      return(
             <VerticalLayout>
-                <h1>Scegli la valuta base</h1><ComboBox options="" getSelection={this.getCurrIn}/><br/>
-                <h1>Scegli la valuta finale</h1><ComboBox options="" getSelection={this.getCurrOut}/><br/>
+                <h1>Scegli la valuta base</h1><ComboBox options={this.props.curr} getSelection={this.getCurrIn}/><br/>
+                <h1>Scegli la valuta finale</h1><ComboBox options={this.props.curr} getSelection={this.getCurrOut}/><br/>
                 <h1>Inserisci il valore:</h1><LineEditPushButton buttonName="Send" getText={this.getValue}/>
             </VerticalLayout>
         );
