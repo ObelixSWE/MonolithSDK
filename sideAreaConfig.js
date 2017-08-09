@@ -7,8 +7,6 @@
 
 
 
-
-
 /*function flyin(command, arg1, item) {
 	if (command === 'flyin') {
 		var tmpl = RocketChat.TabBar.getTemplate()
@@ -21,7 +19,7 @@
   }
 }*/
 
-Meteor.startup(function() {
+Meteor.startup(() => {
 	RocketChat.TabBar.addButton({
 		groups: ['channel', 'privategroup', 'directmessage'],
 		id: 'bubble_menu',
@@ -38,7 +36,7 @@ Meteor.startup(function() {
 		icon: 'icon-rocket',
 		template: 'templateSideArea2',
 		order: 12
-	})
+	});
 
 
 
@@ -46,8 +44,7 @@ Meteor.startup(function() {
 	/*RocketChat.slashCommands.add('flyin', flyin, {
 		description: 'Show / hide the panel',
 	})*/
-})
-
+});
 
 
 
