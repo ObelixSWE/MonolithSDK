@@ -26,7 +26,8 @@ export default class PollBubble extends AbsBubble {
             title:this.props.title,
             num:this.props.num,
             op:this.props.op,
-            id:this.props.id
+            id:this.props.id,
+            voted:false
         }
         this.addVoto=this.addVoto.bind(this);
     }
@@ -34,17 +35,22 @@ export default class PollBubble extends AbsBubble {
     addVoto(id) {
         let i=id;
         var stateCopy=Object.assign({},this.state);
-        stateCopy.op[i].voti +=1;
+        if(stateCopy.voted==false)stateCopy.op[i].voti +=1;
+        stateCopy.voted=true;
         this.setState(stateCopy);
+
+        //console.log(this.state.voted +" "+ this.state.op[i].voti)
         //salvataggio su DB
     }
 
     render(){
+        console.log(this.state);
         let opts=[];
-        for (i=0;i<this.state.num;i++){
+        for (var i=0;i<this.state.num;i++){
+
             opts.push(
                 <div>
-                    <PushButton id={i} buttonName={this.state.op[i].val} handleClick={this.addVoto}/> Voti: {this.state.op[i].voti} <br/>
+                    <PushButton id={i} dis={this.state.voted} buttonName={this.state.op[i].val} handleClick={this.addVoto}/> Voti: {this.state.op[i].voti} <br/>
                 </div>
             )
         }
