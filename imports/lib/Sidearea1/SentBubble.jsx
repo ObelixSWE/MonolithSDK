@@ -10,8 +10,8 @@ export default class SentBubble extends React.Component {
   render() {
     return (
       <div id="sent_bubble">
-        {this.props.bubbles.map((bubble) => {BubbleDiscriminator.useDoMakeSender(bubble.bubbleType, bubble, bubble.bubbleId)})}
-      <div>
+        {this.props.bubbles.map((bubble) => {BubbleDiscriminator.useDoMakeBubbleSender(bubble.bubbleType, bubble, bubble.bubbleId)})}
+      </div>
     );
   }
 }

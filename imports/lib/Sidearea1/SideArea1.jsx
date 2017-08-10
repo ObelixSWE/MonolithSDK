@@ -16,16 +16,23 @@
 import React, {Component} from 'react';
 import BubbleMenu from './BubbleMenu.jsx';
 import SentBubble from './SentBubble.jsx';
+import {BubbleCollection} from "../database/databaseInitialization.js";
+import { createContainer } from 'meteor/react-meteor-data';
+
+
+
 
 class Sidearea1 extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
+      console.log(this.props);
     return (
       <div id="sidearea1">
       <BubbleMenu />
-      <SentBubble bubbles={this.props.sentbubbles}/>
+          <h1>CIAO</h1>
+        <SentBubble bubbles={this.props.bubbles}/>
       </div>
     );
   }
@@ -33,10 +40,10 @@ class Sidearea1 extends React.Component {
 
 
 export default Sidearea1Container = createContainer(() => {
-    const handle = Meteor.subscribe('BubblesPublication');
+    let handle = Meteor.subscribe('BubblesPublication');
 
     return {
-        bubbles: BubbleCollection.find({userId: {$eq: Meteor.Meteor.userId()}}).fetch(),
+        bubbles: BubbleCollection.find({userId: {$eq: Meteor.userId()}}).fetch(),
         listLoading: ! handle.ready(),
         currentUser: Meteor.user()
     };
