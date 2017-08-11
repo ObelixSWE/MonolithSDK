@@ -15,6 +15,9 @@
 
 import React, {Component} from "react";
 import {BubbleCollection} from "../database/databaseInitialization.js";
+import { createContainer } from "meteor/react-meteor-data";
+import ReceivedBubble from "./ReceivedBubbles";
+
 
 class Sidearea2 extends React.Component {
   constructor(props) {
@@ -34,7 +37,7 @@ export default Sidearea2Container = createContainer(() => {
     const handle = Meteor.subscribe('BubblesPublication');
 
     return {
-        bubbles: BubbleCollection.find({userId: {$ne: Meteor.Meteor.userId()}}).fetch(),
+        bubbles: BubbleCollection.find({userId: {$ne: Meteor.userId()}}).fetch(),
         listLoading: ! handle.ready(),
         currentUser: Meteor.user()
     };

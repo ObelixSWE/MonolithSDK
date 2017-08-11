@@ -1,4 +1,5 @@
 import { Template } from 'meteor/templating';
+//import Template from 'meteor/react-template-helper';
 import './templateSideArea1.html';
 
 
@@ -25,15 +26,48 @@ import WeathBubble from '../imports/UI/Bubbles/WeathBub/WeathBubble.jsx';
 import WeathBubbleConfig from '../imports/UI/Bubbles/WeathBub/WeathBubbleConfig.jsx';
 import WeathBubbleCreationButton from '../imports/UI/Bubbles/WeathBub/WeathBubbleCreationButton.jsx';
 
+import Sidearea1Container from '../imports/lib/Sidearea1/SideArea1.jsx';
+import {BubbleCollection} from '../imports/lib/database/databaseInitialization.js';
 
-Template.templateSideArea1.onRendered(function() {
-	renderMyStuff();
-	console.log('rendering!');
+
+/*
+class Sidearea1Container extends React.Component {
+	constructor(props){
+		super(props);
+	}
+	render(){
+		return <p>hello</p>;
+	}
+}*/
+
+Template.templateSideArea1.helpers({
+	Sidearea1Container() {
+		return Sidearea1Container;
+	}
 });
 
 
 
+/*
+import {mount, withOptions} from 'react-mounter';
+const mount1 = withOptions({
+    rootId: 'sidearea1',
+}, mount);
 
+
+*/
+
+
+/*
+helpers({
+	Sidearea1Container() {
+		return Sidearea1Container;
+	}
+});
+*/
+
+
+/*
 export class SideArea1 extends React.Component {
 
   constructor(props){
@@ -117,15 +151,7 @@ export class SideArea1 extends React.Component {
 		*/
 		this.setState({menu:m});
   }
-  /*  <div>
-      <p> dio </p>
-      <PushButton
-        id="aaaaaa"
-        buttonName="ciaoaaaaaaaa"
-        handleClick={this.fun}
-      />
-    </div>
-*/
+
 	test(m){
 		let s=<ListBubble stat={m}/>;
 		let a=this.state.bolla;
@@ -154,12 +180,16 @@ export class SideArea1 extends React.Component {
 
 
 }
+*/
 
-
+/*
 export default function renderMyStuff() {
+
   if (typeof document === 'undefined') {
-    return reactRenderToString(<SideArea1 />)
+    return reactRenderToString(<Sidearea1Container />);
   } else {
-    reactRender(<SideArea1 />, document.getElementById('sidearea1'))
+//, document.getElementById('sidearea1')
+  	reactRender.render(Sidearea1Container);
   }
 }
+*/
