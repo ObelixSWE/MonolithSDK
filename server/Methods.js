@@ -1,7 +1,7 @@
 
-import {Meteor} from "meteor/meteor";
-import {BubbleCollection, aBubbleCollection} from "../imports/lib/database/databaseInitialization.js";
-import {CheckHandler} from "../imports/lib/checks/CheckHandler.js";
+import {Meteor} from 'meteor/meteor';
+import {BubbleCollection, aBubbleCollection} from '../lib/database/databaseInitialization.js';
+import {CheckHandler} from '../lib/checks/CheckHandler.js';
 //import Check from "../imports/lib/checks/Check";
 
 // ricorda che esiste this.userId
@@ -11,59 +11,60 @@ import {CheckHandler} from "../imports/lib/checks/CheckHandler.js";
 // throw new Meteor.Error("logged-out", "The user must be logged in to post a comment.");
 
 Meteor.methods({
-    insertBubble(bubbleType, data, funDataEdit = 'nonOperationsOnData'){
-        data = Meteor.call(funDataEdit,data);
-        data.createdAt = new Date();
-        data.lastEdited = new Date();
-        let validation = CheckHandler.execCheck(bubbleType, data);
-        if (!validation.result) {
-            console.log(validation.errors);
-            let errmsg = "";
-            errmsg = validation.errors;
-            throw new Meteor.Error("validation failed", errmsg);
-        }
-        //write to db
-        let insPromise = aBubbleCollection.insertAsync(data);
-        insPromise.then(
-            (result) => {console.log("Insertion of " + result + " succeded");},
-            (error) => {throw new Meteor.Error("insertion failed", error);}
-        );
-        return true;
-    },
-    updateBubble(bubbleId,modifier, funDataEdit = 'nonOperationsOnData'){ // solo per operazioni di set. controlla le chiavi con set validateUpdate
-	modifier = Meteor.call(funDataEdit,modifier);
-        if (modifier.$set !== undefined) {
-            let verify = 0;
-            let bId = BubbleCollection.findOne({"_id" : bubbleId});
-            verify = CheckHandler.execCheckOne(bId.bubbleType, modifier);
-            //console.log(verify);
-            if(!verify.result){
-                throw new Meteor.Error("update-invalid","data does not validate in update of " + bubbleId);
-            }
-        }
-        let edit1Promise = aBubbleCollection.updateAsync(bubbleId,modifier);
-        edit1Promise.then(
-            (result) => {console.log("Update of " + result + " succeded");},
-            (error) => {throw new Meteor.Error("update-error", "Update of bubble " + bubbleId + " failed." + error);}
-            );
-        let edit2Promise = aBubbleCollection.updateAsync(bubbleId,{$set :{lastEdited : new Date()}});
-        edit2Promise.then(
-            (result) => {console.log("last edit updated successfully");},
-            (error) => {throw new Meteor.Error("update-error", "Update of lastedit of bubble " + bubbleId + " failed." + error);}
-        );
-        return true;
-    },
-    removeBubble(bubbleId){
-        let removePromise = aBubbleCollection.removeAsync(bubbleId);
-        removePromise.then(
-            (result) => {console.log("Removal of " + result + " succeded");},
-            (errormsg) => {throw new Meteor.Error("remove-error", "Remove of bubble from database failed.");
-        });
-        return true;
-    },
-    nonOperationsOnData(data){
-      return data;
-    }
+	insertBubble(bubbleType, data, funDataEdit = 'nonOperationsOnData') {
+		data = Meteor.call(funDataEdit, data);
+		data.createdAt = new Date();
+		data.lastEdited = new Date();
+		const validation = CheckHandler.execCheck(bubbleType, data);
+		if (!validation.result) {
+			console.log(validation.errors);
+			let errmsg = '';
+			errmsg = validation.errors;
+			throw new Meteor.Error('validation failed', errmsg);
+		}
+		//write to db
+		const insPromise = aBubbleCollection.insertAsync(data);
+		insPromise.then(
+			(result) => { console.log(`Insertion of ${ result } succeded`); },
+			(error) => { throw new Meteor.Error('insertion failed', error); }
+		);
+		return true;
+	},
+	updateBubble(bubbleId, modifier, funDataEdit = 'nonOperationsOnData') { // solo per operazioni di set. controlla le chiavi con set validateUpdate
+		modifier = Meteor.call(funDataEdit, modifier);
+		if (modifier.$set !== undefined) {
+			let verify = 0;
+			const bId = BubbleCollection.findOne({'_id' : bubbleId});
+			verify = CheckHandler.execCheckOne(bId.bubbleType, modifier);
+			//console.log(verify);
+			if (!verify.result) {
+				throw new Meteor.Error('update-invalid', `data does not validate in update of ${ bubbleId }`);
+			}
+		}
+		const edit1Promise = aBubbleCollection.updateAsync(bubbleId, modifier);
+		edit1Promise.then(
+			(result) => { console.log(`Update of ${ result } succeded`); },
+			(error) => { throw new Meteor.Error('update-error', `Update of bubble ${ bubbleId } failed.${ error }`); }
+		);
+		const edit2Promise = aBubbleCollection.updateAsync(bubbleId, {$set :{lastEdited : new Date()}});
+		edit2Promise.then(
+			(result) => { console.log('last edit updated successfully'); },
+			(error) => { throw new Meteor.Error('update-error', `Update of lastedit of bubble ${ bubbleId } failed.${ error }`); }
+		);
+		return true;
+	},
+	removeBubble(bubbleId) {
+		const removePromise = aBubbleCollection.removeAsync(bubbleId);
+		removePromise.then(
+			(result) => { console.log(`Removal of ${ result } succeded`); },
+			(errormsg) => {
+				throw new Meteor.Error('remove-error', 'Remove of bubble from database failed.');
+			});
+		return true;
+	},
+	nonOperationsOnData(data) {
+		return data;
+	}
 });
 
 
