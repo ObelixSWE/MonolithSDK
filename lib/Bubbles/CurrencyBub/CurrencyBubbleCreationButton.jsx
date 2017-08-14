@@ -12,7 +12,6 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react';
 import AbsButton from '../../../lib/uiConstruction/AbsButton.jsx';
 
 
@@ -23,6 +22,10 @@ export default class CurrencyBubbleCreationButton extends AbsButton {
 
 	bubbleName() {
 		return 'currency';
+	}
+
+	bubbleButtonName() {
+		return 'Currency Bubble';
 	}
 
 }

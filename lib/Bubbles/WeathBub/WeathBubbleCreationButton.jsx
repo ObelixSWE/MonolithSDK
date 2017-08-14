@@ -12,24 +12,19 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
-import PushButton from "../../ui/SingleComponents/PushButton/PushButton"
-import AbsButton from "../../../lib/uiConstruction/AbsButton";
 
-export default class WeathBubbleCreationButton extends AbsButton{
-    constructor(props){
-        super(props);
-    }
+import AbsButton from '../../../lib/uiConstruction/AbsButton';
 
-    render(){
-        return(
-            <PushButton
-                className="btn"
-                buttonName="Weather"
-                handleClick={this.props.generate}
-            />
-        );
-    }
+export default class WeathBubbleCreationButton extends AbsButton {
+	constructor(props) {
+		super(props);
+	}
+
+	bubbleButtonName() {
+		return 'Weather Bubble';
+	}
+
+	bubbleName() {
+		return 'weather';
+	}
 }

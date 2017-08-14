@@ -12,27 +12,23 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
-import AbsButton from "../../../lib/uiConstruction/AbsButton";
-import PushButton from '../../ui/SingleComponents/PushButton/PushButton.jsx';
+
+import AbsButton from '../../../lib/uiConstruction/AbsButton';
 
 
 export default class ListBubbleCreationButton extends AbsButton {
-    constructor(props){
-        super(props);
-    }
+	constructor(props) {
+		super(props);
+	}
 
-    render(){
-        return(
-            <PushButton
-                className="btn"
-                buttonName="List"
-                handleClick={this.props.generate}
-            />
-        );
-    }
+	bubbleButtonName() {
+		return 'List Bubble';
+	}
+
+	bubbleName() {
+		return 'list';
+	}
+
 }
 
 

@@ -67,8 +67,12 @@ export default class CurrencyBubbleConfig extends AbsBubbleConfig{
                 <ComboBox options={this.curr} getSelection={this.getCurrOut}/><br/>
                 <span className="propertyLabel">Inserisci il valore:</span>
                 <LineEdit updateState={getValue}/>
-                <PushButton buttonName="Send" handleClick={this.send}/>
+
             </VerticalLayout>
         );
     }
 }
+
+
+//    <PushButton buttonName="Send" handleClick={this.send}/>
+

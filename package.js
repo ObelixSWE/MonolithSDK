@@ -104,7 +104,13 @@ Package.onUse(function(api) {
 		'lib/ui/SingleComponents/TextAreaComboBox/TextAreaComboBox.jsx',
 		'lib/ui/SingleComponents/ComboBox/ComboBox.jsx',
 		'lib/ui/SingleComponents/CheckBoxList/CheckBoxList.jsx',
-		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx'
+		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
+		'lib/Sidearea1/BubbleMenu.jsx',
+		'lib/Sidearea1/ConfigArea.jsx',
+		'lib/Sidearea1/SentBubbles.jsx',
+		'lib/Sidearea1/SideArea1.jsx',
+		'lib/Sidearea2/SideArea2.jsx',
+		'lib/Sidearea2/ReceivedBubbles.jsx'
 	], ['client']);
 	api.addFiles([
 		'server/Methods.js',

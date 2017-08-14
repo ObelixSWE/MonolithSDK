@@ -31,7 +31,7 @@ export default class CurrencyBubble extends AbsBubble{
               <span className="propertyLabel">From:</span>
               <span className="text">{this.props.curr_in}: {this.props.value_in}</span><br/>
               <span className="propertyLabel">To:</span>
-              <span className="text"><{this.props.curr_out}: {this.props.value_out}</span>
+              <span className="text">{this.props.curr_out}: {this.props.value_out}</span>
           </VerticalLayout>
         );
     }

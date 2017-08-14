@@ -1,5 +1,5 @@
 /*
-*  Name :   BubbleCreationButton.jsx 
+*  Name :   BubbleCreationButton.jsx
 *  Location : /imports/UI/Bubbles
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
@@ -12,25 +12,21 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
-import AbsButton from "../../../lib/uiConstruction/AbsButton";
 
+import AbsButton from '../../../lib/uiConstruction/AbsButton';
 
 export default class TranslationBubbleCreationButton extends AbsButton {
-    constructor(props){
-        super(props);
-    }
+	constructor(props) {
+		super(props);
+	}
 
-    render(){
-        return(
-            <PushButton
-                className="btn"
-                buttonName="Translation"
-                handleClick={this.props.generate}
-            />
-        );
-    }
+	bubbleButtonName() {
+		return 'Translation Bubble';
+	}
+
+	bubbleName() {
+		return 'translation';
+	}
+
 }
 
