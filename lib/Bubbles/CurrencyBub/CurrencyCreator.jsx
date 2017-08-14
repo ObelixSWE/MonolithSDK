@@ -24,8 +24,8 @@ class CurrencyCreator extends BubbleCreator {
 	}
 }
 
-const cc = new CurrencyCreator('currency');
-BubbleDiscriminator.registerBubbleCreator(cc);
+
+BubbleDiscriminator.registerBubbleCreator(new CurrencyCreator('currency'));
 
 /*
 console.log(cc.doMakeBubbleReceiver({}));
