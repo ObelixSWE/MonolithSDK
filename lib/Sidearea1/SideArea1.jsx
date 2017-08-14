@@ -21,9 +21,6 @@ import {BubbleDiscriminator} from "../uiConstruction/BubbleDiscriminator";
 import ConfigArea from './ConfigArea';
 
 
-
-// <SentBubble bubbles={this.props.bubbles}/>
-
 class Sidearea1 extends React.Component {
   constructor(props) {
     super(props);
@@ -44,17 +41,16 @@ class Sidearea1 extends React.Component {
 
 
   render() {
-      console.log(this.props);
     return (
-      <div id="sidearea1">
+      <div>
          <BubbleMenu createConfigArea={this.createConfigArea}/>
           <ConfigArea menu={this.state.openedConfigMenu} />
-          {this.props.bubbles.map((bubble) => {return BubbleDiscriminator.useDoMakeBubbleSender(bubble.bubbleType, bubble)})}
       </div>
     );
   }
 }
 
+// <SentBubbles bubbles={this.props.bubbles}/>
 
 export default Sidearea1Container = createContainer(() => {
      Meteor.subscribe('bubbles');

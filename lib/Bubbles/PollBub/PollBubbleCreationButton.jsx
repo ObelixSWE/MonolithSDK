@@ -12,26 +12,21 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
-import PushButton from "../../ui/SingleComponents/PushButton/PushButton"
-import AbsButton from "../../../lib/uiConstruction/AbsButton";
+import AbsButton from '../../../lib/uiConstruction/AbsButton';
 
 export default class PollBubbleCreationButton extends AbsButton {
-    constructor(props){
-        super(props);
-    }
+	constructor(props) {
+		super(props);
+	}
 
-    render(){
-        return(
-            <PushButton
-                className="btn"
-                buttonName="Poll"
-                handleClick={this.props.generate}
-            />
-        );
-    }
+	bubbleButtonName() {
+		return 'Poll Bubble';
+	}
+
+	bubbleName() {
+		return 'poll';
+	}
+
 }
 
 /*

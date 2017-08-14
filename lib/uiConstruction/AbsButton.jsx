@@ -4,14 +4,14 @@ import React, { Component } from 'react';
 export default class AbsButton extends React.Component {
 	constructor(props) {
 		super(props);
-		this.onClick = this.onClick.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 		if (this.constructor === AbsButton) {
 			throw new TypeError('AbsButton is abstract');
 		}
 	}
 
-	onClick() {
-		props.onClick(this.bubbleName());
+	handleClick() {
+		this.props.onClick(this.bubbleName());
 	}
 
 	bubbleName(){
@@ -20,9 +20,15 @@ export default class AbsButton extends React.Component {
         }
 	}
 
+    bubbleButtonName(){
+        if (this.bubbleName === BubbleDatabase.prototype.bubbleName) {
+            throw new TypeError('Please implement bubbleButtonName method of AbsButton derivate class.');
+        }
+    }
+
 	render() {
         let btnClass = classNames("btn btn-primary btn-lg",this.props.classes);
-        return <button id={this.props.id} type="button" className={btnClass} onClick={this.onClick} >{this.props.buttonName}</button>
+        return <button id={this.props.id} type="button" className={btnClass} onClick={this.handleClick}>{this.bubbleButtonName()}</button>
 	}
 }
 

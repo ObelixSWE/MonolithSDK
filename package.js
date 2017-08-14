@@ -48,9 +48,9 @@ Package.onUse(function(api) {
 		'lib/callerInitialization.js',
 		'lib/database/BubbleDatabase.js',
 		'lib/database/databaseInitialization.js',
-		'lib/Bubbles/TranslationBub/TranslationBubble.jsx',
-		'lib/Bubbles/TranslationBub/TranslationBubbleConfig.jsx',
-		'lib/Bubbles/TranslationBub/TranslationBubbleCreationButton.jsx',
+		//'lib/Bubbles/TranslationBub/TranslationBubble.jsx',
+		//'lib/Bubbles/TranslationBub/TranslationBubbleConfig.jsx',
+		//'lib/Bubbles/TranslationBub/TranslationBubbleCreationButton.jsx',
 		'lib/Bubbles/RandomBub/RandBubbleConfig.jsx',
 		'lib/Bubbles/RandomBub/RandBubble.jsx',
 		'lib/Bubbles/RandomBub/RandBubbleCreationButton.jsx',
@@ -71,9 +71,9 @@ Package.onUse(function(api) {
 		'lib/Bubbles/RandomBub/RandCheck.js',
 		'lib/Bubbles/RandomBub/RandCreator.jsx',
 		'lib/Bubbles/RandomBub/RandDb.js',
-		'lib/Bubbles/TranslationBub/TranslationCheck.js',
-		'lib/Bubbles/TranslationBub/TranslationCreator.jsx',
-		'lib/Bubbles/TranslationBub/TranslationDb.js',
+		//'lib/Bubbles/TranslationBub/TranslationCheck.js',
+		//'lib/Bubbles/TranslationBub/TranslationCreator.jsx',
+		//'lib/Bubbles/TranslationBub/TranslationDb.js',
 		'lib/Bubbles/ListBub/ListCheck.js',
 		'lib/Bubbles/ListBub/ListCreator.jsx',
 		'lib/Bubbles/ListBub/ListDb.js',
@@ -104,7 +104,13 @@ Package.onUse(function(api) {
 		'lib/ui/SingleComponents/TextAreaComboBox/TextAreaComboBox.jsx',
 		'lib/ui/SingleComponents/ComboBox/ComboBox.jsx',
 		'lib/ui/SingleComponents/CheckBoxList/CheckBoxList.jsx',
-		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx'
+		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
+		'lib/Sidearea1/BubbleMenu.jsx',
+		'lib/Sidearea1/ConfigArea.jsx',
+		'lib/Sidearea1/SentBubbles.jsx',
+		'lib/Sidearea1/SideArea1.jsx',
+		'lib/Sidearea2/SideArea2.jsx',
+		'lib/Sidearea2/ReceivedBubbles.jsx'
 	], ['client']);
 	api.addFiles([
 		'server/Methods.js',
@@ -164,6 +170,9 @@ Package.onUse(function(api) {
 		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
 		'server/main.js'],
 	['server']);
+
+	api.addFiles('lib/ui/CSS/bootstrap.css', 'client');
+	api.addFiles('lib/ui/CSS/styles.css', 'client');
 });
 
 Package.onTest(function(api) {
@@ -178,7 +187,7 @@ Npm.depends({
 	'react-dom':'15.6.1',
 	'bluebird':'3.5.0',
 	'simpl-schema':'0.3.2',
-	'bootstrap':'3.3.7',
+	//'bootstrap':'3.3.7',
 	//'react-mounter':'1.2.0',
 	'react-addons-pure-render-mixin':'15.6.0'/*,
 	'react-addons-transition-group':'15.6.0',
