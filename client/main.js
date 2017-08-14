@@ -4,7 +4,6 @@
 //});
 
 
-
 import './sideAreaConfig';
 import '../lib/uiConstruction/BubbleDiscriminator';
 import '../lib/Bubbles/WeathBub/WeathCreator';

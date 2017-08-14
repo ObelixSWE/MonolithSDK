@@ -6,16 +6,16 @@ export default class ConfigArea extends React.Component {
 		super(props);
 	}
 	render(){
+	    console.log(this.props.menu);
 	    if(this.props.menu) {
             return (
                 <div>
                     {this.props.menu}
                 </div>
-
             );
         }
-        /*else{
-	        return ;
-        }*/
+        else{
+	        return null;
+        }
     }
 }

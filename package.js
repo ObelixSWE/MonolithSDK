@@ -170,6 +170,9 @@ Package.onUse(function(api) {
 		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
 		'server/main.js'],
 	['server']);
+
+	api.addFiles('lib/ui/CSS/bootstrap.css', 'client');
+	api.addFiles('lib/ui/CSS/styles.css', 'client');
 });
 
 Package.onTest(function(api) {
@@ -184,7 +187,7 @@ Npm.depends({
 	'react-dom':'15.6.1',
 	'bluebird':'3.5.0',
 	'simpl-schema':'0.3.2',
-	'bootstrap':'3.3.7',
+	//'bootstrap':'3.3.7',
 	//'react-mounter':'1.2.0',
 	'react-addons-pure-render-mixin':'15.6.0'/*,
 	'react-addons-transition-group':'15.6.0',
