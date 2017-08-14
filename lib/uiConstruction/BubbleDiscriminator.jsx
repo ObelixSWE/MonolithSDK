@@ -25,16 +25,16 @@ if(Meteor.isClient) {
                 throw new Error(`Bubbletype ${ bubbleType } not found. You need to register it with BubbleDiscriminator.registerBubbleCreator.`);
             }
         },
-        useDoMakeBubbleConfigurationMenu(bubbleType) {
+        useDoMakeBubbleConfigurationMenu(bubbleType, closeMenu) {
             if (this.BubbleCreatorMap && this.BubbleCreatorMap[bubbleType]) {
-                return this.BubbleCreatorMap[bubbleType].doMakeConfigurationMenu();
+                return this.BubbleCreatorMap[bubbleType].doMakeConfigurationMenu(closeMenu);
             } else {
                 throw new Error(`Bubbletype ${ bubbleType } not found. You need to register it with BubbleDiscriminator.registerBubbleCreator.`);
             }
         },
-        useDoMakeButton(bubbleType) {
+        useDoMakeButton(bubbleType, createConfigArea) {
             if (this.BubbleCreatorMap && this.BubbleCreatorMap[bubbleType]) {
-                return this.BubbleCreatorMap[bubbleType].doMakeButton();
+                return this.BubbleCreatorMap[bubbleType].doMakeButton(createConfigArea);
             } else {
                 throw new Error(`Bubbletype ${ bubbleType } not found. You need to register it with BubbleDiscriminator.registerBubbleCreator.`);
             }
