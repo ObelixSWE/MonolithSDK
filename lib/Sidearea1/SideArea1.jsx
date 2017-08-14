@@ -15,28 +15,40 @@
 
 import React, {Component} from 'react';
 import BubbleMenu from './BubbleMenu.jsx';
-import SentBubble from './SentBubbles.jsx';
 import {BubbleCollection} from "../database/databaseInitialization.js";
 import { createContainer } from 'meteor/react-meteor-data';
 import {BubbleDiscriminator} from "../uiConstruction/BubbleDiscriminator";
+import ConfigArea from './ConfigArea';
 
 
-
-setTimeout(() => {console.log(BubbleCollection.find({}).fetch())}, 10000);
 
 // <SentBubble bubbles={this.props.bubbles}/>
 
 class Sidearea1 extends React.Component {
   constructor(props) {
     super(props);
+    this.createConfigArea = this.createConfigArea.bind(this);
+    this.closeConfig = this.closeConfig.bind(this);
+    this.state = {
+        openedConfigMenu : null
+    }
   }
+
+  closeConfig(){
+      this.setState({openedConfigMenu: null});
+  }
+
+  createConfigArea(buttonType){
+      this.setState({openedConfigMenu: BubbleDiscriminator.useDoMakeBubbleConfigurationMenu(buttonType, this.closeConfig)});
+  }
+
+
   render() {
       console.log(this.props);
     return (
       <div id="sidearea1">
-         <BubbleMenu />
-          <h1>CIAO</h1>
-          <p>how do you propose to make this work?????</p>
+         <BubbleMenu createConfigArea={this.createConfigArea}/>
+          <ConfigArea menu={this.state.openedConfigMenu} />
           {this.props.bubbles.map((bubble) => {return BubbleDiscriminator.useDoMakeBubbleSender(bubble.bubbleType, bubble)})}
       </div>
     );

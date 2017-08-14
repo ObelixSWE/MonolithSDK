@@ -28,7 +28,7 @@ class PushButton extends React.Component {
     }
 
     render() {
-        var btnClass = classNames("btn btn-primary btn-lg",this.props.classes);
+        let btnClass = classNames("btn btn-primary btn-lg",this.props.classes);
         if(this.props.dis==true)
             return <button id={this.props.id} type="button" className={btnClass} onClick={this.onClick} disabled>{this.props.buttonName}</button>
         else

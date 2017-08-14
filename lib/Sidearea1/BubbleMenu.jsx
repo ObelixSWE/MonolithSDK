@@ -9,10 +9,15 @@ export default class BubbleMenu extends React.Component {
     let BubbleList = Object.keys(BubbleDiscriminator.BubbleCreatorMap);
     return (
       <div id="bubble_button_menu">
-      <ul>
-        {BubbleList.map((button) => <li> {BubbleDiscriminator.useDoMakeButton(button)} </li>)}
-      </ul>
+        <ul>
+          {BubbleList.map((button) => <li> {BubbleDiscriminator.useDoMakeButton(button, this.props.createConfigArea)} </li>)}
+        </ul>
       </div>
     );
   }
 }
+
+
+/*
+createConfigArea function to create config menu
+ */

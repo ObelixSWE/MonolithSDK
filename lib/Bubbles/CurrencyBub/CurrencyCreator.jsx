@@ -16,16 +16,16 @@ class CurrencyCreator extends BubbleCreator {
 	doMakeBubbleReceiver(props) {
 		return React.createElement(CurrencyBubble, props);
 	}
-	doMakeConfigurationMenu() {
-		return React.createElement(CurrencyBubbleConfig);
+	doMakeConfigurationMenu(closeMenufun) {
+		return React.createElement(CurrencyBubbleConfig, {closeMenu: closeMenufun});
 	}
-	doMakeButton() {
-		return React.createElement(CurrencyBubbleCreationButton);
+	doMakeButton(createConfigArea) {
+		return React.createElement(CurrencyBubbleCreationButton, { onClick: createConfigArea });
 	}
 }
 
-const cc = new CurrencyCreator('currency');
-BubbleDiscriminator.registerBubbleCreator(cc);
+
+BubbleDiscriminator.registerBubbleCreator(new CurrencyCreator('currency'));
 
 /*
 console.log(cc.doMakeBubbleReceiver({}));
