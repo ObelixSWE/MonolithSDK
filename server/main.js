@@ -1,7 +1,15 @@
 import '../lib/database/databaseInitialization';
 import '../lib/checks/CheckHandler';
 import '../lib/Bubbles/CurrencyBub/CurrencyCheck';
+import '../lib/Bubbles/ListBub/ListCheck';
+import '../lib/Bubbles/PollBub/PollCheck';
+import '../lib/Bubbles/RandomBub/RandCheck';
+import '../lib/Bubbles/WeathBub/WeathCheck';
 
 
-import {BubbleCollection} from '../lib/database/databaseInitialization';
-//console.log(BubbleCollection.find({}).fetch());
+
+import '../lib/Bubbles/CurrencyBub/CurrencyMethod.js';
+import './Methods';
+
+
+

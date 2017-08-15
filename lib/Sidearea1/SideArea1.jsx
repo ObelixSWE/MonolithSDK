@@ -19,7 +19,7 @@ import {BubbleCollection} from "../database/databaseInitialization.js";
 import { createContainer } from 'meteor/react-meteor-data';
 import {BubbleDiscriminator} from "../uiConstruction/BubbleDiscriminator";
 import ConfigArea from './ConfigArea';
-
+import SentBubbles from './SentBubbles';
 
 class Sidearea1 extends React.Component {
   constructor(props) {
@@ -45,12 +45,13 @@ class Sidearea1 extends React.Component {
       <div>
          <BubbleMenu createConfigArea={this.createConfigArea}/>
           <ConfigArea menu={this.state.openedConfigMenu} />
+          <SentBubbles bubbles={this.props.bubbles}/>
       </div>
     );
   }
 }
 
-// <SentBubbles bubbles={this.props.bubbles}/>
+
 
 export default Sidearea1Container = createContainer(() => {
      Meteor.subscribe('bubbles');

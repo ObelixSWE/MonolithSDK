@@ -18,7 +18,7 @@ import ComboBox from "../../ui/SingleComponents/ComboBox/ComboBox";
 import LineEdit from "../../ui/SingleComponents/LineEdit/LineEdit";
 import PushButton from "../../ui/SingleComponents/PushButton/PushButton";
 import AbsBubbleConfig from "../../uiConstruction/AbsBubbleConfig";
-import CurrencyDb from "./CurrencyDb.js";
+import {CurrencyDb} from "./CurrencyDb.js";
 
 export default class CurrencyBubbleConfig extends AbsBubbleConfig{
     constructor(props){
@@ -33,7 +33,6 @@ export default class CurrencyBubbleConfig extends AbsBubbleConfig{
             curr_out: this.curr[0],
             value:0,
         }
-        this.db=new CurrencyDb;
     }
 
     getCurrOut(text){
@@ -51,10 +50,19 @@ export default class CurrencyBubbleConfig extends AbsBubbleConfig{
     }
 
     send(id){
-        let prom=this.db.insert({curr_in: this.state.curr_in,
-                                curr_out: this.state.curr_out,
-                                value: this.state.value});
-        this.props.closeMenu();
+        let prom = CurrencyDb.insert(
+            {
+                curr_in: this.state.curr_in,
+                curr_out: this.state.curr_out,
+                value: this.state.value
+            },
+            'CurrencyConvertor'
+        );
+        prom.then(
+            (res) => {this.props.closeMenu();},
+            (err) => {console.error("PANIC");}
+        );
+
     }
 
     render(){
@@ -67,7 +75,7 @@ export default class CurrencyBubbleConfig extends AbsBubbleConfig{
                 <ComboBox options={this.curr} getSelection={this.getCurrOut}/><br/>
                 <span className="propertyLabel">Inserisci il valore:</span>
                 <LineEdit updateState={this.getValue}/>
-
+                <PushButton handleClick={this.send} buttonName="Send"/>
             </VerticalLayout>
         );
     }

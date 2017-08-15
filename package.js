@@ -168,6 +168,7 @@ Package.onUse(function(api) {
 		'lib/ui/SingleComponents/ComboBox/ComboBox.jsx',
 		'lib/ui/SingleComponents/CheckBoxList/CheckBoxList.jsx',
 		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
+		'lib/Bubbles/CurrencyBub/CurrencyMethod.js',
 		'server/main.js'],
 	['server']);
 
@@ -187,14 +188,9 @@ Npm.depends({
 	'react-dom':'15.6.1',
 	'bluebird':'3.5.0',
 	'simpl-schema':'0.3.2',
-	//'bootstrap':'3.3.7',
-	//'react-mounter':'1.2.0',
-	'react-addons-pure-render-mixin':'15.6.0'/*,
-	'react-addons-transition-group':'15.6.0',
-	'react-addons-css-transition-group':'15.6.0',
-	'react-addons-linked-state-mixin':'15.6.0',
-	'react-addons-create-fragment':'15.6.0',
-	'react-addons-update':'15.6.0',
-	'react-addons-test-utils':'15.6.0',
-	'react-addons-perf':'15.4.2'*/
+	'react-addons-pure-render-mixin':'15.6.0',
+	'money': '0.2.0',
+	'request': '2.81.0',
+	'request-promise': '4.2.1',
+	'weather-js': '2.0.0'
 });

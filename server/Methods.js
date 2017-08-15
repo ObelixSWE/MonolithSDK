@@ -11,8 +11,14 @@ import {CheckHandler} from '../lib/checks/CheckHandler.js';
 // throw new Meteor.Error("logged-out", "The user must be logged in to post a comment.");
 
 Meteor.methods({
-	insertBubble(bubbleType, data, funDataEdit = 'nonOperationsOnData') {
-		data = Meteor.call(funDataEdit, data);
+	insertBubble(bubbleType, roomId, data, funDataEdit, funDataEditArgs) {
+		if (funDataEdit) {
+			console.log(funDataEdit);
+			data = Meteor.call(funDataEdit, data, funDataEditArgs);
+		}
+		data.bubbleType = bubbleType;
+		data.userId = this.userId;
+		data.roomId = roomId;
 		data.createdAt = new Date();
 		data.lastEdited = new Date();
 		const validation = CheckHandler.execCheck(bubbleType, data);
@@ -30,8 +36,10 @@ Meteor.methods({
 		);
 		return true;
 	},
-	updateBubble(bubbleId, modifier, funDataEdit = 'nonOperationsOnData') { // solo per operazioni di set. controlla le chiavi con set validateUpdate
-		modifier = Meteor.call(funDataEdit, modifier);
+	updateBubble(bubbleId, modifier, funDataEdit, funDataEditArgs) { // solo per operazioni di set. controlla le chiavi con set validateUpdate
+		if (funDataEdit) {
+			modifier = Meteor.call(funDataEdit, modifier, funDataEditArgs);
+		}
 		if (modifier.$set !== undefined) {
 			let verify = 0;
 			const bId = BubbleCollection.findOne({'_id' : bubbleId});
@@ -61,9 +69,6 @@ Meteor.methods({
 				throw new Meteor.Error('remove-error', 'Remove of bubble from database failed.');
 			});
 		return true;
-	},
-	nonOperationsOnData(data) {
-		return data;
 	}
 });
 
