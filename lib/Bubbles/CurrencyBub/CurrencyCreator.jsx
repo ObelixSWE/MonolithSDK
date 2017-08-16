@@ -11,10 +11,10 @@ class CurrencyCreator extends BubbleCreator {
 		super(bubbleName);
 	}
 	doMakeBubbleSender(props) {
-		return React.createElement(CurrencyBubble, props);
+		return React.createElement(CurrencyBubble, Object.assign(props, {key: props._id}));
 	}
 	doMakeBubbleReceiver(props) {
-		return React.createElement(CurrencyBubble, props);
+		return React.createElement(CurrencyBubble, Object.assign(props, {key: props._id}));
 	}
 	doMakeConfigurationMenu(closeMenufun) {
 		return React.createElement(CurrencyBubbleConfig, {closeMenu: closeMenufun});

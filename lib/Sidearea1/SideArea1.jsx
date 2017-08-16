@@ -57,7 +57,7 @@ export default Sidearea1Container = createContainer(() => {
      Meteor.subscribe('bubbles');
    // console.log(BubbleCollection.find({}).fetch());
     return {
-        bubbles: BubbleCollection.find({}).fetch(),
+        bubbles: BubbleCollection.find({userId: {$eq: Meteor.userId()}}).fetch(),
         currentUser: Meteor.user()
     };
 }, Sidearea1);

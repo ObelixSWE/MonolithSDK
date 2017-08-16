@@ -10,7 +10,7 @@ export default class ReceivedBubble extends React.Component {
   render() {
     return (
       <div id="received_bubble">
-        {this.props.bubbles.map((bubble) => {BubbleDiscriminator.useDoMakeBubbleReceiver(bubble.bubbleType, bubble, bubble.bubbleId)})}
+        {this.props.bubbles.map((bubble) => {return BubbleDiscriminator.useDoMakeBubbleReceiver(bubble.bubbleType, bubble/*, bubble.bubbleId*/)})}
       </div>
     );
   }

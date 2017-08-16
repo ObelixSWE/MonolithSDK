@@ -26,7 +26,7 @@ class Sidearea2 extends React.Component {
   render() {
     return (
       <div>
-      <ReceivedBubble  bubbles={this.props.sentbubbles}/>
+        <ReceivedBubble  bubbles={this.props.bubbles}/>
       </div>
     );
   }
