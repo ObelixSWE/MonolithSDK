@@ -113,6 +113,7 @@ Package.onUse(function(api) {
 		'lib/Sidearea2/ReceivedBubbles.jsx'
 	], ['client']);
 	api.addFiles([
+		'lib/Bubbles/RandomBub/RandMethod.js',
 		'server/Methods.js',
 		/*'client/templateSideArea1.html',
 		'client/templateSideArea2.html',
@@ -129,6 +130,7 @@ Package.onUse(function(api) {
 		'lib/callerInitialization.js',
 		'lib/database/BubbleDatabase.js',
 		'lib/database/databaseInitialization.js',
+		'lib/Bubbles/RandomBub/RandCheck.js',
 		/*'lib/Bubbles/TranslationBub/TranslationBubble.jsx',
 		'lib/Bubbles/TranslationBub/TranslationBubbleConfig.jsx',
 		'lib/Bubbles/TranslationBub/TranslationBubbleCreationButton.jsx',

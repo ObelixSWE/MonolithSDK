@@ -56,11 +56,11 @@ export default class CurrencyBubbleConfig extends AbsBubbleConfig{
                 curr_out: this.state.curr_out,
                 value: this.state.value
             },
-            'CurrencyConvertor'
+            'BubbleCurrencyConvertor'
         );
         prom.then(
             (res) => {this.props.closeMenu();},
-            (err) => {console.error("PANIC");}
+            (err) => {console.error("Something bad happened....");}
         );
 
     }

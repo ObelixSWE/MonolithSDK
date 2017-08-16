@@ -9,6 +9,7 @@ import '../lib/Bubbles/WeathBub/WeathCheck';
 
 
 import '../lib/Bubbles/CurrencyBub/CurrencyMethod.js';
+import '../lib/Bubbles/RandomBub/RandMethod.js';
 import './Methods';
 
 

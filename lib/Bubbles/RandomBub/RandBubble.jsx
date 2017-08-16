@@ -12,34 +12,33 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
-import VerticalLayout from "../../ui/Layouts/VerticalLayout";
-import PushButton from "../../ui/SingleComponents/PushButton/PushButton";
-import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
+import React, { Component } from 'react';
+import VerticalLayout from '../../ui/Layouts/VerticalLayout';
+import PushButton from '../../ui/SingleComponents/PushButton/PushButton';
+import AbsBubble from '../../../lib/uiConstruction/AbsBubble';
+import {RandomDb} from './RandDb.js';
+
 
 export default class RandBubble extends AbsBubble {
     constructor(props){
         super(props);
         this.calcolate=this.calcolate.bind(this);
-        this.state={
-            n:''
-        }
-
-
     }
 
     calcolate(){
+        // update(bubbleId, modifier, serverSideOps, serverSideOpsArgs)
+        RandomDb.update(this.props._id, 'BubbleRandomUpdate', this.props.range);
+        /*
         this.state.n=(int)(Math.random()*this.props.nMax);
         this.props.send(this.state.n);
+        */
     }
 
     render(){
         return(
             <VerticalLayout>
-                <h1>Rolled number: {this.state.n}</h1>
-                <PushButton buttonName="Re-roll" handleClick={this.calcolate}/>
+                <h1>Rolled number: {this.props.value}</h1>
+                <PushButton buttonName='Re-roll' handleClick={this.calcolate}/>
             </VerticalLayout>
         );
     }
@@ -47,6 +46,6 @@ export default class RandBubble extends AbsBubble {
 
 /*
 how to use:
-<RandBubble nMax={"maximum number"}/>;
+<RandBubble nMax={'maximum number'}/>;
 
 */
