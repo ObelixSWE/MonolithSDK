@@ -19,14 +19,18 @@ import { renderToString as reactRenderToString } from 'react-dom/server'
 export default class LineEdit extends React.Component {
     constructor(props) {
         super(props);
+		this.state={
+			text:this.props.value
+		}
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event){
+		this.setState({text: event.target.value});
         this.props.updateState(event.target.value,this.props.id);
     }
     render(){
-		var leClass = classNames("",this.props.classes);
-        return <input id={this.props.id} type="text" className={leClass} placeholder={this.props.placeholder} onChange={this.handleChange} value={this.props.value}/>;
+		let leClass = classNames("",this.props.classes);
+        return <input id={this.props.id} type="text" className={leClass} placeholder={this.props.placeholder} onChange={this.handleChange} value={this.state.text}/>;
     }
 }
 
@@ -36,5 +40,6 @@ How to use:
 	id= // like HTML id
 	classes= // CSS classes
 	updateState={this."function name"}
+	value="default value"
  />
 */
