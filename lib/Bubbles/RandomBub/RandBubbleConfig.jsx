@@ -34,7 +34,11 @@ export default class RandBubbleConfig extends AbsBubbleConfig{
     }
 
     send(){
-        RandomDb.insert({},'BubbleRandomInsert',this.state.value);
+        let indProm = RandomDb.insert({},'BubbleRandomInsert',this.state.value);
+        insProm.then(
+            (result) => {this.props.closeMenu();},
+            (error) => {console.log(error);}
+        );
     }
 
     render(){

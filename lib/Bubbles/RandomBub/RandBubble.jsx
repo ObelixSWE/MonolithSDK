@@ -28,10 +28,6 @@ export default class RandBubble extends AbsBubble {
     calcolate(){
         // update(bubbleId, modifier, serverSideOps, serverSideOpsArgs)
         RandomDb.update(this.props._id, 'BubbleRandomUpdate', this.props.range);
-        /*
-        this.state.n=(int)(Math.random()*this.props.nMax);
-        this.props.send(this.state.n);
-        */
     }
 
     render(){
