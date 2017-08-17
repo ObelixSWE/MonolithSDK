@@ -26,7 +26,7 @@ export default class LineEdit extends React.Component {
     }
     render(){
 		var leClass = classNames("",this.props.classes);
-        return <input id={this.props.id} type="text" className={leClass} placeholder={this.props.placeholder} onChange={this.handleChange}/>;
+        return <input id={this.props.id} type="text" className={leClass} placeholder={this.props.placeholder} onChange={this.handleChange} value={this.props.value}/>;
     }
 }
 
