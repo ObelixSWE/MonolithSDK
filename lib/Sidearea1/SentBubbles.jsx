@@ -1,16 +1,39 @@
 import React, {Component} from 'react';
 import {BubbleDiscriminator} from '../uiConstruction/BubbleDiscriminator.jsx';
+import PushButton from '../ui/SingleComponents/PushButton/PushButton.jsx';
+import BubbleDatabase from '../database/BubbleDatabase.js';
 
 export default class SentBubbles extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    static removeBubble (id){
+        return BubbleDatabase.remove(id);
+    }
+
     render() {
-        return (
-            <div id="bubble_button_menu">
-                    {this.props.bubbles.map((bubble) => {return BubbleDiscriminator.useDoMakeBubbleSender(bubble.bubbleType, bubble/*,  bubble.bubbleId*/)})}
-            </div>
-        );
+        if(this.props.bubbles.length) {
+            return (
+                <div id="bubble_button_menu">
+                    {this.props.bubbles.map((bubble) => {
+                        return (
+                            <div key={bubble._id} className="bubbleborder">
+                                <PushButton id={bubble._id} classes="deletebutton" buttonName="&times;" handleClick={SentBubbles.removeBubble} />
+                                {BubbleDiscriminator.useDoMakeBubbleSender(bubble.bubbleType, bubble)}
+                            </div>
+                        );
+                    })}
+                </div>
+            );
+        }
+        else{
+            return (
+                <div id="bubble_button_menu">
+                    <p>You haven't sent any bubble yet.</p>
+                </div>
+            );
+        }
     }
 }
 

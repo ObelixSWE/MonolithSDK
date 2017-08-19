@@ -111,7 +111,7 @@ Package.onUse(function(api) {
 		'lib/Sidearea1/SideArea1.jsx',
 		'lib/Sidearea2/SideArea2.jsx',
 		'lib/Sidearea2/ReceivedBubbles.jsx'
-	], ['client']);
+], ['client']);
 	api.addFiles([
 		'lib/Bubbles/RandomBub/RandMethod.js',
 		'server/Methods.js',
@@ -171,6 +171,7 @@ Package.onUse(function(api) {
 		'lib/ui/SingleComponents/CheckBoxList/CheckBoxList.jsx',
 		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyMethod.js',
+		'lib/Bubbles/PollBub/PollMethod.js',
 		'server/main.js'],
 	['server']);
 

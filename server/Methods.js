@@ -6,8 +6,6 @@ import {CheckHandler} from '../lib/checks/CheckHandler.js';
 
 // ricorda che esiste this.userId
 // in caso di interruzione della connessione viene chiamato due volte. come fare?
-
-
 // throw new Meteor.Error("logged-out", "The user must be logged in to post a comment.");
 
 Meteor.methods({

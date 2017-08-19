@@ -29,11 +29,12 @@ class VerticalLayout extends React.Component{
 
 
     renderChildren() {
-        // cicla sulle chiavi ?????
+        let i = 0;
         return React.Children.map(
             this.props.children,
                 child => {
-                return (<ContainedElement classNames="col-md-12">{child}</ContainedElement>);
+                i++;
+                return (<ContainedElement key={i} classNames="col-md-12">{child}</ContainedElement>);
             }
         );
     }

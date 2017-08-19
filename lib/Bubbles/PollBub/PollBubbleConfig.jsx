@@ -12,19 +12,17 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
+import React, { Component } from 'react';
 import PushButton from "../../ui/SingleComponents/PushButton/PushButton";
 import VerticalLayout from "../../ui/Layouts/VerticalLayout";
 import LineEdit from "../../ui/SingleComponents/LineEdit/LineEdit"
 import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
-
+import {PollDb} from "./PollDb";
 
 export default class PollBubbleConfig extends AbsBubbleConfig {
     constructor(props){
         super(props);
-        this.state={ num: 0, op:[],title:''}
+        this.state={ num: 0, op:[],title:''};
         this.addOpt=this.addOpt.bind(this);
         this.titleChange=this.titleChange.bind(this);
         this.optChange=this.optChange.bind(this);
@@ -41,30 +39,36 @@ export default class PollBubbleConfig extends AbsBubbleConfig {
     }
 
     optChange(text,id) {
-      let m={id:id,val:text,voti:0};
-      let v=this.state.op;
-      v[id-1]=m;
-      this.setState({op:v});
+        let newEl={id:id, val:text, votes:0};
+        let oldStateOp = this.state.op;
+        oldStateOp[id] = newEl;
+        this.setState({op:oldStateOp});
     }
 
     send(){
-      this.props.send(this.state.title, this.state.op, this.state.num);
-
+        console.log(this.state);
+        let insProm = PollDb.insert({ title: this.state.title, options: this.state.op, voted: [] });
+        insProm.then(
+            (res) => {this.props.closeMenu();},
+            (err) => {console.error("Something bad happened....");}
+        );
+      //this.props.send(this.state.title, this.state.op, this.state.num);
     }
 
     render() {
-        var rows = [];
-        var n=this.state.num+1;
-        for (var i=1; i < n; i++) {
-            rows.push(<div>
-                Opzione {i}:<br/>
-                <LineEdit id={i} placeholder="Inserisci un opzione" updateState={this.optChange}/>
+        let rows = [];
+        let n=this.state.num;
+        for (let i=0; i <= n; i++) {
+            rows.push(
+                <div>
+                Option {i+1}:<br/>
+                <LineEdit id={i} placeholder="Insert an Option" updateState={this.optChange}/>
             </div>);
         }
         return (
             <VerticalLayout>
                 <h1>Domanda:</h1><br/>
-                <LineEdit id="question" placeholder="Inserisci una domanda" updateState={this.titleChange}/><br/>
+                <LineEdit id="question" placeholder="Insert a question" updateState={this.titleChange}/><br/>
                 {rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
                 <PushButton buttonName="Send" handleClick={this.send} />
