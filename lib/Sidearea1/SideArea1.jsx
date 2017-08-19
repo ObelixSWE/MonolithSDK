@@ -54,10 +54,10 @@ class Sidearea1 extends React.Component {
 
 
 export default Sidearea1Container = createContainer(() => {
-     Meteor.subscribe('bubbles');
+     Meteor.subscribe('bubbles', Session.get('openedRoom'));
    // console.log(BubbleCollection.find({}).fetch());
     return {
-        bubbles: BubbleCollection.find({userId: {$eq: Meteor.userId()}}).fetch(),
+        bubbles: BubbleCollection.find({userId: {$eq: Meteor.userId()}}, { sort: {createdAt: -1} }).fetch(),
         currentUser: Meteor.user()
     };
 }, Sidearea1);

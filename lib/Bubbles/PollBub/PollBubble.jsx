@@ -12,54 +12,63 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
-import VerticalLayout from "../../ui/Layouts/VerticalLayout";
-import PushButton from "../../ui/SingleComponents/PushButton/PushButton";
-import AbsBubble from "../../../lib/uiConstruction/AbsBubble";
+import React, { Component } from 'react';
+import VerticalLayout from '../../ui/Layouts/VerticalLayout';
+import PushButton from '../../ui/SingleComponents/PushButton/PushButton';
+import AbsBubble from '../../../lib/uiConstruction/AbsBubble';
+import {PollDb} from './PollDb';
+import {Meteor} from 'meteor/meteor';
+
 
 export default class PollBubble extends AbsBubble {
     constructor(props){
         super(props);
-        this.state={
-            title:this.props.title,
-            num:this.props.num,
-            op:this.props.op,
-            id:this.props.id,
-            voted:false
-        }
-        this.addVoto=this.addVoto.bind(this);
+        this.addVote=this.addVote.bind(this);
+        this.state = {
+            voted: (this.props.voted.indexOf(Meteor.userId()) > 0)
+        };
     }
+    /*
+                title:this.props.title,
+            num:this.props.num,
+            options:this.props.options,
+            id:this.props.id,
+     */
 
-    addVoto(id) {
-        let i=id;
-        var stateCopy=Object.assign({},this.state);
-        if(stateCopy.voted==false)stateCopy.op[i].voti +=1;
-        stateCopy.voted=true;
-        this.setState(stateCopy);
-
-        //console.log(this.state.voted +" "+ this.state.op[i].voti)
-        //salvataggio su DB
+    addVote(id) {
+        let upProm = PollDb.update(this.props._id, 'BubblePollUpdate', { id_ans: id, user: Meteor.userId() });
+        upProm.then(
+            (success) =>{console.log("Update ok");},
+            (error) => {console.log('Something bad happened...');}
+        );
     }
 
     render(){
-        console.log(this.state);
         let opts=[];
-        for (var i=0;i<this.state.num;i++){
-
+        for (let i=0;i<this.props.options.length;i++){
             opts.push(
                 <div>
-                    <PushButton id={i} dis={this.state.voted} buttonName={this.state.op[i].val} handleClick={this.addVoto}/> Voti: {this.state.op[i].voti} <br/>
+                    <PushButton id={i} dis={this.state.voted} buttonName={this.props.options[i].val} handleClick={this.addVote}/> Votes: {this.props.options[i].votes} <br/>
                 </div>
             )
         }
-        return(
-            <VerticalLayout>
-                <h1>{this.state.title}</h1>
-                {opts}
-            </VerticalLayout>
-        );
+        if(this.state.voted){
+            return(
+                <VerticalLayout>
+                    <h1>{this.props.title}</h1>
+                    <p>You already voted in this survey.</p>
+                    {opts}
+                </VerticalLayout>
+            );
+        }
+        else {
+            return (
+                <VerticalLayout>
+                    <h1>{this.props.title}</h1>
+                    {opts}
+                </VerticalLayout>
+            );
+        }
     }
 }
 

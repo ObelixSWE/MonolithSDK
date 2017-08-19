@@ -12,13 +12,12 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
-import RadioButtonGroup from "../../ui/SingleComponents/RadioButtonGroup/RadioButtonGroup"
-import PushButton from "../../ui/SingleComponents/PushButton/PushButton";
-import VerticalLayout from "../../ui/Layouts/VerticalLayout";
-import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
+import React, { Component } from 'react';
+import RadioButtonGroup from '../../ui/SingleComponents/RadioButtonGroup/RadioButtonGroup';
+import PushButton from '../../ui/SingleComponents/PushButton/PushButton';
+import VerticalLayout from '../../ui/Layouts/VerticalLayout';
+import AbsBubbleConfig from '../../../lib/uiConstruction/AbsBubbleConfig';
+import {RandomDb} from './RandDb';
 
 
 export default class RandBubbleConfig extends AbsBubbleConfig{
@@ -35,22 +34,27 @@ export default class RandBubbleConfig extends AbsBubbleConfig{
     }
 
     send(){
-
+        let insProm = RandomDb.insert({},'BubbleRandomInsert',this.state.value);
+        insProm.then(
+            (result) => {this.props.closeMenu();},
+            (error) => {console.log(error);}
+        );
     }
 
     render(){
-        return(<VerticalLayout>
-            <RadioButtonGroup
-            options={["4","6","8","12","20"]}
-            getValue={this.getValue}
-            />
-            <PushButton buttonName="Send" handleClick={this.send}/>
-        </VerticalLayout>);
+        return(
+            <VerticalLayout>
+             <RadioButtonGroup
+               options={['4','6','8','12','20']}
+               getValue={this.getValue}
+              />
+            <PushButton buttonName='Send' handleClick={this.send}/>
+            </VerticalLayout>);
     }
 
 }
 
 /*
 how to use:
-<RandBubbleConfig send={this."function name"}/>
+<RandBubbleConfig send={this.'function name'}/>
 */

@@ -6,7 +6,8 @@ export const BubbleDiscriminator = {
 	BubbleCreatorMap: {},
 	registerBubbleCreator(bubbleCreator) {
 		if (bubbleCreator instanceof BubbleCreator) {
-			this.BubbleCreatorMap = Object.assign(this.BubbleCreatorMap, {[bubbleCreator.bubbleName]: bubbleCreator});
+			//this.BubbleCreatorMap = Object.assign(this.BubbleCreatorMap, {[bubbleCreator.bubbleName]: bubbleCreator});
+			this.BubbleCreatorMap[bubbleCreator.bubbleName] = bubbleCreator;
 		} else {
 			throw new TypeError('registerBubbleCreator needs a BubbleCreator as argument');
 		}

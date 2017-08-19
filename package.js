@@ -111,8 +111,9 @@ Package.onUse(function(api) {
 		'lib/Sidearea1/SideArea1.jsx',
 		'lib/Sidearea2/SideArea2.jsx',
 		'lib/Sidearea2/ReceivedBubbles.jsx'
-	], ['client']);
+], ['client']);
 	api.addFiles([
+		'lib/Bubbles/RandomBub/RandMethod.js',
 		'server/Methods.js',
 		/*'client/templateSideArea1.html',
 		'client/templateSideArea2.html',
@@ -129,6 +130,7 @@ Package.onUse(function(api) {
 		'lib/callerInitialization.js',
 		'lib/database/BubbleDatabase.js',
 		'lib/database/databaseInitialization.js',
+		'lib/Bubbles/RandomBub/RandCheck.js',
 		/*'lib/Bubbles/TranslationBub/TranslationBubble.jsx',
 		'lib/Bubbles/TranslationBub/TranslationBubbleConfig.jsx',
 		'lib/Bubbles/TranslationBub/TranslationBubbleCreationButton.jsx',
@@ -169,6 +171,7 @@ Package.onUse(function(api) {
 		'lib/ui/SingleComponents/CheckBoxList/CheckBoxList.jsx',
 		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyMethod.js',
+		'lib/Bubbles/PollBub/PollMethod.js',
 		'server/main.js'],
 	['server']);
 

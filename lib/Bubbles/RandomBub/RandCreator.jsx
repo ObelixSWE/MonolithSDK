@@ -28,8 +28,3 @@ class RandCreator extends BubbleCreator {
 
 const rc = new RandCreator('random');
 BubbleDiscriminator.registerBubbleCreator(rc);
-
-/*
-console.log(cc.doMakeBubbleReceiver({}));
-console.log(BubbleDiscriminator.useDoMakeBubbleReceiver('currency', {}));
-*/

@@ -6,14 +6,11 @@ import {CheckHandler} from '../lib/checks/CheckHandler.js';
 
 // ricorda che esiste this.userId
 // in caso di interruzione della connessione viene chiamato due volte. come fare?
-
-
 // throw new Meteor.Error("logged-out", "The user must be logged in to post a comment.");
 
 Meteor.methods({
 	insertBubble(bubbleType, roomId, data, funDataEdit, funDataEditArgs) {
 		if (funDataEdit) {
-			console.log(funDataEdit);
 			data = Meteor.call(funDataEdit, data, funDataEditArgs);
 		}
 		data.bubbleType = bubbleType;
@@ -36,24 +33,23 @@ Meteor.methods({
 		);
 		return true;
 	},
-	updateBubble(bubbleId, modifier, funDataEdit, funDataEditArgs) { // solo per operazioni di set. controlla le chiavi con set validateUpdate
-		if (funDataEdit) {
-			modifier = Meteor.call(funDataEdit, modifier, funDataEditArgs);
-		}
+	updateBubble(bubbleId, funDataEdit, funDataEditArgs) { // solo per operazioni di set. controlla le chiavi con set validateUpdate
+		const edit1 = Meteor.call(funDataEdit, bubbleId, funDataEditArgs);
+		/*
 		if (modifier.$set !== undefined) {
 			let verify = 0;
 			const bId = BubbleCollection.findOne({'_id' : bubbleId});
-			verify = CheckHandler.execCheckOne(bId.bubbleType, modifier);
+			verify = CheckHandler.execCheckUpdate(bId.bubbleType, modifier);
 			//console.log(verify);
 			if (!verify.result) {
 				throw new Meteor.Error('update-invalid', `data does not validate in update of ${ bubbleId }`);
 			}
 		}
-		const edit1Promise = aBubbleCollection.updateAsync(bubbleId, modifier);
-		edit1Promise.then(
-			(result) => { console.log(`Update of ${ result } succeded`); },
-			(error) => { throw new Meteor.Error('update-error', `Update of bubble ${ bubbleId } failed.${ error }`); }
-		);
+		console.log(modifier);
+		const edit1Promise = aBubbleCollection.updateAsync(bubbleId, modifier);*/
+		if (!edit1) {
+			throw new Meteor.Error('update-error', `Update of bubble ${ bubbleId } failed.`);
+		}
 		const edit2Promise = aBubbleCollection.updateAsync(bubbleId, {$set :{lastEdited : new Date()}});
 		edit2Promise.then(
 			(result) => { console.log('last edit updated successfully'); },
