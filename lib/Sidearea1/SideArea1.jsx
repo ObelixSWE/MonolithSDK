@@ -45,6 +45,7 @@ class Sidearea1 extends React.Component {
       <div>
          <BubbleMenu createConfigArea={this.createConfigArea}/>
           <ConfigArea menu={this.state.openedConfigMenu} />
+	<h3 class="bubbleHeader">Bubbles you sent</h3>
           <SentBubbles bubbles={this.props.bubbles}/>
       </div>
     );

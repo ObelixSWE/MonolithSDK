@@ -1,5 +1,6 @@
 import React from 'react';
 import {BubbleDiscriminator} from '../uiConstruction/BubbleDiscriminator.jsx';
+import '../ui/CSS/styles.css';
 
 export default class ReceivedBubble extends React.Component {
   constructor(props) {
