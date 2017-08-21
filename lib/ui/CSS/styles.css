@@ -1,15 +1,18 @@
-.prova{
-    padding: 150px 320px;
+.prova {
+	padding: 150px 320px;
 }
 
-.back_button{
-  background-color: #4CAF50;
+.back_button {
+	background-color: #4CAF50;
 }
 
-.sx{
 
+.hidden {
+	display: none;
 }
 
-.hidden{
-    display : none;
+.bubbleborder {
+	border-style: solid;
+	margin: 10px;
 }
+

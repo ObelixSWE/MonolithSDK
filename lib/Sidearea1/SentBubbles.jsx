@@ -18,8 +18,8 @@ export default class SentBubbles extends React.Component {
                 <div id="bubble_button_menu">
                     {this.props.bubbles.map((bubble) => {
                         return (
-                            <div key={bubble._id} className="bubbleborder">
-                                <PushButton id={bubble._id} classes="deletebutton" buttonName="&times;" handleClick={SentBubbles.removeBubble} />
+                            <div key={bubble._id}>
+                                <PushButton id={bubble._id} buttonName="&times;" handleClick={SentBubbles.removeBubble} />
                                 {BubbleDiscriminator.useDoMakeBubbleSender(bubble.bubbleType, bubble)}
                             </div>
                         );

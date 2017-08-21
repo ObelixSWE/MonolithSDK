@@ -4,7 +4,7 @@ import '../lib/Bubbles/CurrencyBub/CurrencyCheck';
 import '../lib/Bubbles/ListBub/ListCheck';
 import '../lib/Bubbles/PollBub/PollCheck';
 import '../lib/Bubbles/RandomBub/RandCheck';
-import '../lib/Bubbles/WeathBub/WeathCheck';
+//import '../lib/Bubbles/WeathBub/WeathCheck';
 
 
 

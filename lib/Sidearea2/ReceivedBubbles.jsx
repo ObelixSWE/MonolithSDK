@@ -1,5 +1,6 @@
 import React from 'react';
 import {BubbleDiscriminator} from '../uiConstruction/BubbleDiscriminator.jsx';
+import '../ui/CSS/styles.css';
 
 export default class ReceivedBubble extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class ReceivedBubble extends React.Component {
             <div id="received_bubble">
                 {this.props.bubbles.map((bubble) => {
                     return (
-                        <div key={bubble._id} className="bubbleborder">
+                        <div key={bubble._id}>
                             {BubbleDiscriminator.useDoMakeBubbleReceiver(bubble.bubbleType, bubble)}
                         </div>
                     );
