@@ -45,6 +45,6 @@ export default class ListBubble extends AbsBubble{
 how to use:
 <ListBubble stat={m}/>
 
-m = { num: 0, op:[],title:''}
+m = { op:[],title:''}
 op = [{id:id,value:text,check:false},{id:id,value:text,check:false},...]
 */

@@ -24,7 +24,7 @@ export default class ImageButton extends React.Component{
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
-    handleClick(event){
+    handleClick(){
         this.props.handleClick(this.props.id);
     }
     render(){
