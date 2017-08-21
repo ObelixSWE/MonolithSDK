@@ -27,7 +27,7 @@ export default class AbsButton extends React.Component {
     }
 
 	render() {
-        let btnClass = classNames("btn btn-primary btn-lg",this.props.classes);
+        let btnClass = classNames("btn btn-primary btn-lg bubble-menu-button",this.props.classes);
         return <button id={this.props.id} type="button" className={btnClass} onClick={this.handleClick}>{this.bubbleButtonName()}</button>
 	}
 }

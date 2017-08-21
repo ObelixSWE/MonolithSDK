@@ -15,11 +15,11 @@ export default class SentBubbles extends React.Component {
     render() {
         if(this.props.bubbles.length) {
             return (
-                <div id="bubble_button_menu">
+                <div id="sent_bubble_menu">
                     {this.props.bubbles.map((bubble) => {
                         return (
-                            <div key={bubble._id} className="bubbleborder">
-                                <PushButton id={bubble._id} classes="deletebutton" buttonName="&times;" handleClick={SentBubbles.removeBubble} />
+                            <div key={bubble._id} className="sent-bubble bubbleborder">
+                                <PushButton id={bubble._id} classes="btn btn-danger btn-xs deletebutton" buttonName="&times;" handleClick={SentBubbles.removeBubble} />
                                 {BubbleDiscriminator.useDoMakeBubbleSender(bubble.bubbleType, bubble)}
                             </div>
                         );

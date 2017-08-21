@@ -34,7 +34,7 @@ export default class RadioButtonGroup extends React.Component{
     render(){
         let el=[];
         for (var i=0;i<this.state.options.length;i++)
-            el.push(<div><input id={i} type="radio" value={this.state.options[i]} onClick={this.handleClick.bind(this)}/>{this.state.options[i]}</div>)
+            el.push(<div><input id={i} key={i} type="radio" value={this.state.options[i]} onClick={this.handleClick.bind(this)}/>{this.state.options[i]}</div>)
         return(<div>
             {el}
         </div>);

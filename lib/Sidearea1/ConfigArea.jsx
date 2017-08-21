@@ -8,7 +8,7 @@ export default class ConfigArea extends React.Component {
 	render(){
 	    if(this.props.menu) {
             return (
-                <div>
+                <div className="config-area-menu bubbleborder bg-warning">
                     {this.props.menu}
                 </div>
             );
