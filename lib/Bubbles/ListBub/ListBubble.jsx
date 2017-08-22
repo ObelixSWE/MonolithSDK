@@ -1,7 +1,7 @@
 /*
 *  Name :   ListBubble.jsx
-*  Location : /imports/UI/Bubbles
-*  Author: Riccardo Saggese
+*  Location : /imports/UI/Bubbles/ListBub
+*  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
 *  Description: {class ListBubble}
 */

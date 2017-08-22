@@ -1,7 +1,7 @@
 /*
 *  Name : AbsList.jsx
-*  Location : /imports/UI/Bubbles
-*  Author: Riccardo Saggese
+*  Location : /imports/UI/Bubbles/ListBub
+*  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
 *  Description: {class AbsList}
 */
@@ -29,7 +29,7 @@ export default class AbsList extends AbsBubbleConfig {
 		let id="leopt"+this.state.num;
 		this.rows.push(<div>
         		Opzione {n}:<br/>
-                <LineEdit id={id} placeholder="Inserisci un opzione" updateState={this.optChange}/>
+                <LineEdit id={id} placeholder="Insert Option" updateState={this.optChange}/>
             	</div>);
         let m={id:id,value:"undefined",check:false};
         let v=this.state.op;
@@ -57,7 +57,7 @@ export default class AbsList extends AbsBubbleConfig {
         return (
             <div>
                 <h3>Nome lista:</h3>
-                <LineEdit id="title" placeholder="Inserisci una nome per la lista" updateState={this.titleChange}/><br/>
+                <LineEdit id="title" placeholder="Insert List Name" updateState={this.titleChange}/><br/>
                 {this.rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
                 <PushButton buttonName="Send" handleClick={this.send}/>

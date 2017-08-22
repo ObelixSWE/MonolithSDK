@@ -1,7 +1,7 @@
 /*
 *  Name :   ChecklistConfig.jsx
-*  Location : /imports/UI/Bubbles
-*  Author: Riccardo Saggese
+*  Location : /imports/UI/Bubbles/ListBub
+*  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
 *  Description: {class ChecklistConfig}
 */
@@ -26,7 +26,7 @@ export default class ChecklistConfig extends AbsList {
         return (
             <div>
                 <h3>Nome lista:</h3>
-                <LineEdit id="title" placeholder="Inserisci una nome per la lista" updateState={this.titleChange}/><br/>
+                <LineEdit id="title" placeholder="Insert List Name" updateState={this.titleChange}/><br/>
                 {this.rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
                 <PushButton buttonName="Send" handleClick={this.send}/>

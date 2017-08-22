@@ -1,15 +1,9 @@
 /*
-*  Name :   BubbleConfig.jsx
-*  Location : /imports/UI/Bubbles
-*  Author: Nicolò Rigato
+*  Name :   ListBubbleConfig.js
+*  Location : /imports/UI/Bubbles/ListBub
+*  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
-*  ----------------------------------------------
-*  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Description: {class ListBubbleConfig}
 */
 
 import React, { Component } from 'react';
@@ -29,7 +23,6 @@ export default class ListBubbleConfig extends AbsList {
 		this.add_checklist=this.add_checklist.bind(this);
 		this.send=this.send.bind(this);
 		this.rows = [];
-		this.op=[{id: 1, value: 'Hello World', check:false},{id: 2, value: 'Installation', check:false}];//arriva un array di stringhe (creare l'array)
     }
 
 	display_checklist(){
@@ -38,7 +31,6 @@ export default class ListBubbleConfig extends AbsList {
 
 	add_checklist(opt){
 		let n=this.state.num;
-        console.log(opt.length);
 		for(let i=0;i<opt.length;i++){
 		    n++;
 			let id="clopt"+n;
@@ -56,21 +48,21 @@ export default class ListBubbleConfig extends AbsList {
 		this.display_checklist();
 	}
 
-	send(){//mettere apposto sto metodo
+	send(){//mettere apposto questo metodo
 		console.log("sent??");
 	}
 
     render() {
         let lists=[
-            { title: "asdasd", op: [ "s1", "s2" ] },
+            { title: "asdasd", op: [ "s1", "s2" ] }, //da togliere
             { title: "werwer", op: [ "r1", "r2" ] }
         ];
         return (
             <div>
                 <h3>Nome lista:</h3>
-                <LineEdit id="title" placeholder="Inserisci una nome per la lista" updateState={this.titleChange}/><br/>
-                <PushButton buttonName="CheckList" classes="checklist_button btn-sm" handleClick={this.display_checklist}/><br/>
-				<CheckList lists={lists} op={this.op} hide={this.state.hide} add={this.add_checklist}/>
+                <LineEdit id="title" placeholder="Insert List Name" updateState={this.titleChange}/><br/>
+                <PushButton buttonName="CheckLists" classes="checklist_button btn-sm" handleClick={this.display_checklist}/><br/>
+				<CheckList lists={lists} hide={this.state.hide} add={this.add_checklist}/>
                 {this.rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
                 <PushButton buttonName="Send" handleClick={this.send}/>
@@ -83,10 +75,6 @@ export default class ListBubbleConfig extends AbsList {
 export class CheckList extends React.Component{
 	constructor(props){
         super(props);
-		this.state={
-			op:[]//forse non serve
-		}
-//this.props.op
 		this.getCheck=this.getCheck.bind(this);
 		this.add=this.add.bind(this);
         this.createLists=this.createLists.bind(this);
@@ -113,7 +101,7 @@ export class CheckList extends React.Component{
             }
             this.lists.push(
                 <div>
-                    <span>{this.props.lists[i].title}</span>
+                    <h4>{this.props.lists[i].title}</h4>
                     <CheckBoxList options={op} getCheck={this.getCheck}/>
                 </div>
             );
@@ -149,10 +137,6 @@ export class CheckList extends React.Component{
         );
     }
 }
-
-/*
-<CheckBoxList options={this.state.op} getCheck={this.getCheck}/>
-*/
 
 /*
 how to use:
