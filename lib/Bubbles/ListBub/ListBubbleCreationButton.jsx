@@ -14,11 +14,13 @@
 
 
 import AbsButton from '../../../lib/uiConstruction/AbsButton';
+import {BubbleDiscriminator} from '../../uiConstruction/BubbleDiscriminator';
 
 
 export default class ListBubbleCreationButton extends AbsButton {
 	constructor(props) {
 		super(props);
+		this.handleSecondButton = this.handleSecondButton.bind(this);
 	}
 
 	bubbleButtonName() {
@@ -28,6 +30,15 @@ export default class ListBubbleCreationButton extends AbsButton {
 	bubbleName() {
 		return 'list';
 	}
+
+	secondAreaName() {
+	    return 'checklist';
+	}
+
+	/*handleSecondButton() {
+	    console.log(this.props);
+		//return BubbleDiscriminator.useDoMakeBubbleConfigurationMenu('checklist', this.props.closeMenu);
+	}*/
 
 }
 

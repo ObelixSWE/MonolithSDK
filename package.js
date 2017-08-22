@@ -76,7 +76,6 @@ Package.onUse(function(api) {
 		//'lib/Bubbles/TranslationBub/TranslationDb.js',
 		'lib/Bubbles/ListBub/ListCheck.js',
 		'lib/Bubbles/ListBub/ListCreator.jsx',
-		'lib/Bubbles/ListBub/ListDb.js',
 		//'lib/Bubbles/WeathBub/WeathCheck.js',
 		//'lib/Bubbles/WeathBub/WeathCreator.jsx',
 		//'lib/Bubbles/WeathBub/WeathDb.js',
@@ -110,8 +109,12 @@ Package.onUse(function(api) {
 		'lib/Sidearea1/SentBubbles.jsx',
 		'lib/Sidearea1/SideArea1.jsx',
 		'lib/Sidearea2/SideArea2.jsx',
-		'lib/Sidearea2/ReceivedBubbles.jsx'
-], ['client']);
+		'lib/Sidearea2/ReceivedBubbles.jsx',
+		'lib/Bubbles/ListBub/AbsList.jsx',
+		'lib/Bubbles/ListBub/AbsList.jsx',
+		//'lib/Bubbles/ListBub/ChecklistCreationButton.jsx',
+		'lib/Bubbles/ListBub/ChecklistCreator.jsx'
+	], ['client']);
 	api.addFiles([
 		'lib/Bubbles/RandomBub/RandMethod.js',
 		'server/Methods.js',
@@ -172,6 +175,8 @@ Package.onUse(function(api) {
 		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyMethod.js',
 		'lib/Bubbles/PollBub/PollMethod.js',
+		'lib/Bubbles/ListBub/ListMethod.js',
+		'lib/Bubbles/ListBub/ListDb.js',
 		'server/main.js'],
 	['server']);
 
@@ -182,7 +187,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
 	api.use('ecmascript');
 	api.use('tinytest');
-	api.use('prova-react-01');
 
 });
 

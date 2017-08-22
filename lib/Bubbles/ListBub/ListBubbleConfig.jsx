@@ -12,10 +12,8 @@
 *  Author: {Autore della modifica}
 */
 
-import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
-import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
+import React, { Component } from 'react';
+import AbsList from './AbsList.jsx';
 import LineEdit from '../../ui/SingleComponents/LineEdit/LineEdit.jsx';
 import PushButton from '../../ui/SingleComponents/PushButton/PushButton.jsx';
 import VerticalLayout from '../../ui/Layouts/VerticalLayout.jsx';
@@ -23,49 +21,15 @@ import CheckBoxList from '../../ui/SingleComponents/CheckBoxList/CheckBoxList.js
 
 
 
-export default class ListBubbleConfig extends AbsBubbleConfig {
+export default class ListBubbleConfig extends AbsList {
     constructor(props){
         super(props);
-        this.state={ num: 0, op:[],title:'',
-					hide:true,
-					}
-        this.addOpt=this.addOpt.bind(this);
-        this.titleChange=this.titleChange.bind(this);
-        this.optChange=this.optChange.bind(this);
-        this.send=this.send.bind(this);
+        //this.state={ num: 0, op:[],title:'', hide:true	};
 		this.display_checklist=this.display_checklist.bind(this);
 		this.add_checklist=this.add_checklist.bind(this);
+		this.send=this.send.bind(this);
 		this.rows = [];
-    }
-
-    addOpt(){
-        let n=this.state.num+1;
-        this.setState({num:n});
-		let id="leopt"+this.state.num;
-		this.rows.push(<div>
-        		Opzione {n}:<br/>
-                <LineEdit id={id} placeholder="Inserisci un opzione" updateState={this.optChange}/>
-            	</div>);
-    }
-
-    titleChange(txt){
-        this.setState({title:txt});
-
-    }
-
-
-    optChange(text,id) {
-      let m={id:id,value:text,check:false};
-      let v=this.state.op;
-      v[id-1]=m;
-      this.setState({op:v});
-     //this.state.op[id-1]={id:id,val:text,check:false};
-
-    }
-
-    send(){
-      let m=this.state;//{num: this.state.num, op: this.state.op, title:this.state.title}
-      this.props.send(m);
+		this.op=[{id: 1, value: 'Hello World', check:false},{id: 2, value: 'Installation', check:false}];//arriva un array di stringhe (creare l'array)
     }
 
 	display_checklist(){
@@ -73,26 +37,36 @@ export default class ListBubbleConfig extends AbsBubbleConfig {
 	}
 
 	add_checklist(opt){
+		let n=this.state.num;
+        console.log(this.state.num);
 		for(let i=0;i<opt.length;i++){
-			let n=this.state.num+1;
-		    this.setState({num:n});
-			let id="leopt"+this.state.num;
+		    n++;
+			let id="clopt"+n;
 			this.rows.push(<div>
 		    		Opzione {n}:<br/>
-		            <LineEdit id={id} value={opt[i].value} updateState={this.optChange}/>
+		            <LineEdit id={id} value={opt[i]} updateState={this.optChange}/>
 		        	</div>);
+            let m={id:id,value:opt[i],check:false};
+            let v=this.state.op;
+            v.push(m);
+            this.setState({op:v});
+            this.optChange(opt[i],id);
 		}
+		this.setState({num:n});
 		this.display_checklist();
 	}
 
+	send(){//mettere apposto sto metodo
+		console.log("sent??");
+	}
+
     render() {
-		let op=[{id: 1, value: 'Hello World', check:false},{id: 2, value: 'Installation', check:false}];
         return (
             <div>
-                <h1>Nome lista:</h1><br/>
+                <h3>Nome lista:</h3>
                 <LineEdit id="title" placeholder="Inserisci una nome per la lista" updateState={this.titleChange}/><br/>
                 <PushButton buttonName="CheckList" classes="checklist_button btn-sm" handleClick={this.display_checklist}/><br/>
-				<CheckList op={op} hide={this.state.hide} add={this.add_checklist}/>
+				<CheckList op={this.op} hide={this.state.hide} add={this.add_checklist}/>
                 {this.rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
                 <PushButton buttonName="Send" handleClick={this.send}/>
@@ -116,7 +90,7 @@ export class CheckList extends React.Component{
 	getCheck(m){
 		let o=this.state.op;
 		for(let i=0;i<o.length;i++){
-			if(o[i].id==m.id){
+			if(o[i].id===m.id){
 				o[i]=m;
 			}
 		}
@@ -126,8 +100,9 @@ export class CheckList extends React.Component{
 	add(){
 		let opt=[];
 		for(let i=0;i<this.state.op.length;i++)
-			if(this.state.op[i].check==true)
-				opt.push(this.state.op[i]);
+			if(this.state.op[i].check===true){
+				opt.push(this.state.op[i].value);
+			}
 		this.props.add(opt);
 	}
 

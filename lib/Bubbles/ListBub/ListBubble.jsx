@@ -13,8 +13,6 @@
 */
 
 import React, { Component } from 'react'
-import { render as reactRender } from 'react-dom'
-import { renderToString as reactRenderToString } from 'react-dom/server'
 import VerticalLayout from "../../ui/Layouts/VerticalLayout";
 import CheckBoxList from "../../ui/SingleComponents/CheckBoxList/CheckBoxList";
 import AbsBubble from "../../../lib/uiConstruction/AbsBubble";

@@ -1,8 +1,14 @@
 # MonolithSDK
 
-## Dependecies
+## How to start?
 
-meteor npm install --save simpl-schema
-meteor npm install --save bluebird
-meteor add maxharris9:classnames twbs:bootstrap 
-meteor npm install --save react react-dom
+
+git clone https://github.com/RocketChat/Rocket.Chat.git && cd Rocket.Chat
+meteor npm start # when finished close
+meteor add templating blaze-html-templates react-meteor-data maxharris9:classnames react-template-helper	
+meteor npm i react react-dom bluebird simpl-schema react-addons-pure-render-mixin money request request-promise  --save
+# copy folder now
+meteor add monolith-dsk
+meteor
+
+ kadira:react-layout ?

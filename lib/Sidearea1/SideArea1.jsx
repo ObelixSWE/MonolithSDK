@@ -35,8 +35,9 @@ class Sidearea1 extends React.Component {
       this.setState({openedConfigMenu: null});
   }
 
-  createConfigArea(buttonType){
-      this.setState({openedConfigMenu: BubbleDiscriminator.useDoMakeBubbleConfigurationMenu(buttonType, this.closeConfig)});
+  createConfigArea(toBeInserted){
+      this.setState({openedConfigMenu: BubbleDiscriminator.useDoMakeBubbleConfigurationMenu(toBeInserted, this.closeConfig)});
+
   }
 
 
@@ -45,7 +46,7 @@ class Sidearea1 extends React.Component {
       <div>
          <BubbleMenu createConfigArea={this.createConfigArea}/>
           <ConfigArea menu={this.state.openedConfigMenu} />
-	<h3 class="bubbleHeader">Bubbles you sent</h3>
+	    <h3 className="bubbleHeader">Bubbles you sent</h3>
           <SentBubbles bubbles={this.props.bubbles}/>
       </div>
     );

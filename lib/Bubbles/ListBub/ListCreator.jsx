@@ -20,7 +20,10 @@ class ListCreator extends BubbleCreator {
 		return React.createElement(ListBubbleConfig, {closeMenu: closeMenufun});
 	}
 	doMakeButton(createConfigArea) {
-		return React.createElement(ListBubbleCreationButton, { onClick: createConfigArea });
+		return React.createElement(ListBubbleCreationButton, {
+			onClick: createConfigArea,
+			secondButtonName: 'Set checklists'
+		});
 	}
 }
 
