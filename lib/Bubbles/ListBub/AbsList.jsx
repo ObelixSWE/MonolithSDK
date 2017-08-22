@@ -28,7 +28,7 @@ export default class AbsList extends AbsBubbleConfig {
         this.setState({num:n});
 		let id="leopt"+this.state.num;
 		this.rows.push(<div>
-        		Opzione {n}:<br/>
+        		Option n:{n}:<br/>
                 <LineEdit id={id} placeholder="Insert Option" updateState={this.optChange}/>
             	</div>);
         let m={id:id,value:"undefined",check:false};
@@ -51,18 +51,5 @@ export default class AbsList extends AbsBubbleConfig {
             }
         }
         this.setState({op:v});
-    }
-
-    render() {
-        return (
-            <div>
-                <h3>Nome lista:</h3>
-                <LineEdit id="title" placeholder="Insert List Name" updateState={this.titleChange}/><br/>
-                {this.rows}<br/>
-                <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
-                <PushButton buttonName="Send" handleClick={this.send}/>
-            </div>
-
-        );
     }
 }

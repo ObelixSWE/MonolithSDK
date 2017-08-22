@@ -59,7 +59,7 @@ export default class ListBubbleConfig extends AbsList {
         ];
         return (
             <div>
-                <h3>Nome lista:</h3>
+                <h3>List Name:</h3>
                 <LineEdit id="title" placeholder="Insert List Name" updateState={this.titleChange}/><br/>
                 <PushButton buttonName="CheckLists" classes="checklist_button btn-sm" handleClick={this.display_checklist}/><br/>
 				<CheckList lists={lists} hide={this.state.hide} add={this.add_checklist}/>

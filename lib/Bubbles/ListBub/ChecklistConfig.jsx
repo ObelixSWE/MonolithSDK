@@ -25,8 +25,8 @@ export default class ChecklistConfig extends AbsList {
     render() {
         return (
             <div>
-                <h3>Nome lista:</h3>
-                <LineEdit id="title" placeholder="Insert List Name" updateState={this.titleChange}/><br/>
+                <h3>Checklist Name:</h3>
+                <LineEdit id="title" placeholder="Insert Checklist Name" updateState={this.titleChange}/><br/>
                 {this.rows}<br/>
                 <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
                 <PushButton buttonName="Send" handleClick={this.send}/>
