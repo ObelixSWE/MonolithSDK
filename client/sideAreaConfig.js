@@ -4,7 +4,7 @@ Meteor.startup(() => {
 		groups: ['channel', 'privategroup', 'directmessage', 'direct', 'group'],
 		id: 'bubble_menu',
 		title: 'bubble_menu',
-		icon: 'icon-rocket',
+		icon: 'hashtag',
 		template: 'templateSideArea1',
 		order: 110
 	});
@@ -13,7 +13,7 @@ Meteor.startup(() => {
 		groups: ['channel', 'privategroup', 'directmessage', 'direct', 'group'],
 		id: 'bubble_view',
 		title: 'bubble_view',
-		icon: 'icon-rocket',
+		icon: 'hashtag',
 		template: 'templateSideArea2',
 		order: 120
 	});
