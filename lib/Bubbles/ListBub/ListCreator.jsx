@@ -1,3 +1,11 @@
+/*
+*  Name :   ListCreator.jsx
+*  Location : /imports/UI/Bubbles
+*  Author: Riccardo Saggese
+*  Creation Data: 2017-06-27
+*  Description: {class ListCreator}
+*/
+
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';
 
@@ -30,8 +38,3 @@ class ListCreator extends BubbleCreator {
 
 const lc = new ListCreator('list');
 BubbleDiscriminator.registerBubbleCreator(lc);
-
-/*
-console.log(cc.doMakeBubbleReceiver({}));
-console.log(BubbleDiscriminator.useDoMakeBubbleReceiver('currency', {}));
-*/

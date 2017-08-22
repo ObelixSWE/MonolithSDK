@@ -1,15 +1,9 @@
 /*
-*  Name :   Bubble.jsx
+*  Name :   PollBubble.jsx
 *  Location : /imports/UI/Bubbles
-*  Author: Nicolò Rigato
+*  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
-*  ----------------------------------------------
-*  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Description: {class PollBubble}
 */
 
 import React, { Component } from 'react';
@@ -28,12 +22,7 @@ export default class PollBubble extends AbsBubble {
             voted: (this.props.voted.indexOf(Meteor.userId()) > 0)
         };
     }
-    /*
-                title:this.props.title,
-            num:this.props.num,
-            options:this.props.options,
-            id:this.props.id,
-     */
+
 
     addVote(id) {
         let upProm = PollDb.update(this.props._id, 'BubblePollUpdate', { id_ans: id, user: Meteor.userId() });

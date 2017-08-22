@@ -1,25 +1,19 @@
 /*
-*  Name :   BubbleConfig.jsx
+*  Name : AbsList.jsx
 *  Location : /imports/UI/Bubbles
-*  Author: Nicolò Rigato
+*  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
-*  ----------------------------------------------
-*  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Description: {class AbsList}
 */
 
 import React, { Component } from 'react'
 import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
 import LineEdit from '../../ui/SingleComponents/LineEdit/LineEdit.jsx';
 import PushButton from '../../ui/SingleComponents/PushButton/PushButton.jsx';
-//import VerticalLayout from '../../ui/Layouts/VerticalLayout.jsx';
 
 
-export default class AbsList extends AbsBubbleConfig {//mettere la storia dell'astrazione
+
+export default class AbsList extends AbsBubbleConfig {
     constructor(props){
         super(props);
         this.state={ num: 0, op:[],title:''	};
@@ -56,10 +50,7 @@ export default class AbsList extends AbsBubbleConfig {//mettere la storia dell'a
                 v[i].text = text;
             }
         }
-        //v[id-1]=m;
         this.setState({op:v});
-        //this.state.op[id-1]={id:id,val:text,check:false};
-
     }
 
     render() {

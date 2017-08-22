@@ -1,15 +1,9 @@
 /*
-*  Name :   Bubble.jsx
+*  Name :   ListBubble.jsx
 *  Location : /imports/UI/Bubbles
-*  Author: Nicolò Rigato
+*  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
-*  ----------------------------------------------
-*  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Description: {class ListBubble}
 */
 
 import React, { Component } from 'react'
@@ -38,11 +32,3 @@ export default class ListBubble extends AbsBubble{
         );
     }
 }
-
-/*
-how to use:
-<ListBubble stat={m}/>
-
-m = { op:[],title:''}
-op = [{id:id,value:text,check:false},{id:id,value:text,check:false},...]
-*/

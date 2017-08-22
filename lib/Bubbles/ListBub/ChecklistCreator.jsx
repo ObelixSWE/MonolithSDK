@@ -1,3 +1,10 @@
+/*
+*  Name :   ChecklistCreator.jsx
+*  Location : /imports/UI/Bubbles
+*  Author: Riccardo Saggese
+*  Creation Data: 2017-06-27
+*  Description: {class ChecklistCreator}
+*/
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';
 
@@ -25,8 +32,3 @@ class ChecklistCreator extends BubbleCreator {
 
 const lc = new ChecklistCreator('checklist');
 BubbleDiscriminator.registerBubbleCreator(lc);
-
-/*
-console.log(cc.doMakeBubbleReceiver({}));
-console.log(BubbleDiscriminator.useDoMakeBubbleReceiver('currency', {}));
-*/

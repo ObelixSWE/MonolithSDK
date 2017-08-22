@@ -1,15 +1,9 @@
 /*
-*  Name :   BubbleConfig.jsx
+*  Name :   ListBubbleConfig.jsx
 *  Location : /imports/UI/Bubbles
-*  Author: Nicolò Rigato
+*  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
-*  ----------------------------------------------
-*  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Description: {class ListBubbleConfig}
 */
 
 import React, { Component } from 'react';
@@ -24,12 +18,11 @@ import CheckBoxList from '../../ui/SingleComponents/CheckBoxList/CheckBoxList.js
 export default class ListBubbleConfig extends AbsList {
     constructor(props){
         super(props);
-        //this.state={ num: 0, op:[],title:'', hide:true	};
 		this.display_checklist=this.display_checklist.bind(this);
 		this.add_checklist=this.add_checklist.bind(this);
 		this.send=this.send.bind(this);
 		this.rows = [];
-		this.op=[{id: 1, value: 'Hello World', check:false},{id: 2, value: 'Installation', check:false}];//arriva un array di stringhe (creare l'array)
+		this.op=[{id: 1, value: 'Hello World', check:false},{id: 2, value: 'Installation', check:false}];
     }
 
 	display_checklist(){
@@ -56,7 +49,7 @@ export default class ListBubbleConfig extends AbsList {
 		this.display_checklist();
 	}
 
-	send(){//mettere apposto sto metodo
+	send(){
 		console.log("sent??");
 	}
 

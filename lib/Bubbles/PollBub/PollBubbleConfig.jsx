@@ -1,15 +1,9 @@
 /*
-*  Name :   BubbleConfig.jsx
+*  Name : PollBubbleConfig.jsx
 *  Location : /imports/UI/Bubbles
-*  Author: Nicolò Rigato
+*  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
-*  ----------------------------------------------
-*  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Description: {class PollBubbleConfig}
 */
 
 import React, { Component } from 'react';
@@ -52,7 +46,6 @@ export default class PollBubbleConfig extends AbsBubbleConfig {
             (res) => {this.props.closeMenu();},
             (err) => {console.error("Something bad happened....");}
         );
-      //this.props.send(this.state.title, this.state.op, this.state.num);
     }
 
     render() {

@@ -1,3 +1,11 @@
+/*
+*  Name :   CurrencyCreator.js
+*  Location : /imports/UI/Bubbles
+*  Author: Riccardo Saggese
+*  Creation Data: 2017-06-27
+*  Description: {class CurrencyCreator}
+*/
+
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';
 
@@ -24,11 +32,6 @@ class CurrencyCreator extends BubbleCreator {
 	}
 }
 
-
 export const cc = new CurrencyCreator('currency');
 BubbleDiscriminator.registerBubbleCreator(cc);
 
-/*
-console.log(cc.doMakeBubbleReceiver({}));
-console.log(BubbleDiscriminator.useDoMakeBubbleReceiver('currency', {}));
-*/

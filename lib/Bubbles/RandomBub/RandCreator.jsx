@@ -1,3 +1,11 @@
+/*
+*  Name :  RandCreator.jsx
+*  Location : /imports/UI/Bubbles
+*  Author: Riccardo Saggese
+*  Creation Data: 2017-06-27
+*  Description: {class RandCreator }
+*/
+
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';
 

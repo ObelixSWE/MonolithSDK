@@ -1,15 +1,9 @@
 /*
-*  Name :   Bubble.jsx
+*  Name :   RandBubble.js
 *  Location : /imports/UI/Bubbles
-*  Author: Nicolò Rigato
+*  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
-*  ----------------------------------------------
-*  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Description: {class RandBubble}
 */
 
 import React, { Component } from 'react';
@@ -26,7 +20,6 @@ export default class RandBubble extends AbsBubble {
     }
 
     calcolate(){
-        // update(bubbleId, modifier, serverSideOps, serverSideOpsArgs)
         RandomDb.update(this.props._id, 'BubbleRandomUpdate', this.props.range);
     }
 

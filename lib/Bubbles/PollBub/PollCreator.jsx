@@ -1,3 +1,11 @@
+/*
+*  Name :   PollCreator.js
+*  Location : /imports/UI/Bubbles
+*  Author: Riccardo Saggese
+*  Creation Data: 2017-06-27
+*  Description: {class PollCreator}
+*/
+
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';
 
@@ -24,12 +32,5 @@ class PollCreator extends BubbleCreator {
 	}
 }
 
-
-
 const pc = new PollCreator('poll');
 BubbleDiscriminator.registerBubbleCreator(pc);
-
-/*
-console.log(cc.doMakeBubbleReceiver({}));
-console.log(BubbleDiscriminator.useDoMakeBubbleReceiver('currency', {}));
-*/
