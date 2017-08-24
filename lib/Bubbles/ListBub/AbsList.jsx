@@ -16,25 +16,33 @@ import PushButton from '../../ui/SingleComponents/PushButton/PushButton.jsx';
 export default class AbsList extends AbsBubbleConfig {
     constructor(props){
         super(props);
-        this.state={ num: 0, op:[],title:''	};
+        this.state={op:[],title:''	};
         this.addOpt=this.addOpt.bind(this);
+        this.delOpt=this.delOpt.bind(this);
         this.titleChange=this.titleChange.bind(this);
         this.optChange=this.optChange.bind(this);
-		this.rows = [];
     }
 
+
     addOpt(){
-        let n=this.state.num+1;
-        this.setState({num:n});
-		let id="leopt"+this.state.num;
-		this.rows.push(<div>
-        		Option n:{n}:<br/>
-                <LineEdit id={id} placeholder="Insert Option" updateState={this.optChange}/>
-            	</div>);
-        let m={id:id,value:"undefined",check:false};
+        let id="lopt"+(this.state.op.length+1);
+        let m={id:id,value:"",check:false};
         let v=this.state.op;
         v.push(m);
         this.setState({op:v});
+        this.optChange("",id);
+    }
+
+    delOpt(id){
+        let o=this.state.op;
+        let r=-1;
+        for(let i=0;i<o.length;i++)
+            if(o[i].id==id)
+                r=i;
+        if(r>=0){
+            o.splice(r, 1);
+            this.setState({op:o});
+        }
     }
 
     titleChange(txt){
@@ -43,10 +51,9 @@ export default class AbsList extends AbsBubbleConfig {
 
 
     optChange(text,id) {
-        let m={id:id,value:text,check:false};
         let v=this.state.op;
         for(let i=0;i<v.length;i++) {
-            if (v[i].id === id) {
+            if (v[i].id == id) {
                 v[i].text = text;
             }
         }

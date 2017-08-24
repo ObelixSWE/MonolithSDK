@@ -32,7 +32,7 @@ class CheckButton extends React.Component{
     }
     render(){
 			var chClass = classNames("",this.props.classes);
-            return(<div><input id={this.props.id} className={chClass} type="checkbox" onChange={this.changeCheck} checked={this.state.check}/>{this.props.value}</div>);
+            return(<div className={chClass}><input id={this.props.id} type="checkbox" onChange={this.changeCheck} checked={this.state.check}/>{this.props.value}</div>);
     }
 
 }

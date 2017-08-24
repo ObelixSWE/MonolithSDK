@@ -34,3 +34,14 @@
 	background-color: #ffcccc;
 }
 
+.al-right{
+    float: right;
+}
+
+.al.left{
+    float: left;
+}
+
+.rc-old input[type="text"]{
+    width: 80%;
+}
