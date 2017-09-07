@@ -19,7 +19,7 @@ import './SideArea2';
 
 
 import '../lib/database/databaseInitialization';
-
+import '../lib/Bubbles/ListBub/CheckListDb.js';
 
 // if u wait it happens
 /*

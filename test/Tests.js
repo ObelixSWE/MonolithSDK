@@ -204,7 +204,7 @@ it('tests that at the PushButtons click (associated to the LineEditPushButton), 
 
 it('tests that the PushButton name is set correctly', () => {
 
-    const pushButton = shallow(<PushButton id="prova" buttonName='ProvaNome'/>);
+    const pushButton = shallow(<PushButton argument="prova" buttonName='ProvaNome'/>);
 
     expect(pushButton.text()).toEqual('ProvaNome');
 
@@ -217,7 +217,7 @@ it('tests the PushButton component on the clickbutton event', () =>{
     function fun(value){
         x=value;
     }
-    const pushButton = shallow(<PushButton id="YES"  handleClick={fun}  buttonName='ProvaNome'/>);
+    const pushButton = shallow(<PushButton argument="YES"  handleClick={fun}  buttonName='ProvaNome'/>);
     pushButton.find('button').simulate('click');
     expect(x).toEqual('YES');
 });

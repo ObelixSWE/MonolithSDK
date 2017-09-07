@@ -53,7 +53,7 @@ export default class PollBubbleConfig extends AbsBubbleConfig {
         let n=this.state.num;
         for (let i=0; i <= n; i++) {
             rows.push(
-                <div>
+                <div key={i}>
                 Option {i+1}:<br/>
                 <LineEdit id={i} placeholder="Insert an Option" updateState={this.optChange}/>
             </div>);

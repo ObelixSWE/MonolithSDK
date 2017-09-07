@@ -6,57 +6,52 @@
 *  Description: {class AbsList}
 */
 
-import React, { Component } from 'react'
-import AbsBubbleConfig from "../../../lib/uiConstruction/AbsBubbleConfig";
+import React, { Component } from 'react';
+import AbsBubbleConfig from '../../../lib/uiConstruction/AbsBubbleConfig';
 import LineEdit from '../../ui/SingleComponents/LineEdit/LineEdit.jsx';
 import PushButton from '../../ui/SingleComponents/PushButton/PushButton.jsx';
 
 
 
 export default class AbsList extends AbsBubbleConfig {
-    constructor(props){
-        super(props);
-        this.state={op:[],title:''	};
-        this.addOpt=this.addOpt.bind(this);
-        this.delOpt=this.delOpt.bind(this);
-        this.titleChange=this.titleChange.bind(this);
-        this.optChange=this.optChange.bind(this);
-    }
+	constructor(props) {
+		super(props);
+		this.state={ops:[], title:''};
+		this.addOpt=this.addOpt.bind(this);
+		this.delOpt=this.delOpt.bind(this);
+		this.titleChange=this.titleChange.bind(this);
+		this.optChange=this.optChange.bind(this);
+	}
 
 
-    addOpt(){
-        let id="lopt"+(this.state.op.length+1);
-        let m={id:id,value:"",check:false};
-        let v=this.state.op;
-        v.push(m);
-        this.setState({op:v});
-        this.optChange("",id);
-    }
+	addOpt(element) {
+		const newOptions=this.state.ops;
+		const newEl = element ? element : '';
+		newOptions.push(newEl);
+		this.setState({ops: newOptions});
+		/*
+		const id=`lopt${ this.state.op.length+1 }`;
+		const m={id, value:'', check:false};
+		const v=this.state.op;
+		v.push(m);
+		this.setState({op:v});
+		this.optChange('', id);*/
+	}
 
-    delOpt(id){
-        let o=this.state.op;
-        let r=-1;
-        for(let i=0;i<o.length;i++)
-            if(o[i].id==id)
-                r=i;
-        if(r>=0){
-            o.splice(r, 1);
-            this.setState({op:o});
-        }
-    }
+	delOpt(id) {
+		const newOptions = this.state.ops;
+		newOptions.splice(id, 1);
+		this.setState({ops: newOptions});
+	}
 
-    titleChange(txt){
-        this.setState({title:txt});
-    }
+	titleChange(txt) {
+		this.setState({title:txt});
+	}
 
 
-    optChange(text,id) {
-        let v=this.state.op;
-        for(let i=0;i<v.length;i++) {
-            if (v[i].id == id) {
-                v[i].text = text;
-            }
-        }
-        this.setState({op:v});
-    }
+	optChange(text, id) {
+		const newOptions = this.state.ops;
+		newOptions[id] = text;
+		this.setState({ops:newOptions});
+	}
 }

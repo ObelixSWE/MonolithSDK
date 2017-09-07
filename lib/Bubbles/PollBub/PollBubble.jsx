@@ -36,8 +36,8 @@ export default class PollBubble extends AbsBubble {
         let opts=[];
         for (let i=0;i<this.props.options.length;i++){
             opts.push(
-                <div>
-                    <PushButton id={i} dis={this.state.voted} buttonName={this.props.options[i].val} handleClick={this.addVote}/> Votes: {this.props.options[i].votes} <br/>
+                <div key={i}>
+                    <PushButton argument={i} dis={this.state.voted} buttonName={this.props.options[i].val} handleClick={this.addVote}/> Votes: {this.props.options[i].votes} <br/>
                 </div>
             )
         }

@@ -9,7 +9,7 @@ import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';
 
 import React from 'react';
-import ChecklistConfig from './ChecklistConfig';
+import ChecklistConfigContainer from './ChecklistConfig';
 
 class ChecklistCreator extends BubbleCreator {
 	constructor(bubbleName) {
@@ -22,7 +22,7 @@ class ChecklistCreator extends BubbleCreator {
 		return null;
 	}
 	doMakeConfigurationMenu(closeMenufun) {
-		return React.createElement(ChecklistConfig, {closeMenu: closeMenufun});
+		return React.createElement(ChecklistConfigContainer, {closeMenu: closeMenufun});
 	}
 	doMakeButton() {
 		return null;

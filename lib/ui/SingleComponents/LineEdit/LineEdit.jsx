@@ -20,8 +20,8 @@ export default class LineEdit extends React.Component {
     constructor(props) {
         super(props);
 		this.state={
-			text:this.props.value
-		}
+			text: this.props.value ? this.props.value : ''
+		};
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event){
@@ -36,7 +36,7 @@ export default class LineEdit extends React.Component {
 
 /*
 How to use:
- <LineEdit 
+ <LineEdit
 	id= // like HTML id
 	classes= // CSS classes
 	updateState={this."function name"}

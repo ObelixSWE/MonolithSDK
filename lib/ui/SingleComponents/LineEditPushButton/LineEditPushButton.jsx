@@ -40,7 +40,7 @@ export default class LineEditPushButton extends React.Component{
 		var pbClass = classNames("",this.props.classespb);
         return(<div>
             <LineEdit id={this.props.idle} classes={leClass} updateState={this.textField}/>
-			<PushButton id={this.props.idpb} classes={pbClass} handleClick={this.handleClick} buttonName={this.props.buttonName}/>
+			<PushButton argument={this.props.idpb} classes={pbClass} handleClick={this.handleClick} buttonName={this.props.buttonName}/>
         </div>);
     }
 }

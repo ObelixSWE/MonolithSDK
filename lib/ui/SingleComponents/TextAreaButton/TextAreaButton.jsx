@@ -39,7 +39,7 @@ export default class TextAreaButton extends React.Component{// non funziona il r
 		var taClass = classNames("",this.props.classesta);
         return(<div>
                 <textarea id={this.props.idta} className={taClass} width={this.props.width} height={this.props.height} onChange={this.textField}></textarea>
-                <PushButton id={this.props.idpb} classes={pbClass} handleClick={this.handleClick} buttonName={this.props.buttonName}/>
+                <PushButton argument={this.props.idpb} classes={pbClass} handleClick={this.handleClick} buttonName={this.props.buttonName}/>
             </div>
 
         );

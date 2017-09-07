@@ -55,9 +55,6 @@ Package.onUse(function(api) {
 		'lib/Bubbles/RandomBub/RandBubble.jsx',
 		'lib/Bubbles/RandomBub/RandBubbleCreationButton.jsx',
 		//'lib/Bubbles/bubbleDiscriminator.js',
-		'lib/Bubbles/ListBub/ListBubble.jsx',
-		'lib/Bubbles/ListBub/ListBubbleCreationButton.jsx',
-		'lib/Bubbles/ListBub/ListBubbleConfig.jsx',
 		//'lib/Bubbles/Bubble.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyBubble.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyBubbleCreationButton.jsx',
@@ -74,8 +71,6 @@ Package.onUse(function(api) {
 		//'lib/Bubbles/TranslationBub/TranslationCheck.js',
 		//'lib/Bubbles/TranslationBub/TranslationCreator.jsx',
 		//'lib/Bubbles/TranslationBub/TranslationDb.js',
-		'lib/Bubbles/ListBub/ListCheck.js',
-		'lib/Bubbles/ListBub/ListCreator.jsx',
 		//'lib/Bubbles/WeathBub/WeathCheck.js',
 		//'lib/Bubbles/WeathBub/WeathCreator.jsx',
 		//'lib/Bubbles/WeathBub/WeathDb.js',
@@ -111,8 +106,18 @@ Package.onUse(function(api) {
 		'lib/Sidearea2/SideArea2.jsx',
 		'lib/Sidearea2/ReceivedBubbles.jsx',
 		'lib/Bubbles/ListBub/AbsList.jsx',
-		'lib/Bubbles/ListBub/AbsList.jsx',
-		//'lib/Bubbles/ListBub/ChecklistCreationButton.jsx',
+		'lib/Bubbles/ListBub/ListCreator.jsx',
+		'lib/Bubbles/ListBub/ListBubble.jsx',
+		'lib/Bubbles/ListBub/ListCheckListNavigation.jsx',
+		'lib/Bubbles/ListBub/CheckListDb.js',
+		'lib/Bubbles/ListBub/CheckListCreation.jsx',
+		'lib/Bubbles/ListBub/ListBubbleCreationButton.jsx',
+		'lib/Bubbles/ListBub/style.css',
+		'lib/Bubbles/ListBub/CheckListEditing.jsx',
+		'lib/Bubbles/ListBub/Spinner.jsx',
+		'lib/Bubbles/ListBub/ListDb.js',
+		'lib/Bubbles/ListBub/ChecklistConfig.jsx',
+		'lib/Bubbles/ListBub/ListBubbleConfig.jsx',
 		'lib/Bubbles/ListBub/ChecklistCreator.jsx'
 	], ['client']);
 	api.addFiles([
@@ -177,6 +182,7 @@ Package.onUse(function(api) {
 		'lib/Bubbles/PollBub/PollMethod.js',
 		'lib/Bubbles/ListBub/ListMethod.js',
 		'lib/Bubbles/ListBub/ListDb.js',
+		'lib/Bubbles/ListBub/CheckListDb.js',
 		'server/main.js'],
 	['server']);
 

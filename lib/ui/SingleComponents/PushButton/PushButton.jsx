@@ -24,15 +24,15 @@ class PushButton extends React.Component {
     }
 
     onClick(){
-        this.props.handleClick(this.props.id);
+        this.props.handleClick(this.props.argument);
     }
 
     render() {
         let btnClass = classNames("btn btn-primary btn-lg",this.props.classes);
-        if(this.props.dis==true)
-            return <button id={this.props.id} type="button" className={btnClass} onClick={this.onClick} disabled>{this.props.buttonName}</button>
+        if(this.props.dis===true)
+            return <button type="button" className={btnClass} onClick={this.onClick} disabled>{this.props.buttonName}</button>
         else
-            return <button id={this.props.id} type="button" className={btnClass} onClick={this.onClick} >{this.props.buttonName}</button>
+            return <button type="button" className={btnClass} onClick={this.onClick} >{this.props.buttonName}</button>
     }
 }
 
@@ -41,7 +41,6 @@ export default PushButton;
 /*
 How to use:
 <PushButton
-    id= // like HTML "id" attribute
 	classes= // CSS classes
     handleClick={this."function name"}
     buttonName="button name"
