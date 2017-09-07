@@ -1,0 +1,65 @@
+/*
+*  Name :   VerticalLayout.jsx
+*  Location : /imports/UI/Layouts
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: {Breve descrizione del file}
+*  ----------------------------------------------
+*  History :
+*  Version: {Versione del file}
+*  Update data: {Data ultima modifica}
+*  Description: {descrizione della modifica}
+*  Author: {Autore della modifica}
+*/
+
+import style from '../CSS/styles.css';
+
+//importare boostrap
+
+import React, { Component } from 'react';
+import { render as reactRender } from 'react-dom';
+import { renderToString as reactRenderToString } from 'react-dom/server';
+import ContainedElement from './ContainedElement.jsx';
+
+class VerticalLayout extends React.Component{
+    constructor(props){
+        super(props);
+        this.renderChildren = this.renderChildren.bind(this);
+    }
+
+
+    renderChildren() {
+        let i = 0;
+        return React.Children.map(
+            this.props.children,
+                child => {
+                i++;
+                return (<ContainedElement key={i} classNames="col-md-12">{child}</ContainedElement>);
+            }
+        );
+    }
+
+
+    render(){
+        var classes = classNames("row",{"hidden" : this.props.hide},this.props.classNames);
+        return(
+            <div className={classes}>
+                {this.renderChildren()}
+            </div>
+        );
+    }
+}
+
+export default VerticalLayout;
+
+
+/*
+How to use:
+<VerticalLayout hide={"visibility state(true or false)"}>
+<Children/>
+<Children/>
+.
+.
+.
+</VerticalLayout>
+*/

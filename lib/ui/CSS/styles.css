@@ -1,0 +1,47 @@
+.hidden{
+    display : none;
+}
+
+.bubble-menu-button{
+	width: 50%;
+	margin: 5px;
+	margin-left: 25%;
+}
+
+.bubbleborder{
+	border: 2px solid gray;
+    border-radius: 10px;
+	margin-bottom: 5px;
+	padding: 3px;
+}
+
+.deletebutton{
+	float: right;
+	margin-top: 3px;
+	margin-right: 3px;
+}
+
+.bubble-creation-button{
+	background-color: #ccffff;
+}
+
+.config-area-menu{
+	background-color: #ccffcc;
+}
+
+.sent-bubble,
+.received-bubble{
+	background-color: #ffcccc;
+}
+
+.al-right{
+    float: right;
+}
+
+.al.left{
+    float: left;
+}
+
+.rc-old input[type="text"]{
+    width: 80%;
+}
