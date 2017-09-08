@@ -1,9 +1,9 @@
 /*
 *  Name :  HelloCreator.jsx
-*  Location : /imports/UI/Bubbles
-*  Author: Riccardo Saggese
+*  Location : /lib/Bubbles/HelloBubble/HelloCreator.jsx
+*  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
-*  Description: {class HelloCreator }
+*  Description: class HelloCreator 
 */
 
 import BubbleCreator from '../../uiConstruction/BubbleCreator';

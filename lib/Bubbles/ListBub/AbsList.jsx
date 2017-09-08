@@ -1,10 +1,11 @@
 /*
 *  Name : AbsList.jsx
-*  Location : /imports/UI/Bubbles/ListBub
+*  Location : /lib/Bubbles/ListBub/AbsList.jsx
 *  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
-*  Description: {class AbsList}
+*  Description: class AbsList
 */
+
 
 import React, { Component } from 'react';
 import AbsBubbleConfig from '../../../lib/uiConstruction/AbsBubbleConfig';

@@ -1,10 +1,11 @@
 /*
 *  Name :   ListCreator.jsx
-*  Location : /imports/UI/Bubbles/ListBub
+*  Location : /lib/Bubbles/ListBub/ListCreator.jsx
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
 *  Description: {class ListCreator}
 */
+
 
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';

@@ -3,14 +3,16 @@
 *  Location : /imports/UI/Layouts
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
+*  Description: position all the elements vertically
 *  ----------------------------------------------
 *  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Version: 1.0.0
+*  Update data: 2017-08-25
+*  Description: added comments "how to use"
+*  Author: Silvio Meneguzzo
 */
+
+
 
 import style from '../CSS/styles.css';
 

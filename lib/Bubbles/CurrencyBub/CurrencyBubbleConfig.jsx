@@ -1,10 +1,13 @@
 /*
-*  Name :   BubbleConfig.jsx
-*  Location : /impor../../UI/Bubbles
+*  Name :   CurrencyBubbleConfig.jsx
+*  Location : /lib/Bubbles/CurrencyBub/CurrencyBubbleConfig.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class CurrencyBubbleConfig}
+*  Description: class CurrencyBubbleConfig
 */
+
+
+
 
 import React, { Component } from 'react'
 import VerticalLayout from "../../ui/Layouts/VerticalLayout";

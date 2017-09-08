@@ -1,11 +1,17 @@
+/*
+*  Name :  Method.js
+*  Location : /server/Method.js
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: method server side
+*/
 
 import {Meteor} from 'meteor/meteor';
 import {BubbleCollection, aBubbleCollection} from '../lib/database/databaseInitialization.js';
 import {CheckHandler} from '../lib/checks/CheckHandler.js';
 //import Check from "../imports/lib/checks/Check";
 
-// ricorda che esiste this.userId
-// in caso di interruzione della connessione viene chiamato due volte. come fare?
+
 // throw new Meteor.Error("logged-out", "The user must be logged in to post a comment.");
 
 Meteor.methods({
@@ -33,7 +39,7 @@ Meteor.methods({
 		);
 		return true;
 	},
-	updateBubble(bubbleId, funDataEdit, funDataEditArgs) { // solo per operazioni di set. controlla le chiavi con set validateUpdate
+	updateBubble(bubbleId, funDataEdit, funDataEditArgs) { 
 		const edit1 = Meteor.call(funDataEdit, bubbleId, funDataEditArgs);
 		/*
 		if (modifier.$set !== undefined) {

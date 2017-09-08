@@ -1,3 +1,12 @@
+/*
+*  Name :  SideArea1.js
+*  Location : /client/SideArea1.js
+*  Author: Riccardo Saggese
+*  Creation Data: 2017-06-27
+*  Description: SideArea1
+*/
+
+
 import { Template } from 'meteor/templating';
 import './templateSideArea1.html';
 

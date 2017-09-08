@@ -1,10 +1,13 @@
 /*
-*  Name :   RandBubbleConfig.js
-*  Location : /imports/UI/Bubbles
+*  Name :   RandBubbleConfig.jsx
+*  Location : /lib/Bubbles/RandBub/RandBubbleConfig.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class RandBubbleConfig}
+*  Description: class RandBubbleConfig
 */
+
+
+
 
 import React, { Component } from 'react';
 import RadioButtonGroup from '../../ui/SingleComponents/RadioButtonGroup/RadioButtonGroup';

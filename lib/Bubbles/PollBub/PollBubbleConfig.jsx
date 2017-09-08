@@ -1,10 +1,11 @@
 /*
 *  Name : PollBubbleConfig.jsx
-*  Location : /imports/UI/Bubbles
+*  Location : /lib/Bubbles/PollBub/PollBubbleConfig.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
 *  Description: {class PollBubbleConfig}
 */
+
 
 import React, { Component } from 'react';
 import PushButton from "../../ui/SingleComponents/PushButton/PushButton";

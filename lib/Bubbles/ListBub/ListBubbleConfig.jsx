@@ -1,9 +1,9 @@
 /*
 *  Name :   ListBubbleConfig.js
-*  Location : /imports/UI/Bubbles/ListBub
+*  Location : /lib/Bubbles/ListBub/ListBubbleConfig.jsx
 *  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
-*  Description: {class ListBubbleConfig}
+*  Description: class ListBubbleConfig
 */
 
 import React, { Component } from 'react';

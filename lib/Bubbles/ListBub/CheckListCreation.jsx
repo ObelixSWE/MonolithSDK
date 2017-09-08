@@ -1,3 +1,12 @@
+/*
+*  Name :   ChecklistCreation.jsx
+*  Location : /lib/Bubbles/ListBub/ChecklistCreation.jsx
+*  Author: Emanuele Crespan
+*  Creation Data: 2017-06-27
+*  Description: {class ChecklistCreation}
+*/
+
+
 import LineEdit from '../../ui/SingleComponents/LineEdit/LineEdit.jsx';
 import PushButton from '../../ui/SingleComponents/PushButton/PushButton.jsx';
 import VerticalLayout from '../../ui/Layouts/VerticalLayout.jsx';

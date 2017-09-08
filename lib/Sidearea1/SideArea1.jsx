@@ -1,15 +1,15 @@
 /*
  *  Name :   SideArea1.jsx
- *  Location : /imports/UI/SideArea1
+ *  Location : /imports/UI/SideArea1.jsx
  *  Author: Nicolò Rigato
  *  Creation Data: 2017-06-27
- *  Description: {Breve descrizione del file}
+ *  Description: area that contains sent bubbles and bubble's creation menu
  *  ----------------------------------------------
  *  History :
- *  Version: {Versione del file}
- *  Update data: {Data ultima modifica}
- *  Description: {descrizione della modifica}
- *  Author: {Autore della modifica}
+ *  Version: 1.0.0
+ *  Update data: 2017-09-01
+ *  Description: bug fix
+ *  Author: Silvio Meneguzzo
  */
 
 

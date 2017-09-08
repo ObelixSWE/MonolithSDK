@@ -1,11 +1,10 @@
 /*
 *  Name :   RandBubbleCreationButton.jsx
-*  Location : /imports/UI/Bubbles
+*  Location : /lib/Bubbles/RandBub/RandBubbleCreationButton.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class RandBubbleCreationButton }
+*  Description: class RandBubbleCreationButton 
 */
-
 
 import AbsButton from '../../../lib/uiConstruction/AbsButton';
 

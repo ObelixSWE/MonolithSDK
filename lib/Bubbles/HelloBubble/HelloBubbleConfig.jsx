@@ -1,9 +1,9 @@
 /*
-*  Name :   HelloBubbleConfig.js
-*  Location : /imports/UI/Bubbles
+*  Name :   HelloBubbleConfig.jsx
+*  Location : /lib/Bubbles/HelloBubble/HelloBubbleConfig.jsx
 *  Author: Emanuele Crespan
 *  Creation Data: 2017-09-05
-*  Description: {class HelloBubbleConfig}
+*  Description: class HelloBubbleConfig
 */
 
 import React, { Component } from 'react';

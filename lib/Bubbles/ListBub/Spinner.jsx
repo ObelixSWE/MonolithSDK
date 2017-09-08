@@ -1,3 +1,12 @@
+/*
+*  Name :   Spinner.jsx
+*  Location : /lib/Bubbles/ListBub/Spinner.jsx
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: Spinner
+*/
+
+
 import React, { Component } from 'react';
 import './style.css';
 

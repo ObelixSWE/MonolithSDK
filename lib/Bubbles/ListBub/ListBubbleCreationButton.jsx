@@ -1,9 +1,9 @@
 /*
 *  Name :   ListBubbleCreationButton.jsx
-*  Location : /imports/UI/Bubbles/ListBub
+*  Location : /lib/Bubbles/ListBub/ListBubbleCreationButton.jsx
 *  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
-*  Description: {class ListBubbleCreationButton}
+*  Description: class ListBubbleCreationButton
 */
 
 

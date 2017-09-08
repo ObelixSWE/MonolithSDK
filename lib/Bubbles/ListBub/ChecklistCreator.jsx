@@ -1,10 +1,12 @@
 /*
 *  Name :   ChecklistCreator.jsx
-*  Location : /imports/UI/Bubbles/ListBub
+*  Location : /lib/Bubbles/ListBub/ChecklistCreator.jsx
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
-*  Description: {class ChecklistCreator}
+*  Description: class ChecklistCreator
 */
+
+
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';
 

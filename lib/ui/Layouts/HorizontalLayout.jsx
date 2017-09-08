@@ -3,14 +3,17 @@
 *  Location : /imports/UI/Layouts
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
+*  Description: {
+Place all elements horizontally up to a maximum of 12}
 *  ----------------------------------------------
 *  History :
-*  Version: 0.0.1
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Version: 1.0.0
+*  Update data: 2017-08-25
+*  Description: added comments "how to use"
+*  Author: Silvio Meneguzzo
 */
+
+
 import style from '../CSS/styles.css';
 import React, { Component } from 'react';
 import { render as reactRender } from 'react-dom';

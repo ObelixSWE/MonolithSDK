@@ -1,3 +1,12 @@
+/*
+*  Name : package.js
+*  Author: Nicolò Rigato
+*  Creation Date: 2017-07-24
+*  Description: package
+*/
+
+
+
 Package.describe({
 	name: 'monolith-sdk',
 	version: '0.0.1',

@@ -1,3 +1,18 @@
+/*
+*  Name :   AbsBubble.jsx
+*  Location : /lib/uiConstruction/AbsBubble.jsx
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-07-18
+*  Description: Abstract class of generic Bubble
+*  ----------------------------------------------
+*/
+
+
+
+
+
+
+
 import React, { Component } from 'react';
 //import { render as reactRender } from 'react-dom';
 

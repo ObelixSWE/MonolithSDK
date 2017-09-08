@@ -1,10 +1,12 @@
 /*
 *  Name :   ChecklistConfig.jsx
-*  Location : /imports/UI/Bubbles/ListBub
+*  Location : /lib/Bubbles/ListBub/ChecklistConfig.jsx
 *  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
 *  Description: {class ChecklistConfig}
 */
+
+
 
 import React, { Component } from 'react';
 import LineEdit from '../../ui/SingleComponents/LineEdit/LineEdit.jsx';

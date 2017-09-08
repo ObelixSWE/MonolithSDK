@@ -1,3 +1,12 @@
+/*
+*  Name :   BubbleDiscriminator.jsx
+*  Location : /lib/uiConstruction/BubbleDiscriminator.jsx
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-07-18
+*  Description: defines what type of bubble it is
+*  ----------------------------------------------
+*/
+
 import BubbleCreator from './BubbleCreator.jsx';
 import { Meteor } from 'meteor/meteor';
 

@@ -1,3 +1,14 @@
+/*
+*  Name :   ReceivedBubbles.jsx
+*  Location : /lib/SideArea2/ReceivedBubbles.jsx
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: class react that shows the bubbles received
+*  ----------------------------------------------
+
+*/
+
+
 import React from 'react';
 import {BubbleDiscriminator} from '../uiConstruction/BubbleDiscriminator.jsx';
 import '../ui/CSS/styles.css';

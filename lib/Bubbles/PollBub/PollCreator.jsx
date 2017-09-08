@@ -1,10 +1,11 @@
 /*
-*  Name :   PollCreator.js
-*  Location : /imports/UI/Bubbles
+*  Name :   PollCreator.jsx
+*  Location : /lib/Bubbles/PollBub/PollCreator.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class PollCreator}
+*  Description: class PollCreator
 */
+
 
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';

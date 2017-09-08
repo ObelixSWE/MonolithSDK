@@ -1,10 +1,12 @@
 /*
 *  Name :   ListBubble.jsx
-*  Location : /imports/UI/Bubbles/ListBub
+*  Location : /lib/Bubbles/ListBub/ListBubble.jsx
 *  Author: Emanuele Crespan
 *  Creation Data: 2017-06-27
-*  Description: {class ListBubble}
+*  Description: class ListBubble
 */
+
+
 
 import React, { Component } from 'react'
 import VerticalLayout from "../../ui/Layouts/VerticalLayout";

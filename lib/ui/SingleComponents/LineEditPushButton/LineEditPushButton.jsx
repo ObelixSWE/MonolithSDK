@@ -6,11 +6,14 @@
 *  Description: A React class that represent a LineEdit with a Button that return the LineEdit content when clicked
 *  ----------------------------------------------
 *  History :
-*  Version: 0.0.1
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
+*  Version: 1.0.0
+*  Update data: 2017-08-25
+*  Description: added comments "how to use"
+*  Author: Silvio Meneguzzo
 */
+
+
+
 
 
 import React, { Component } from 'react'

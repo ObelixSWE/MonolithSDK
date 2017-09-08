@@ -1,9 +1,9 @@
 /*
 *  Name :   HelloBubbleCreationButton.jsx
-*  Location : /imports/UI/Bubbles
+*  Location : /lib/Bubbles/HelloBubble/HelloBubbleCreationButton.jsx
 *  Author: Emanuele Crespan
 *  Creation Data: 2017-09-05
-*  Description: {class HelloBubbleCreationButton }
+*  Description: class HelloBubbleCreationButton 
 */
 
 

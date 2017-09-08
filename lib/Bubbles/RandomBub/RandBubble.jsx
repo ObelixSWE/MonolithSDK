@@ -1,10 +1,11 @@
 /*
-*  Name :   RandBubble.js
-*  Location : /imports/UI/Bubbles
+*  Name :   RandBubble.jsx
+*  Location : /lib/Bubbles/RandBub/RandBubble.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class RandBubble}
+*  Description: class RandBubble
 */
+
 
 import React, { Component } from 'react';
 import VerticalLayout from '../../ui/Layouts/VerticalLayout';

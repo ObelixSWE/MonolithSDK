@@ -1,11 +1,11 @@
 /*
-*  Name : test.js
+*  Name : Test.js
+Location : /test/Tests.js
 *  Author: Federica Schifano
 *  Author: Tomas Mali
 *  Creation Date: 2017-07-24
 *  Description: Tests
 */
-
 
 
 import React from 'react';

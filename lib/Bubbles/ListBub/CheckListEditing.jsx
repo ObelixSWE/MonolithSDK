@@ -1,3 +1,13 @@
+/*
+*  Name :   ChecklistEditing.jsx
+*  Location : /lib/Bubbles/ListBub/ChecklistEditing.jsx
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: class ChecklistEditing
+*/
+
+
+
 import LineEdit from '../../ui/SingleComponents/LineEdit/LineEdit.jsx';
 import PushButton from '../../ui/SingleComponents/PushButton/PushButton.jsx';
 import VerticalLayout from '../../ui/Layouts/VerticalLayout.jsx';

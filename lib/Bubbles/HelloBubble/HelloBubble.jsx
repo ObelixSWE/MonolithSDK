@@ -1,10 +1,11 @@
 /*
-*  Name :   HelloBubble.js
-*  Location : /imports/UI/Bubbles
+*  Name :   HelloBubble.jsx
+*  Location : /lib/Bubbles/HelloBubble/HelloBubble.jsx
 *  Author: Emanuele Crespan
 *  Creation Data: 2017-09-05
-*  Description: {class HelloBubble}
+*  Description: class HelloBubble
 */
+
 
 import React, { Component } from 'react';
 import VerticalLayout from '../../ui/Layouts/VerticalLayout';

@@ -1,3 +1,12 @@
+/*
+*  Name :  main.js
+*  Location : /server/main.js
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: main server side
+*/
+
+
 import '../lib/database/databaseInitialization';
 import '../lib/checks/CheckHandler';
 import '../lib/Bubbles/CurrencyBub/CurrencyCheck';

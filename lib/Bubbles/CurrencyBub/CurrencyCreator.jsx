@@ -1,10 +1,11 @@
 /*
-*  Name :   CurrencyCreator.js
-*  Location : /imports/UI/Bubbles
+*  Name :   CurrencyCreator.jsx
+*  Location : /lib/Bubbles/CurrencyBub/CurrencyCreator.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class CurrencyCreator}
+*  Description: class CurrencyCreator
 */
+
 
 import BubbleCreator from '../../uiConstruction/BubbleCreator';
 import { BubbleDiscriminator } from '../../uiConstruction/BubbleDiscriminator';

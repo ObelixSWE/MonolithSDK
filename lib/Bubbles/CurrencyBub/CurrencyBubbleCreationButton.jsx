@@ -1,10 +1,14 @@
 /*
-*  Name :   BubbleCreationButton.jsx
-*  Location : /imports/UI/Bubbles
+*  Name :  CurrencyBubbleCreationButton.jsx
+*  Location : /lib/Bubbles/CurrencyBub/CurrencyBubbleCreationButton.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class CurrencyBubbleCreationButton}
+*  Description: class CurrencyBubbleCreationButton
 */
+
+
+
+
 
 import AbsButton from '../../../lib/uiConstruction/AbsButton.jsx';
 

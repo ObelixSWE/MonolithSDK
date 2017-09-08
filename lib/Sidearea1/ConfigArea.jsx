@@ -1,3 +1,13 @@
+/*
+*  Name :   ConfigArea.jsx
+*  Location : /lib/Sidearea1/ConfigArea.jsx
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: Bubble creation area
+
+*  ----------------------------------------------
+
+*/
 
 import React from 'react';
 

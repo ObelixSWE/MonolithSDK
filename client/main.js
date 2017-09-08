@@ -1,3 +1,10 @@
+/*
+*  Name :  main.js
+*  Location : /client/main.js
+*  Author: Riccardo Saggese
+*  Creation Data: 2017-06-27
+*  Description: main
+*/
 
 //Tracker.autorun(() => {
 
