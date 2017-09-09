@@ -56,7 +56,6 @@ export default class ListBubbleConfig extends AbsList {
                 </div>
             );
         }
-//mettere this.props.lists
         return (
             <div>
                 <h3>List Name:</h3>

@@ -17,14 +17,14 @@ export default class ListBubble extends AbsBubble{
     constructor(props){
         super(props);
         this.checkItem=this.checkItem.bind(this);
-        this.buttonSimbol=this.buttonSimbol.bind(this);
+        this.buttonSymbol=this.buttonSymbol.bind(this);
     }
 
     checkItem(position){
         ListDb.update(this.props._id, 'updateCheckListItem', position);
     }
 
-    buttonSimbol (position) {
+    buttonSymbol (position) {
         if(this.props.ops[position].check){
             return {simb: <span>&radic;</span>, active: true};
         } else {
@@ -38,8 +38,8 @@ export default class ListBubble extends AbsBubble{
             listItems.push(
                 <div key={i}>
                     <PushButton argument={i}
-                                buttonName={this.buttonSimbol(i).simb}
-                                dis={this.buttonSimbol(i).active}
+                                buttonName={this.buttonSymbol(i).simb}
+                                dis={this.buttonSymbol(i).active}
                                 handleClick={this.checkItem}
                     />
                     <span className="itemInList">{this.props.ops[i].item}</span>

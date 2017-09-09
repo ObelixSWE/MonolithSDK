@@ -34,5 +34,5 @@ class HelloCreator extends BubbleCreator {
 
 
 
-const rc = new HelloCreator('Hello');
+const rc = new HelloCreator('hello');
 BubbleDiscriminator.registerBubbleCreator(rc);
