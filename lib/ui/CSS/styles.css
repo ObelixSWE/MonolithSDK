@@ -43,7 +43,8 @@
 
 .sent-bubble,
 .received-bubble{
-	background-color: #ffcccc;
+	background-color: #afceff;
+	/*#ffcccc;*/
 }
 
 .al-right{

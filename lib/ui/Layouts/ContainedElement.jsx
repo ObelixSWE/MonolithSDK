@@ -19,7 +19,7 @@ class ContainedElement extends React.Component{
         super(props);
     }
     render(){
-        var classes = classNames(this.props.classNames);
+        let classes = classNames(this.props.classNames);
         return <div className={classes}>{React.cloneElement(this.props.children)}</div>;
     }
 }

@@ -11,6 +11,7 @@ import PushButton from '../../ui/SingleComponents/PushButton/PushButton';
 import LineEdit from '../../ui/SingleComponents/LineEdit/LineEdit';
 import VerticalLayout from '../../ui/Layouts/VerticalLayout';
 import AbsBubbleConfig from '../../../lib/uiConstruction/AbsBubbleConfig';
+import {HelloDb} from "./HelloDb";
 
 
 export default class HelloBubbleConfig extends AbsBubbleConfig{
@@ -27,7 +28,7 @@ export default class HelloBubbleConfig extends AbsBubbleConfig{
     }
 
     send(){
-        let insProm = HelloDb.insert({},'BubbleHelloInsert',this.state.value);
+        let insProm = HelloDb.insert({value: this.state.value});
         insProm.then(
             (result) => {this.props.closeMenu();},
             (error) => {console.log(error);}
@@ -38,10 +39,7 @@ export default class HelloBubbleConfig extends AbsBubbleConfig{
         return(
             <VerticalLayout>
                 <LineEdit
-                    id="helloLineEdit"
-                    classes=""
                     updateState={this.getValue}
-                    value=""
                 />
                 <PushButton buttonName='Send' handleClick={this.send}/>
             </VerticalLayout>);
