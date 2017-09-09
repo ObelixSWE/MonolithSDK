@@ -34,16 +34,16 @@
 }
 
 .bubble-creation-button{
-	background-color: #ccffff;
+	background-color: #f0f8ff;
 }
 
 .config-area-menu{
-	background-color: #ccffcc;
+	background-color: #e0ffff;
 }
 
 .sent-bubble,
 .received-bubble{
-	background-color: #afceff;
+	background-color: #add8e6;
 	/*#ffcccc;*/
 }
 

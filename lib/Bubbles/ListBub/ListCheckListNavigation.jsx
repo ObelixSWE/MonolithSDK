@@ -69,10 +69,11 @@ export class ListCheckListNavigation extends React.Component{
                 let options = [];
                 for (let j = 0; j < this.props.lists[i].ops.length; j++) {
                     options.push(
-                        <div key={j}>
+                        <div key={j} className="check-div">
                             <span className="itemInList">{this.props.lists[i].ops[j]}</span>
                             <PushButton argument={this.props.lists[i].ops[j]}
                                         buttonName="Add"
+										classes="addCheck-button btn-xs"
                                         handleClick={this.addToList}/> <br/>
                         </div>
                     );

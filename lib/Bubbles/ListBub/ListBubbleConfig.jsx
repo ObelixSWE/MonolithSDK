@@ -60,11 +60,11 @@ export default class ListBubbleConfig extends AbsList {
             <div>
                 <h3>List Name:</h3>
                 <LineEdit id="title" placeholder="Insert List Name" updateState={this.titleChange}/><br/>
-                <PushButton buttonName="CheckLists" classes="checklist_button btn-sm" handleClick={this.display_checklist}/><br/>
+                <PushButton buttonName="CheckLists" classes="checklist-button btn-sm" handleClick={this.display_checklist}/><br/>
 				<ListCheckListNavigationContainer hide={this.state.hide} add={this.addOpt}/>
                 {rows}<br/>
-                <PushButton buttonName="Add" handleClick={this.addOpt}/><br/>
-                <PushButton buttonName="Send" handleClick={this.send}/>
+                <PushButton buttonName="Add" classes="btn-sm add-option-button" handleClick={this.addOpt}/><br/>
+                <PushButton buttonName="Send" classes="" handleClick={this.send}/>
             </div>
 
         );

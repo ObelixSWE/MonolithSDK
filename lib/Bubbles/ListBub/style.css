@@ -54,3 +54,19 @@ SPINNER
 		  -webkit-transform: scale(1.0);
 	  }
 }
+
+.addCheck-button{
+	float:right;
+}
+
+.check-div{
+	width:80%;
+}
+
+.checklist-button{
+	margin-top:3px;
+	margin-bottom:3px;
+}
+.add-option-button{
+	margin-bottom:3px;
+}
