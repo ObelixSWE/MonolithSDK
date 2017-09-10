@@ -20,7 +20,7 @@ import '../lib/Bubbles/ListBub/ChecklistCreator';
 
 
 //import '../lib/Bubbles/TranslationBub/TranslationCreator';
-import '../lib/Bubbles/HelloBubble/HelloCreator';
+//import '../lib/Bubbles/HelloBubble/HelloCreator';
 import './SideArea1';
 import './SideArea2';
 
