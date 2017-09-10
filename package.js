@@ -49,6 +49,7 @@ Package.onUse(function(api) {
 		'client/SideArea2.js',
 		'client/SideArea1.js',
 		'client/sideAreaConfig.js',
+		'lib/exports.js',
 		'lib/uiConstruction/AbsButton.jsx',
 		'lib/uiConstruction/AbsBubble.jsx',
 		'lib/uiConstruction/BubbleCreator.jsx',
@@ -115,7 +116,7 @@ Package.onUse(function(api) {
 	], ['client']);
 	api.addFiles([
 		'lib/Bubbles/RandomBub/RandMethod.js',
-		'server/exports.js',
+		'lib/exports.js',
 		'server/Methods.js',
 		'lib/uiConstruction/AbsButton.jsx',
 		'lib/uiConstruction/AbsBubble.jsx',
@@ -133,9 +134,9 @@ Package.onUse(function(api) {
 		'lib/Bubbles/ListBub/ListMethod.js',
 		'lib/Bubbles/ListBub/ListDb.js',
 		'lib/Bubbles/ListBub/CheckListDb.js',
-			'lib/Bubbles/HelloBubble/HelloDb.js',
 		'server/main.js'],
 	['server']);
+/*
 	api.addFiles([
 		'lib/Bubbles/HelloBubble/HelloCheck.js',
 		'lib/Bubbles/HelloBubble/HelloBubbleConfig.jsx',
@@ -143,8 +144,9 @@ Package.onUse(function(api) {
 		'lib/Bubbles/HelloBubble/HelloBubble.jsx',
 		'lib/Bubbles/HelloBubble/HelloCreator.jsx'
 	], ['client']);
+	api.addFiles({'lib/Bubbles/HelloBubble/HelloDb.js'], ['client']);*/
 	api.export('MonolithUI', ['client']);
-	api.export('Monolith', ['server']);
+	api.export('Monolith', ['client', 'server']);
 });
 
 Package.onTest(function(api) {

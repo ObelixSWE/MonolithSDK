@@ -1,5 +1,3 @@
-MonolithUI={};
-
 //components
 
 import CheckBoxList from '../lib/ui/SingleComponents/CheckBoxList/CheckBoxList';
@@ -14,29 +12,12 @@ import RadioButtonGroup from '../lib/ui/SingleComponents/RadioButtonGroup/RadioB
 import TextAreaButton from '../lib/ui/SingleComponents/TextAreaButton/TextAreaButton';
 import TextAreaComboBox from '../lib/ui/SingleComponents/TextAreaComboBox/TextAreaComboBox';
 
-MonolithUI.components={
-	CheckBoxList,
-	CheckButton,
-	ComboBox,
-	Image,
-	ImageButton,
-	LineEdit,
-	LineEditComboBox,
-	PushButton,
-	RadioButtonGroup,
-	TextAreaButton,
-	TextAreaComboBox
-};
-
 //Layouts
 
 import VerticalLayout from '../lib/ui/Layouts/VerticalLayout';
 import HorizontalLayout from '../lib/ui/Layouts/HorizontalLayout';
 
-MonolithUI.layout={
-	VerticalLayout,
-	HorizontalLayout
-};
+
 
 // UI construction
 
@@ -47,10 +28,27 @@ import BubbleCreator from '../lib/uiConstruction/BubbleCreator';
 import BubbleDiscriminator from '../lib/uiConstruction/BubbleDiscriminator';
 
 
-MonolithUI.uiConstruction = {
+
+
+
+MonolithUI ={
+	CheckBoxList,
+	CheckButton,
+	ComboBox,
+	Image,
+	ImageButton,
+	LineEdit,
+	LineEditComboBox,
+	PushButton,
+	RadioButtonGroup,
+	TextAreaButton,
+	TextAreaComboBox,
+	VerticalLayout,
+	HorizontalLayout,
 	AbsBubble,
 	AbsButton,
 	AbsBubbleConfig,
 	BubbleCreator,
 	BubbleDiscriminator
 };
+
