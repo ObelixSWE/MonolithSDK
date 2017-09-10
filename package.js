@@ -98,7 +98,7 @@ Package.onUse(function(api) {
 		'lib/Sidearea1/SentBubbles.jsx',
 		'lib/Sidearea1/SideArea1.jsx',
 		'lib/Sidearea2/SideArea2.jsx',
-		'lib/Sidearea2/ReceivedBubbles.jsx',
+		'lib/Sidearea2/ReceivedBubbles.jsx'/*,
 		'lib/Bubbles/ListBub/AbsList.jsx',
 		'lib/Bubbles/ListBub/ListCreator.jsx',
 		'lib/Bubbles/ListBub/ListBubble.jsx',
@@ -112,7 +112,7 @@ Package.onUse(function(api) {
 		'lib/Bubbles/ListBub/ListDb.js',
 		'lib/Bubbles/ListBub/ChecklistConfig.jsx',
 		'lib/Bubbles/ListBub/ListBubbleConfig.jsx',
-		'lib/Bubbles/ListBub/ChecklistCreator.jsx'
+		'lib/Bubbles/ListBub/ChecklistCreator.jsx'*/
 	], ['client']);
 	api.addFiles([
 		'lib/Bubbles/RandomBub/RandMethod.js',
@@ -130,21 +130,13 @@ Package.onUse(function(api) {
 		'lib/database/databaseInitialization.js',
 		'lib/Bubbles/RandomBub/RandCheck.js',
 		'lib/Bubbles/CurrencyBub/CurrencyMethod.js',
-		'lib/Bubbles/PollBub/PollMethod.js',
+		'lib/Bubbles/PollBub/PollMethod.js', /*
 		'lib/Bubbles/ListBub/ListMethod.js',
 		'lib/Bubbles/ListBub/ListDb.js',
-		'lib/Bubbles/ListBub/CheckListDb.js',
+		'lib/Bubbles/ListBub/CheckListDb.js',*/
 		'server/main.js'],
 	['server']);
-/*
-	api.addFiles([
-		'lib/Bubbles/HelloBubble/HelloCheck.js',
-		'lib/Bubbles/HelloBubble/HelloBubbleConfig.jsx',
-		'lib/Bubbles/HelloBubble/HelloBubbleCreationButton.jsx',
-		'lib/Bubbles/HelloBubble/HelloBubble.jsx',
-		'lib/Bubbles/HelloBubble/HelloCreator.jsx'
-	], ['client']);
-	api.addFiles({'lib/Bubbles/HelloBubble/HelloDb.js'], ['client']);*/
+
 	api.export('MonolithUI', ['client']);
 	api.export('Monolith', ['client', 'server']);
 });
