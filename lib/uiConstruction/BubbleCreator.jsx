@@ -1,3 +1,13 @@
+/*
+*  Name :   BubbleCreator.jsx
+*  Location : /lib/uiConstruction/BubbleCreator.jsx
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-07-18
+*  Description: Abstract class of generic Creation Bubble
+*  ----------------------------------------------
+*/
+
+
 
 export default class BubbleCreator {
 	constructor(bubbleName) {

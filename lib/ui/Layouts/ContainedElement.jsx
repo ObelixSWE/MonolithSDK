@@ -3,14 +3,12 @@
 *  Location : /imports/UI/Layouts
 *  Author: Nicolò Rigato
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
+*  Description: {associate classnames to props}
 *  ----------------------------------------------
-*  History :
-*  Version: {Versione del file}
-*  Update data: {Data ultima modifica}
-*  Description: {descrizione della modifica}
-*  Author: {Autore della modifica}
 */
+
+
+
 
 import React, { Component } from 'react'
 import { render as reactRender } from 'react-dom'
@@ -21,7 +19,7 @@ class ContainedElement extends React.Component{
         super(props);
     }
     render(){
-        var classes = classNames(this.props.classNames);
+        let classes = classNames(this.props.classNames);
         return <div className={classes}>{React.cloneElement(this.props.children)}</div>;
     }
 }

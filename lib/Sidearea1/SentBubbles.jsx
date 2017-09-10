@@ -1,3 +1,14 @@
+/*
+*  Name :   SentBubbles.jsx
+*  Location : /lib/Sidearea1/SentBubbles.jsx
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: send bubble button
+
+
+*  ----------------------------------------------
+
+*/
 
 import React, {Component} from 'react';
 import {BubbleDiscriminator} from '../uiConstruction/BubbleDiscriminator.jsx';

@@ -1,3 +1,15 @@
+/*
+*  Name :   BubbleMenu.jsx
+*  Location : /lib/Sidearea1/BubbleMenu
+*  Author: Nicolò Rigato
+*  Creation Data: 2017-06-27
+*  Description: createConfigArea function to create config menu
+*  ----------------------------------------------
+
+*/
+
+
+
 import React, {Component} from 'react';
 import {BubbleDiscriminator} from '../uiConstruction/BubbleDiscriminator.jsx';
 

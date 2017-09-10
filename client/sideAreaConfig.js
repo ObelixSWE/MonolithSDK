@@ -1,3 +1,10 @@
+/*
+*  Name :  SideAreaConfig.js
+*  Location : /client/SideAreaConfig.js
+*  Author: Riccardo Saggese
+*  Creation Data: 2017-06-27
+*  Description: Configuration both SideArea
+*/
 
 Meteor.startup(() => {
 	RocketChat.TabBar.addButton({

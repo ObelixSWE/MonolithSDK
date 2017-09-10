@@ -1,9 +1,9 @@
 /*
-*  Name :   Bubble.jsx
-*  Location : /imports/UI/Bubbles
+*  Name :   CurrencyBubble.jsx
+*  Location : /lib/Bubbles/CurrencyBub/CurrencyBubble.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class CurrencyBubble}
+*  Description: class CurrencyBubble
 */
 
 import React, { Component } from 'react';

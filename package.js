@@ -1,3 +1,12 @@
+/*
+*  Name : package.js
+*  Author: Nicolò Rigato
+*  Creation Date: 2017-07-24
+*  Description: package
+*/
+
+
+
 Package.describe({
 	name: 'monolith-sdk',
 	version: '0.0.1',
@@ -30,14 +39,17 @@ Package.onUse(function(api) {
 	]);
 	api.mainModule('client/main.js', 'client');
 	api.mainModule('server/main.js', 'server');
+	api.addFiles('lib/ui/CSS/bootstrap.css', ['client'/*, 'server'*/]);
+	api.addFiles('lib/ui/CSS/styles.css', ['client'/*, 'server'*/]);
 	api.addFiles([
 		'client/main.js',
+		'client/exports.js',
 		'client/templateSideArea1.html',
 		'client/templateSideArea2.html',
 		'client/SideArea2.js',
 		'client/SideArea1.js',
-		//'client/main.js',
 		'client/sideAreaConfig.js',
+		'lib/exports.js',
 		'lib/uiConstruction/AbsButton.jsx',
 		'lib/uiConstruction/AbsBubble.jsx',
 		'lib/uiConstruction/BubbleCreator.jsx',
@@ -48,14 +60,9 @@ Package.onUse(function(api) {
 		'lib/callerInitialization.js',
 		'lib/database/BubbleDatabase.js',
 		'lib/database/databaseInitialization.js',
-		//'lib/Bubbles/TranslationBub/TranslationBubble.jsx',
-		//'lib/Bubbles/TranslationBub/TranslationBubbleConfig.jsx',
-		//'lib/Bubbles/TranslationBub/TranslationBubbleCreationButton.jsx',
 		'lib/Bubbles/RandomBub/RandBubbleConfig.jsx',
 		'lib/Bubbles/RandomBub/RandBubble.jsx',
 		'lib/Bubbles/RandomBub/RandBubbleCreationButton.jsx',
-		//'lib/Bubbles/bubbleDiscriminator.js',
-		//'lib/Bubbles/Bubble.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyBubble.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyBubbleCreationButton.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyBubbleConfig.jsx',
@@ -68,25 +75,12 @@ Package.onUse(function(api) {
 		'lib/Bubbles/RandomBub/RandCheck.js',
 		'lib/Bubbles/RandomBub/RandCreator.jsx',
 		'lib/Bubbles/RandomBub/RandDb.js',
-		//'lib/Bubbles/TranslationBub/TranslationCheck.js',
-		//'lib/Bubbles/TranslationBub/TranslationCreator.jsx',
-		//'lib/Bubbles/TranslationBub/TranslationDb.js',
-		//'lib/Bubbles/WeathBub/WeathCheck.js',
-		//'lib/Bubbles/WeathBub/WeathCreator.jsx',
-		//'lib/Bubbles/WeathBub/WeathDb.js',
 		'lib/Bubbles/CurrencyBub/CurrencyCheck.js',
 		'lib/Bubbles/CurrencyBub/CurrencyCreator.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyDb.js',
-		//'lib/Bubbles/BubbleCreationButton.jsx',
-		//'lib/Bubbles/BubbleConfig.jsx',
-		//'lib/Bubbles/bubbleCreator.js',
-		//'lib/Bubbles/WeathBub/WeathBubbleConfig.jsx',
-		//'lib/Bubbles/WeathBub/WeathBubble.jsx',
-		//'lib/Bubbles/WeathBub/WeathBubbleCreationButton.jsx',
 		'lib/ui/Layouts/HorizontalLayout.jsx',
 		'lib/ui/Layouts/VerticalLayout.jsx',
 		'lib/ui/Layouts/ContainedElement.jsx',
-		'lib/ui/CSS/styles.css',
 		'lib/ui/SingleComponents/LineEditPushButton/LineEditPushButton.jsx',
 		'lib/ui/SingleComponents/LineEditComboBox/LineEditComboBox.jsx',
 		'lib/ui/SingleComponents/ImageButton/ImageButton.jsx',
@@ -104,7 +98,7 @@ Package.onUse(function(api) {
 		'lib/Sidearea1/SentBubbles.jsx',
 		'lib/Sidearea1/SideArea1.jsx',
 		'lib/Sidearea2/SideArea2.jsx',
-		'lib/Sidearea2/ReceivedBubbles.jsx',
+		'lib/Sidearea2/ReceivedBubbles.jsx'/*,
 		'lib/Bubbles/ListBub/AbsList.jsx',
 		'lib/Bubbles/ListBub/ListCreator.jsx',
 		'lib/Bubbles/ListBub/ListBubble.jsx',
@@ -118,16 +112,12 @@ Package.onUse(function(api) {
 		'lib/Bubbles/ListBub/ListDb.js',
 		'lib/Bubbles/ListBub/ChecklistConfig.jsx',
 		'lib/Bubbles/ListBub/ListBubbleConfig.jsx',
-		'lib/Bubbles/ListBub/ChecklistCreator.jsx'
+		'lib/Bubbles/ListBub/ChecklistCreator.jsx'*/
 	], ['client']);
 	api.addFiles([
 		'lib/Bubbles/RandomBub/RandMethod.js',
+		'lib/exports.js',
 		'server/Methods.js',
-		/*'client/templateSideArea1.html',
-		'client/templateSideArea2.html',
-		'client/SideArea1.js',
-		'client/SideArea2.js',
-		'sideAreaConfig.js',*/
 		'lib/uiConstruction/AbsButton.jsx',
 		'lib/uiConstruction/AbsBubble.jsx',
 		'lib/uiConstruction/BubbleCreator.jsx',
@@ -139,55 +129,16 @@ Package.onUse(function(api) {
 		'lib/database/BubbleDatabase.js',
 		'lib/database/databaseInitialization.js',
 		'lib/Bubbles/RandomBub/RandCheck.js',
-		/*'lib/Bubbles/TranslationBub/TranslationBubble.jsx',
-		'lib/Bubbles/TranslationBub/TranslationBubbleConfig.jsx',
-		'lib/Bubbles/TranslationBub/TranslationBubbleCreationButton.jsx',
-		'lib/Bubbles/RandomBub/RandBubbleConfig.jsx',
-		'lib/Bubbles/RandomBub/RandBubble.jsx',
-		'lib/Bubbles/RandomBub/RandBubbleCreationButton.jsx',
-		'lib/Bubbles/bubbleDiscriminator.js',
-		'lib/Bubbles/ListBub/ListBubble.jsx',
-		'lib/Bubbles/ListBub/ListBubbleCreationButton.jsx',
-		'lib/Bubbles/ListBub/ListBubbleConfig.jsx',
-		'lib/Bubbles/Bubble.jsx',
-		'lib/Bubbles/CurrencyBub/CurrencyBubble.jsx',
-		'lib/Bubbles/CurrencyBub/CurrencyBubbleCreationButton.jsx',
-		'lib/Bubbles/CurrencyBub/CurrencyBubbleConfig.jsx',
-		'lib/Bubbles/PollBub/PollBubbleCreationButton.jsx',
-		'lib/Bubbles/PollBub/PollBubble.jsx',
-		'lib/Bubbles/PollBub/PollBubbleConfig.jsx',
-		'lib/Bubbles/BubbleCreationButton.jsx',
-		'lib/Bubbles/BubbleConfig.jsx',
-		'lib/Bubbles/bubbleCreator.js',
-		'lib/Bubbles/WeathBub/WeathBubbleConfig.jsx',
-		'lib/Bubbles/WeathBub/WeathBubble.jsx',
-		'lib/Bubbles/WeathBub/WeathBubbleCreationButton.jsx',
-		'lib/ui/Layouts/HorizontalLayout.jsx',
-		'lib/ui/Layouts/VerticalLayout.jsx',
-		'lib/ui/Layouts/ContainedElement.jsx',*/
-		//'lib/ui/CSS/styles.css',
-		'lib/ui/SingleComponents/LineEditPushButton/LineEditPushButton.jsx',
-		'lib/ui/SingleComponents/LineEditComboBox/LineEditComboBox.jsx',
-		'lib/ui/SingleComponents/ImageButton/ImageButton.jsx',
-		'lib/ui/SingleComponents/RadioButtonGroup/RadioButtonGroup.jsx',
-		'lib/ui/SingleComponents/LineEdit/LineEdit.jsx',
-		'lib/ui/SingleComponents/Image/Image.jsx',
-		'lib/ui/SingleComponents/TextAreaButton/TextAreaButton.jsx',
-		'lib/ui/SingleComponents/PushButton/PushButton.jsx',
-		'lib/ui/SingleComponents/TextAreaComboBox/TextAreaComboBox.jsx',
-		'lib/ui/SingleComponents/ComboBox/ComboBox.jsx',
-		'lib/ui/SingleComponents/CheckBoxList/CheckBoxList.jsx',
-		'lib/ui/SingleComponents/CheckButton/CheckButton.jsx',
 		'lib/Bubbles/CurrencyBub/CurrencyMethod.js',
-		'lib/Bubbles/PollBub/PollMethod.js',
+		'lib/Bubbles/PollBub/PollMethod.js', /*
 		'lib/Bubbles/ListBub/ListMethod.js',
 		'lib/Bubbles/ListBub/ListDb.js',
-		'lib/Bubbles/ListBub/CheckListDb.js',
+		'lib/Bubbles/ListBub/CheckListDb.js',*/
 		'server/main.js'],
 	['server']);
 
-	api.addFiles('lib/ui/CSS/bootstrap.css', 'client');
-	api.addFiles('lib/ui/CSS/styles.css', 'client');
+	api.export('MonolithUI', ['client']);
+	api.export('Monolith', ['client', 'server']);
 });
 
 Package.onTest(function(api) {

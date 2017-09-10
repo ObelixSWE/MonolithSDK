@@ -1,10 +1,11 @@
 /*
 *  Name :   BubbleCreationButton.jsx
-*  Location : /imports/UI/Bubbles
+*  Location : /lib/Bubbles/PollBub/BubbleCreationButton.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {Breve descrizione del file}
+*  Description: Creation Button Poll Bubble
 */
+
 
 import AbsButton from '../../../lib/uiConstruction/AbsButton';
 

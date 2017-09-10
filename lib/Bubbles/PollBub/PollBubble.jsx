@@ -1,10 +1,11 @@
 /*
 *  Name :   PollBubble.jsx
-*  Location : /imports/UI/Bubbles
+*  Location : /lib/Bubbles/PollBub/PollBubble.jsx
 *  Author: Riccardo Saggese
 *  Creation Data: 2017-06-27
-*  Description: {class PollBubble}
+*  Description: class PollBubble
 */
+
 
 import React, { Component } from 'react';
 import VerticalLayout from '../../ui/Layouts/VerticalLayout';
@@ -19,7 +20,7 @@ export default class PollBubble extends AbsBubble {
         super(props);
         this.addVote=this.addVote.bind(this);
         this.state = {
-            voted: (this.props.voted.indexOf(Meteor.userId()) > 0)
+            voted: (this.props.voted.indexOf(Meteor.userId()) > -1)
         };
     }
 
@@ -32,7 +33,16 @@ export default class PollBubble extends AbsBubble {
         );
     }
 
+  componentWillReceiveProps(nextProps) {
+        this.setState(
+            {
+		voted: (nextProps.voted.indexOf(Meteor.userId()) > -1)
+            }
+        );
+    }
+
     render(){
+console.log(Meteor.userId());
         let opts=[];
         for (let i=0;i<this.props.options.length;i++){
             opts.push(
